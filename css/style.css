@@ -10,6 +10,11 @@
 	height: 100%;
 }
 
+#available_form{
+  font-family: raleway;
+  font-size: 18px;
+}
+
 .form-container{
 	width: 50%;
 	margin-left: auto;

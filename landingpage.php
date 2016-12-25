@@ -108,6 +108,9 @@
 				position: fixed;
 				z-index: 1000;
 			}
+			#myCarousel{
+				height: 500px;
+				width: 100%;
 		</style>
 		<script type="text/javascript">
 			$(document).ready(function(){
@@ -216,18 +219,18 @@
 			<!-- social media bar -->
 			<div class="container-fluid light-white social-container">
 				<div class="social-menus left">
-					<a class="btn btn-social-icon btn-google">
-				    	<span class="fa fa-google"></span>
-					</a>
-					<a class="btn btn-social-icon btn-twitter">
-				    	<span class="fa fa-twitter"></span>
-					</a>
-					<a class="btn btn-social-icon btn-facebook">
-				    	<span class="fa fa-facebook"></span>
-					</a>
-					<a class="btn btn-social-icon btn-instagram">
-				    	<span class="fa fa-instagram"></span>
-					</a>
+				<a class="btn btn-social-icon btn-google" href="http://bit.ly/2isAQYF 	">
+			    	<span class="fa fa-google"></span>
+				</a>
+				<a class="btn btn-social-icon btn-twitter" href="http://bit.ly/2ho0cuF">
+			    	<span class="fa fa-twitter"></span>
+				</a>
+				<a class="btn btn-social-icon btn-facebook" href="http://bit.ly/2hDBPFf">
+			    	<span class="fa fa-facebook"></span>
+				</a>
+				<a class="btn btn-social-icon btn-instagram" href="http://bit.ly/2i6upOr">
+			    	<span class="fa fa-instagram"></span>
+				</a>
 				</div>
 				<div class="menu-list">
 					<span><a href="">OFFERS</a></span>
@@ -450,9 +453,11 @@
 							<div>
 								<?php 
 									$form_name = "check_available_form_".$name;
+									$price_contianer = "price_container_".$name;
+									$check_available_form_contents = "check_available_form_contents_".$name;
 								?>
 								<form id=<?php echo $form_name ?> method="POST">
-									<div class="check_available_form_contents">
+									<div class="<?php echo $check_available_form_contents; ?>">
 										Event date:<input type="date" name="" class="form-control">
 										<span>Duration: Hours &amp; Miniutes</span>
 										<br>
@@ -478,7 +483,7 @@
 										</select>
 										<input type="hidden" name="anchor_id" value=<?php echo "{$row['anchor_id']}"; ?>>
 									</div>
-									<div class="price_container"></div>
+									<div class="<?php echo $price_contianer; ?>"></div>
 									<?php
 										$button_name = "check_available_form_button_".$name;
 									?>
@@ -490,8 +495,16 @@
 				</div>
 			</div>
 			<!-- ends profile shows -->
+
+			
 			
 			<style type="text/css">
+				.<?php echo $price_contianer; ?>{
+					display: none;
+				}
+				.<?php echo $check_available_form_contents; ?>{
+					display: none;
+				}
 				.<?php echo $name;?>{
 					display: none;
 				}
@@ -504,14 +517,17 @@
 				<?php
 					$main_class = '".'.$name_link.'"';
 					$show_class = '".'.$name.'"';
+					// $price_contianer = '".'.$price_contianer.'"';
+					// $check_available_form_contents = '".'.$check_available_form_contents.'"';
+
 				?>
 				$(document).ready(function(){
 					$(<?php echo $main_class;?>).click(function(){
 				        console.log("test22");
 				        $(<?php echo $show_class;?>).slideToggle("slow");
-				        $(".price_container").empty();
+				        $('.<?php echo $price_contianer;?>').empty();
 				        $("#<?php echo $button_name;?>").show();
-                		$('.check_available_form_contents').show();
+                		$('.<?php echo $check_available_form_contents;?>').show();
 				    });
 				    $("#<?php echo $button_name;?>").click(function (e) {
 				        console.log("fdjg");
@@ -523,8 +539,8 @@
 				            type: 'POST',
 				            data: frm.serialize(),
 				            success: function (data) {
-				                $(".price_container").append(data).show(); // appending data response to result-page div
-				                $('.check_available_form_contents').hide();  //hiding form
+				                $('.<?php echo $price_contianer;?>').append(data).show(); // appending data response to result-page div
+				                $('.<?php echo $check_available_form_contents;?>').hide();  //hiding form
 				                $('#<?php echo $button_name;?>').hide();
 				            }
 				        });
@@ -535,6 +551,11 @@
 				}
 			?>
 			</style>
+			<div class="col-md-12 container-fluid footer-dynamic-block">
+			<?php
+				include 'footer.php';
+			?>
+			</div>
 		</div>
 	</body>
 </html>
