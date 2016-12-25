@@ -56,6 +56,29 @@ $(document).ready(function(){
         $("#budget-fix_container").slideToggle("slow");
         $("#available_result").empty();
         $('#available_form').show();
+        $('#available_result_book').hide();
+    });
+    $("#book_confirmation").click(function(e){
+        console.log("book_confirmation");
+        $confirm_var = confirm("Are you sure");
+        if($confirm_var)
+        {
+            var frm = $('#contact-form');
+            e.preventDefault;
+            $.ajax({
+                url: 'book.php',
+                type: 'POST',
+                data: frm.serialize(),
+                success: function (data) 
+                {
+                    $("#available_result_book").show(); // appending data response to result-page div
+                    setTimeout(function () {
+                        $("#result-page").hide(); 
+                        $("#link-page").show();
+                    }, 5000);
+                }
+            });
+        }
     });
     // $(".budget-fix").click(function (e) {
     //     console.log("inside")
