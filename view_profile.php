@@ -313,7 +313,7 @@ if(! $retval ) {
 					<!-- ends booking-info container -->
 
 					<!-- photos container -->
-					<div class="photos-container hide col-md-6">
+					<div class="photos-container hide col-md-12">
 						<span class="main-title">Photos</span>
 						<div class="col-md-12 container-fluid">
 							<?php 
@@ -336,7 +336,7 @@ if(! $retval ) {
 					<!-- ends photos container -->
 
 					<!-- video container -->
-					<div class="video-container hide col-md-6">
+					<div class="video-container hide col-md-12">
 						<span class="main-title">Videos</span>
 						<div class="col-md-12 container-fluid">
 							<?php 
