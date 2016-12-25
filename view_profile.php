@@ -41,7 +41,7 @@ if(! $retval ) {
 			height: 600px;
 			width: 100%;
 			}
-
+		</style>
 		<script type="text/javascript">
 			;( function( $ ) {
 
@@ -305,6 +305,11 @@ if(! $retval ) {
 
 		</div>
 		<!-- ends user complete details container -->
+		<div class="col-md-12 container-fluid footer-dynamic-block">
+		<?php
+			include 'footer.php';
+		?>
+		</div>
 
 		<!-- Modal -->
 		<div class="modal fade" id="myModal" role="dialog">
