@@ -102,6 +102,11 @@ body{
 	font-weight: 900;
 	color: #444743;
 }
+#available_form{
+  font-family: raleway;
+  font-size: 18px;
+}
+
 .border{
 	margin-left: 5px;
 	margin-right: 5px;

@@ -40,7 +40,12 @@ if(! $retval ) {
 		#myCarousel{
 			height: 600px;
 			width: 100%;
+		}
+		.btn-1{
+			height: 49px;
+			font-family: raleway;
 			}
+		}
 		</style>
 		<script type="text/javascript">
 			;( function( $ ) {
@@ -245,7 +250,7 @@ if(! $retval ) {
 							</div>
 							<div class="col-md-6 description-details">
 								<a id="budget-fix">
-									<button class="col-md-12 btn btn-info">Fix Budget</button>
+									<button class="col-md-12 btn btn-info btn-1">Fix Budget</button>
 								</a>
 							</div>
 						</div>
@@ -309,7 +314,7 @@ if(! $retval ) {
 				<!-- ends booking-info container -->
 
 				<!-- photos container -->
-				<div class="photos-container hide col-md-12">
+				<div class="photos-container hide col-md-6">
 					<span class="main-title">Photos</span>
 					<div class="col-md-12 container-fluid">
 						<?php 
@@ -332,7 +337,7 @@ if(! $retval ) {
 				<!-- ends photos container -->
 
 				<!-- video container -->
-				<div class="video-container hide col-md-12">
+				<div class="video-container hide col-md-6">
 					<span class="main-title">Videos</span>
 					<div class="col-md-12 container-fluid">
 						<?php 
