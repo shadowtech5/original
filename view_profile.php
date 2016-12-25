@@ -40,8 +40,13 @@ if(! $retval ) {
 		#myCarousel{
 			height: 600px;
 			width: 100%;
+		}
+		.btn-1{
+			height: 49px;
+			font-family: raleway;
 			}
-
+		}
+		</style>
 		<script type="text/javascript">
 			;( function( $ ) {
 
@@ -244,15 +249,72 @@ if(! $retval ) {
 								<span>Fee</span>
 							</div>
 							<div class="col-md-6 description-details">
-								<button class="budget-fix col-md-12 btn btn-info" data-toggle="modal" data-target="#myModal" data-ids=<?php echo "{$row['anchor_id']}"; ?> >Fix Budget</button>
+								<a id="budget-fix">
+									<button class="col-md-12 btn btn-info btn-1">Fix Budget</button>
+								</a>
 							</div>
+						</div>
+						<div class="col-md-12" id="budget-fix_container">
+							<div id="available_form">
+								<form id="form1" method="POST">
+									<input type="hidden" value=<?php echo "{$row['anchor_id']}"; ?> name="anchor_id">
+									Duration
+									<br>
+									<div class="col-md-6">
+										<span>Hour</span>
+									</div>
+									<div class="col-md-6">
+										<span>Min</span>
+									</div>
+									<div class="col-md-6">
+										<select class="form-control time left" name="hour">
+										<?php 
+											for($i=0;$i<=24;$i++){
+										?>
+										<option value=<?php echo (string)$i;  ?>><?php echo $i;  ?></option>
+										<?php
+											}
+										?>
+										</select>
+									</div>
+									<div class="col-md-6">
+										<select class="form-control time" name="minute">
+										<?php 
+											for($i=0;$i<=60;$i++){
+										?>
+										<option value=<?php echo (string)$i;  ?>><?php echo $i;  ?></option>
+										<?php
+											}
+										?>
+										</select>
+									</div> 
+									<div class="col-md-12">
+									Days:
+										<select class="form-control " name="days">
+										<?php 
+											for($i=1;$i<=30;$i++){
+										?>
+										<option value=<?php echo (string)$i;  ?>><?php echo $i;  ?></option>
+										<?php
+											}
+										?>
+										</select>
+									</div>
+									<div id="append"></div>
+									<button id="test" type="button" class="btn btn-info">Check Amount</button>
+								</form>
+							</div>
+						</div>
+						<div id="available_result">
+
+						</div>
 						</div>
 					</div>
 				</div>
 				<!-- ends booking-info container -->
 
 				<!-- photos container -->
-				<div class="photos-container hide col-md-12">
+				<div class="photos-container hide col-md-6">
 					<span class="main-title">Photos</span>
 					<div class="col-md-12 container-fluid">
 						<?php 
@@ -275,7 +337,7 @@ if(! $retval ) {
 				<!-- ends photos container -->
 
 				<!-- video container -->
-				<div class="video-container hide col-md-12">
+				<div class="video-container hide col-md-6">
 					<span class="main-title">Videos</span>
 					<div class="col-md-12 container-fluid">
 						<?php 
@@ -306,77 +368,6 @@ if(! $retval ) {
 		</div>
 		<!-- ends user complete details container -->
 
-		<!-- Modal -->
-		<div class="modal fade" id="myModal" role="dialog">
-			<div class="modal-dialog">
-
-				<!-- Modal content-->
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal">&times;</button>
-						<h4 class="modal-title">Check Your Budget</h4>
-					</div>
-					<div class="modal-body">
-						<div id="available_form">
-							<form id="form1" method="POST">
-								Duration
-								<br>
-								<div class="col-md-6">
-									<span>Hour</span>
-								</div>
-								<div class="col-md-6">
-									<span>Min</span>
-								</div>
-								<div class="col-md-6">
-									<select class="form-control time left" name="hour">
-									<?php 
-										for($i=0;$i<=24;$i++){
-									?>
-									<option value=<?php echo (string)$i;  ?>><?php echo $i;  ?></option>
-									<?php
-										}
-									?>
-									</select>
-								</div>
-								<div class="col-md-6">
-									<select class="form-control time" name="minute">
-									<?php 
-										for($i=0;$i<=60;$i++){
-									?>
-									<option value=<?php echo (string)$i;  ?>><?php echo $i;  ?></option>
-									<?php
-										}
-									?>
-									</select>
-								</div> 
-								<div class="col-md-12">
-								Days:
-									<select class="form-control " name="days">
-									<?php 
-										for($i=1;$i<=30;$i++){
-									?>
-									<option value=<?php echo (string)$i;  ?>><?php echo $i;  ?></option>
-									<?php
-										}
-									?>
-									</select>
-								</div>
-								<div id="append"></div>
-								<button id="test" type="button" class="btn btn-info">Check Amount</button>
-							</form>
-						</div>
-						<div id="available_result">
-
-						</div>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					</div>
-				</div>
-
-			</div>
-		</div>
-
-		<!-- modal ends -->
+		
 	</body>
 </html>

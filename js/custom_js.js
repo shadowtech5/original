@@ -43,16 +43,22 @@ $(document).ready(function(){
         $(".video-container").removeClass("hide");
         $(".photos-container").addClass("hide");
     });
-    $(".budget-fix").click(function (e) {
-        console.log("inside")
-        var Id=$(this).attr('data-ids');
-        var input = "<input type='hidden' value='"+Id+"' name='jishnu'/>"
-        $('#append').append(input);
-        $("#available_result").hide(); // appending data response to result-page div
-        $('#available_form').show();  //hiding form
+    $("#budget-fix").click(function(e){
+        console.log("budget");
+        $("#budget-fix_container").slideToggle("slow");
         $("#available_result").empty();
-        console.log(Id);
+        $('#available_form').show();
     });
+    // $(".budget-fix").click(function (e) {
+    //     console.log("inside")
+    //     var Id=$(this).attr('data-ids');
+    //     var input = "<input type='hidden' value='"+Id+"' name='jishnu'/>"
+    //     $('#append').append(input);
+    //     $("#available_result").hide(); // appending data response to result-page div
+    //     $('#available_form').show();  //hiding form
+    //     $("#available_result").empty();
+    //     console.log(Id);
+    // });
     $(".filter").click(function(){
         console.log("test111");
         $(".filter-options-details").slideToggle("slow");

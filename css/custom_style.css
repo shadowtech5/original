@@ -9,6 +9,9 @@
 body{
 	font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
 }
+#budget-fix_container{
+	display: none;
+}
 .background_image{
 	background-image: url("../img/background.jpg");
 	position: fixed;
@@ -99,6 +102,11 @@ body{
 	font-weight: 900;
 	color: #444743;
 }
+#available_form{
+  font-family: raleway;
+  font-size: 18px;
+}
+
 .border{
 	margin-left: 5px;
 	margin-right: 5px;
