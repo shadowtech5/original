@@ -43,6 +43,14 @@ $(document).ready(function(){
         $(".video-container").removeClass("hide");
         $(".photos-container").addClass("hide");
     });
+    $("#book_now_buttonss").click(function(e){
+        console.log("inside book");
+        $(".biography-container").addClass("hide");
+        $(".booking-info-container").addClass("hide");
+        $(".video-container").addClass("hide");
+        $(".photos-container").addClass("hide");
+        $(".booking_container").removeClass("hide");
+    });
     $("#budget-fix").click(function(e){
         console.log("budget");
         $("#budget-fix_container").slideToggle("slow");

@@ -63,5 +63,10 @@
 	
 		
 	echo $anchor_name." costs almost for :". $amount;
-	echo '<button type="button" class="btn btn-info col-md-12 book_now_button">BOOK NOW</button>';
+	echo '<a id="book_now_buttonss"><button type="button" class="btn btn-info col-md-12">BOOK NOW</button></a>';
+	echo '<script>$("#book_now_buttonss").click(function(e){
+        console.log("inside book");
+        $(".view-profile-user-deails").addClass("hide");
+        $(".booking_container").removeClass("hide");
+    });</script>';
 ?>

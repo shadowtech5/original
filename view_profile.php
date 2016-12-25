@@ -157,215 +157,308 @@ if(! $retval ) {
 
 			<!-- user details entry -->
 			<div class="col-md-6 view-profile-user-deails">
-
-				<!-- menu bar starts -->
-				<div class="view-profile-menu-bar col-md-12">
-					<span><a  class="active" id="biography">Biography</a></span>
-					<span><a  id="booking-info">Booking Info</a></span>
-					<span><a  id="photos">Photos</a></span>
-					<span><a  id="videos">Videos</a></span>
-				</div>
-				<!-- ends menu bar -->
-
-				<!-- biography container -->
-				<div class="col-md-12 biography-container">
-					<span>Biography</span>
-					<div class="col-md-12 biography-deails">
-						<span>
-							<?php echo "{$row['anchor_biography']}"; ?>
-						</span>
+				<div class="apart-book-now">
+					<!-- menu bar starts -->
+					<div class="view-profile-menu-bar col-md-12">
+						<span><a  class="active" id="biography">Biography</a></span>
+						<span><a  id="booking-info">Booking Info</a></span>
+						<span><a  id="photos">Photos</a></span>
+						<span><a  id="videos">Videos</a></span>
 					</div>
-				</div>
-				<!-- ends biography container -->
+					<!-- ends menu bar -->
 
-				<!-- booking info container -->
-				<div class="col-md-12 booking-info-container hide">
-					<span class="main-title">Booking info</span>
-					<div class="col-md-12 booking-info-deails">
-						<div class="col-md-12 description-container">
-							<div class="col-md-6 description-title text-center">
-								<span>Performing Team</span>
-							</div>
-							<div class="col-md-6 sub-text">
-								<span>
-									<?php 
-										echo "{$row['anchor_performing_team']}" . " Member/s"; 
-									?>
-								</span>
-							</div>
+					<!-- biography container -->
+					<div class="col-md-12 biography-container">
+						<span>Biography</span>
+						<div class="col-md-12 biography-deails">
+							<span>
+								<?php echo "{$row['anchor_biography']}"; ?>
+							</span>
 						</div>
-						<div class="col-md-12 description-container">
-							<div class="col-md-6 description-title text-center">
-								<span>Performing Duration</span>
-							</div>
-							<div class="col-md-6 description-details sub-text">
-								<span>
-									<?php
-										$ev_id=$_COOKIE["ev_id"];
-										$sql = 'SELECT * from M_EVENT_TYPE where event_id='.$ev_id;
-										$retvl = mysql_query( $sql, $conn );
+					</div>
+					<!-- ends biography container -->
 
-										if(! $retvl ) 
-										{
-											die('Could not get data: ' . mysql_error());
-										}
-
-
-										while($row5 = mysql_fetch_array($retvl, MYSQL_ASSOC)) 
-										{
-											echo "{$row5['performance_duration']}"; 
-										}
-									?>
-								</span>
-							</div>
-						</div>
-						<div class="col-md-12 description-container">
-							<div class="col-md-6 description-title text-center">
-								<span>Language Know</span>
-							</div>
-							<div class="col-md-6 description-details description-details sub-text">
-								<span><?php echo "{$row['anchor_language']}"; ?></span>
-							</div>
-						</div>
-						<div class="col-md-12 description-container">
-							<div class="col-md-6 description-title text-center">
-								<span>Event Prefered</span>
-							</div>
-							<div class="col-md-6 description-details sub-text">
-								<span>CAMPUS EVENTS, CONCERTS/FESTIVALS, CORPORATE EVENTS, RESTAURANTS-PUBS-BARS, WEDDINGS</span>
-							</div>
-						</div>
-						<div class="col-md-12 description-container">
-							<div class="col-md-6 description-title text-center">
-								<span>Open to travel</span>
-							</div>
-							<div class="col-md-6 description-details sub-text">
-								<span><?php echo "{$row['travel']}"; ?></span>
-							</div>
-						</div>
-						<div class="col-md-12 description-container">
-							<div class="col-md-6 description-title text-center">
-								<span>Fee</span>
-							</div>
-							<div class="col-md-6 description-details">
-								<a id="budget-fix">
-									<button class="col-md-12 btn btn-info btn-1">Fix Budget</button>
-								</a>
-							</div>
-						</div>
-						<div class="col-md-12" id="budget-fix_container">
-							<div id="available_form">
-								<form id="form1" method="POST">
-									<input type="hidden" value=<?php echo "{$row['anchor_id']}"; ?> name="anchor_id">
-									Duration
-									<br>
-									<div class="col-md-6">
-										<span>Hour</span>
-									</div>
-									<div class="col-md-6">
-										<span>Min</span>
-									</div>
-									<div class="col-md-6">
-										<select class="form-control time left" name="hour">
+					<!-- booking info container -->
+					<div class="col-md-12 booking-info-container hide">
+						<span class="main-title">Booking info</span>
+						<div class="col-md-12 booking-info-deails">
+							<div class="col-md-12 description-container">
+								<div class="col-md-6 description-title text-center">
+									<span>Performing Team</span>
+								</div>
+								<div class="col-md-6 sub-text">
+									<span>
 										<?php 
-											for($i=0;$i<=24;$i++){
+											echo "{$row['anchor_performing_team']}" . " Member/s"; 
 										?>
-										<option value=<?php echo (string)$i;  ?>><?php echo $i;  ?></option>
+									</span>
+								</div>
+							</div>
+							<div class="col-md-12 description-container">
+								<div class="col-md-6 description-title text-center">
+									<span>Performing Duration</span>
+								</div>
+								<div class="col-md-6 description-details sub-text">
+									<span>
 										<?php
+											$ev_id=$_COOKIE["ev_id"];
+											$sql = 'SELECT * from M_EVENT_TYPE where event_id='.$ev_id;
+											$retvl = mysql_query( $sql, $conn );
+
+											if(! $retvl ) 
+											{
+												die('Could not get data: ' . mysql_error());
+											}
+
+
+											while($row5 = mysql_fetch_array($retvl, MYSQL_ASSOC)) 
+											{
+												echo "{$row5['performance_duration']}"; 
 											}
 										?>
-										</select>
-									</div>
-									<div class="col-md-6">
-										<select class="form-control time" name="minute">
-										<?php 
-											for($i=0;$i<=60;$i++){
-										?>
-										<option value=<?php echo (string)$i;  ?>><?php echo $i;  ?></option>
-										<?php
-											}
-										?>
-										</select>
-									</div> 
-									<div class="col-md-12">
-									Days:
-										<select class="form-control " name="days">
-										<?php 
-											for($i=1;$i<=30;$i++){
-										?>
-										<option value=<?php echo (string)$i;  ?>><?php echo $i;  ?></option>
-										<?php
-											}
-										?>
-										</select>
-									</div>
-									<div id="append"></div>
-									<button id="test" type="button" class="btn btn-info">Check Amount</button>
-								</form>
+									</span>
+								</div>
+							</div>
+							<div class="col-md-12 description-container">
+								<div class="col-md-6 description-title text-center">
+									<span>Language Know</span>
+								</div>
+								<div class="col-md-6 description-details description-details sub-text">
+									<span><?php echo "{$row['anchor_language']}"; ?></span>
+								</div>
+							</div>
+							<div class="col-md-12 description-container">
+								<div class="col-md-6 description-title text-center">
+									<span>Event Prefered</span>
+								</div>
+								<div class="col-md-6 description-details sub-text">
+									<span>CAMPUS EVENTS, CONCERTS/FESTIVALS, CORPORATE EVENTS, RESTAURANTS-PUBS-BARS, WEDDINGS</span>
+								</div>
+							</div>
+							<div class="col-md-12 description-container">
+								<div class="col-md-6 description-title text-center">
+									<span>Open to travel</span>
+								</div>
+								<div class="col-md-6 description-details sub-text">
+									<span><?php echo "{$row['travel']}"; ?></span>
+								</div>
+							</div>
+							<div class="col-md-12 description-container">
+								<div class="col-md-6 description-title text-center">
+									<span>Fee</span>
+								</div>
+								<div class="col-md-6 description-details">
+									<a id="budget-fix">
+										<button class="col-md-12 btn btn-info btn-1">Fix Budget</button>
+									</a>
+								</div>
+							</div>
+							<div class="col-md-12" id="budget-fix_container">
+								<div id="available_form">
+									<form id="form1" method="POST">
+										<input type="hidden" value=<?php echo "{$row['anchor_id']}"; ?> name="anchor_id">
+										Duration
+										<br>
+										<div class="col-md-6">
+											<span>Hour</span>
+										</div>
+										<div class="col-md-6">
+											<span>Min</span>
+										</div>
+										<div class="col-md-6">
+											<select class="form-control time left" name="hour">
+											<?php 
+												for($i=0;$i<=24;$i++){
+											?>
+											<option value=<?php echo (string)$i;  ?>><?php echo $i;  ?></option>
+											<?php
+												}
+											?>
+											</select>
+										</div>
+										<div class="col-md-6">
+											<select class="form-control time" name="minute">
+											<?php 
+												for($i=0;$i<=60;$i++){
+											?>
+											<option value=<?php echo (string)$i;  ?>><?php echo $i;  ?></option>
+											<?php
+												}
+											?>
+											</select>
+										</div> 
+										<div class="col-md-12">
+										Days:
+											<select class="form-control " name="days">
+											<?php 
+												for($i=1;$i<=30;$i++){
+											?>
+											<option value=<?php echo (string)$i;  ?>><?php echo $i;  ?></option>
+											<?php
+												}
+											?>
+											</select>
+										</div>
+										<div id="append"></div>
+										<button id="test" type="button" class="btn btn-info">Check Amount</button>
+									</form>
+								</div>
+							</div>
+							<div id="available_result">
+
+							</div>
 							</div>
 						</div>
-						<div id="available_result">
-
-						</div>
-						</div>
 					</div>
-				</div>
-				<!-- ends booking-info container -->
+					<!-- ends booking-info container -->
 
-				<!-- photos container -->
-				<div class="photos-container hide col-md-6">
-					<span class="main-title">Photos</span>
-					<div class="col-md-12 container-fluid">
-						<?php 
-							for ($i=1; $i<=5; $i++)
-							{
-								$photos = $row['image_path'].$i.'.jpg"';
-						?>
-						<div class="col-md-4 photo-outer-container">
-							<div class="photos_indi_container">
-								<a rel="gallery-1" href=<?php echo "$photos"; ?> class="swipebox">
-									<img src=<?php echo "$photos"; ?> alt="image" class="img-responsive">
-								</a>
+					<!-- photos container -->
+					<div class="photos-container hide col-md-6">
+						<span class="main-title">Photos</span>
+						<div class="col-md-12 container-fluid">
+							<?php 
+								for ($i=1; $i<=5; $i++)
+								{
+									$photos = $row['image_path'].$i.'.jpg"';
+							?>
+							<div class="col-md-4 photo-outer-container">
+								<div class="photos_indi_container">
+									<a rel="gallery-1" href=<?php echo "$photos"; ?> class="swipebox">
+										<img src=<?php echo "$photos"; ?> alt="image" class="img-responsive">
+									</a>
+								</div>
 							</div>
+							<?php
+								}
+							?>
 						</div>
-						<?php
-							}
-						?>
 					</div>
-				</div>
-				<!-- ends photos container -->
+					<!-- ends photos container -->
 
-				<!-- video container -->
-				<div class="video-container hide col-md-6">
-					<span class="main-title">Videos</span>
-					<div class="col-md-12 container-fluid">
-						<?php 
-							for ($i=1; $i<=5; $i++)
-							{
-								$photos = $row['image_path'].$i.'.jpg"';
-						?>
-						<div class="col-md-4 photo-outer-container">
-							<div class="photos_indi_container">
-								<a class="swipebox-video" rel="youtube" href="https://www.youtube.com/watch?v=FIRT7lf8byw">
-									<img src=<?php echo "$photos"; ?> alt="image" class="img-responsive">
-								</a>
+					<!-- video container -->
+					<div class="video-container hide col-md-6">
+						<span class="main-title">Videos</span>
+						<div class="col-md-12 container-fluid">
+							<?php 
+								for ($i=1; $i<=5; $i++)
+								{
+									$photos = $row['image_path'].$i.'.jpg"';
+							?>
+							<div class="col-md-4 photo-outer-container">
+								<div class="photos_indi_container">
+									<a class="swipebox-video" rel="youtube" href="https://www.youtube.com/watch?v=FIRT7lf8byw">
+										<img src=<?php echo "$photos"; ?> alt="image" class="img-responsive">
+									</a>
+								</div>
 							</div>
+							<?php
+								}
+							?>
 						</div>
-						<?php
-							}
-						?>
 					</div>
-				</div>
-				<!-- ends videos container -->
+					<!-- ends videos container -->
 
-				<?php 
-					} 
-				?>
+					<?php 
+						} 
+					?>
+				</div>
+
+				<!-- booking container -->
+				<div class="container booking_container col-md-6 hide">
+
+		            <div class="row">
+
+		                <div class="col-lg-8 col-lg-offset-2">
+
+		                    <form id="contact-form" method="post" action="contact.php" role="form">
+
+		                        <div class="messages"></div>
+
+		                        <div class="controls">
+
+		                            <div class="row">
+		                                <div class="col-md-6">
+		                                    <div class="form-group">
+		                                        <label for="form_name">Firstname *</label>
+		                                        <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
+		                                        <div class="help-block with-errors"></div>
+		                                    </div>
+		                                </div>
+		                                <div class="col-md-6">
+		                                    <div class="form-group">
+		                                        <label for="form_lastname">Lastname *</label>
+		                                        <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
+		                                        <div class="help-block with-errors"></div>
+		                                    </div>
+		                                </div>
+		                            </div>
+		                            <div class="row">
+		                                <div class="col-md-6">
+		                                    <div class="form-group">
+		                                        <label for="form_email">Email *</label>
+		                                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
+		                                        <div class="help-block with-errors"></div>
+		                                    </div>
+		                                </div>
+		                                <div class="col-md-6">
+		                                    <div class="form-group">
+		                                        <label for="form_phone">Event Type</label>
+		                                        <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Please enter your Event*">
+		                                        <div class="help-block with-errors"></div>
+		                                    </div>
+		                                </div>
+		                            </div>
+		                            <div class="row">
+		                                <div class="col-md-4">
+		                                    <div class="form-group">
+		                                        <label for="form_email">Mobile *</label>
+		                                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your mobile *" required="required" data-error="Valid email is required.">
+		                                        <div class="help-block with-errors"></div>
+		                                    </div>
+		                                </div>
+		                                <div class="col-md-4">
+		                                    <div class="form-group">
+		                                        <label for="form_email">Phone *</label>
+		                                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your Phone number *" required="required" data-error="Valid email is required.">
+		                                        <div class="help-block with-errors"></div>
+		                                    </div>
+		                                </div>
+		                                <div class="col-md-4">
+		                                    <div class="form-group">
+		                                        <label for="form_email">Costume *</label>
+		                                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter costume *" required="required" data-error="Valid email is required.">
+		                                        <div class="help-block with-errors"></div>
+		                                    </div>
+		                                </div>
+		                            </div>
+		                            <div class="row">
+		                                <div class="col-md-12">
+		                                    <div class="form-group">
+		                                        <label for="form_message">Address *</label>
+		                                        <textarea id="form_message" name="message" class="form-control" placeholder="Please enter address *" rows="4" required="required" data-error="Please,enter address."></textarea>
+		                                        <div class="help-block with-errors"></div>
+		                                    </div>
+		                                </div>
+		                                <div class="col-md-12">
+		                                    <input type="submit" class="btn btn-success btn-send" value="Book Now">
+		                                </div>
+		                            </div>
+		                        </div>
+
+		                    </form>
+
+		                </div><!-- /.8 -->
+
+		            </div> <!-- /.row-->
+
+		        </div> <!-- /.container-->
+		        <!-- ends booking container -->
 			</div>
-			<!-- ends user details entry -->
+			<!-- ends user complete details container -->
 
 		</div>
-		<!-- ends user complete details container -->
+		<!-- ends user details entry -->
+			
 		<div class="col-md-12 container-fluid footer-dynamic-block">
 		<?php
 			include 'footer.php';
