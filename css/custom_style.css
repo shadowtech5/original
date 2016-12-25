@@ -42,6 +42,8 @@ body{
 .menu-list>span>a{
 	color: #333;
 	padding-right: 5px;
+	font-weight: bold;
+	font-size: 16px;
 }
 .menu-list>span>a:hover{
 	text-decoration: none;
@@ -59,8 +61,8 @@ body{
 	box-shadow: 1px 1px 5px #888888;
 }
 .icon-container{
-	border-top: 1px solid #a8acb4;
-	padding: 15px;
+	/*border-top: 1px solid #a8acb4;*/
+	padding: 7px;
 }
 .event-logo{
 	width: 50%;
@@ -74,6 +76,11 @@ body{
 	background-color: #fff;
 	padding: 15px;
 }
+.event-container>p{
+	font-size: 24px;
+	color: #444743;
+	font-family: raleway;
+}
 .event-container>a{
 	color: #000000;
 	text-decoration: none;
@@ -86,11 +93,17 @@ body{
 	margin-top: 15px;
 	margin-bottom: 15px;
 }
+.event-name>h4{
+	font-size: 21px;
+	font-family: raleway;
+	font-weight: 900;
+	color: #444743;
+}
 .border{
 	margin-left: 5px;
 	margin-right: 5px;
-	border: 2px solid #f98625;
-	height: 250px;	
+	border: 1px solid #8d8d8d;
+	height: 200px;	
 }
 .footer-bar{
 	color: white;
@@ -98,25 +111,45 @@ body{
 	margin-top: 15px;
 	padding: 10px;
 }
+.footer-bar>div>ul li:before {
+		content: "\00BB \0020";
+	     }
 .footer-bar>div>ul{
 	list-style-type: none;
 	padding: 0;
 	padding-top: 10px;
+	font-size: 18px;
+	font-weight: 100;
+	font-family: raleway;
+}
+.footer-bar>div>ul>li>a{
+	padding: 0;
+	color: #bdbdbd;
 }
 .footer-company{
 	padding: 10px;
 	padding-top: 10px;
 	background-color: #000000;
-	border-top: 2px solid #f98625;
+	border-top: 1px solid #f98625;
 }
 .footer-logo{
 	float: left;
+	width: 400%;
 }
 .right{
 	float: right;
 }
+.footer-bar>div>a>span{
+	font-family: raleway;
+	font-size: 22px;
+	font-weight: bold;
+	color: #ffffff;
+}
 .footer-bar>div>span{
-	border-bottom: 2px solid #fff;
+	font-family: raleway;
+	font-size: 22px;
+	font-weight: bold;
+	color: #ffffff;
 }
 .custom-image-size-carousel{
 	height: 250px;
@@ -126,18 +159,20 @@ body{
 }
 .user-name-container>span{
 	font-size: 40px;
+	font-family: raleway;
 	font-weight: bold;
 }
 .view-profile-user-deails{
 	padding-top: 25px;
 }
 .view-profile-menu-bar{
-	border-top: 10px solid #f98625;
-	border-bottom: 10px solid #f98625;
+	border-top: 2px solid #484a4a;
+	border-bottom: 2px solid #484a4a;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	font-size: 25.19px;
 	color: #7b7878;
+	font-family: raleway;
 }
 .view-profile-menu-bar>span{
 	padding-right: 20px;
@@ -165,6 +200,8 @@ body{
 	padding-top: 15px;
 	padding-left: 0;
 	font-size: 18px;
+	font-family: raleway;
+	font-weight: bold;
 }
 .active{
 	color: #000000 !important;
@@ -197,6 +234,11 @@ body{
 	background-color: #AEADB2;
 	border-radius: 5px;
 	font-size: large;
+	padding-top: 2%;
+}
+.sub-text{
+	font-family: raleway;
+	text-align: center;
 	padding-top: 2%;
 }
 .description-details{
@@ -263,15 +305,16 @@ body{
 	background-color: #ffffff;
 	font-size: 12px;
     padding-top: 5px;
-    font-weight: 900;
+    font-family: raleway;
     padding-bottom: 5px;
 }
 .slider.slider-horizontal{
 	width: 170px;
 }
 .filter-options-details{
-	padding-top: 15px;
+	padding-top: 14px;
 	background-color: #E0DBDB;
+	font-family: raleway;
 	display: none;
 	padding-bottom: 10px;
 }

@@ -36,6 +36,12 @@ if(! $retval ) {
 	    <link href="css/bootstrap-social.css" rel="stylesheet" >
 		<link rel="stylesheet" type="text/css" href="css/custom_style.css">
 		<script type="text/javascript" src="js/custom_js.js"></script>
+		<style type="text/css">
+		#myCarousel{
+			height: 600px;
+			width: 100%;
+			}
+
 		<script type="text/javascript">
 			;( function( $ ) {
 
@@ -68,16 +74,16 @@ if(! $retval ) {
 		<!-- social media bar -->
 		<div class="container-fluid light-white social-container">
 			<div class="social-menus left">
-				<a class="btn btn-social-icon btn-google">
+				<a class="btn btn-social-icon btn-google" href="http://bit.ly/2isAQYF 	">
 			    	<span class="fa fa-google"></span>
 				</a>
-				<a class="btn btn-social-icon btn-twitter">
+				<a class="btn btn-social-icon btn-twitter" href="http://bit.ly/2ho0cuF">
 			    	<span class="fa fa-twitter"></span>
 				</a>
-				<a class="btn btn-social-icon btn-facebook">
+				<a class="btn btn-social-icon btn-facebook" href="http://bit.ly/2hDBPFf">
 			    	<span class="fa fa-facebook"></span>
 				</a>
-				<a class="btn btn-social-icon btn-instagram">
+				<a class="btn btn-social-icon btn-instagram" href="http://bit.ly/2i6upOr">
 			    	<span class="fa fa-instagram"></span>
 				</a>
 			</div>
@@ -176,7 +182,7 @@ if(! $retval ) {
 							<div class="col-md-6 description-title text-center">
 								<span>Performing Team</span>
 							</div>
-							<div class="col-md-6 ">
+							<div class="col-md-6 sub-text">
 								<span>
 									<?php 
 										echo "{$row['anchor_performing_team']}" . " Member/s"; 
@@ -188,7 +194,7 @@ if(! $retval ) {
 							<div class="col-md-6 description-title text-center">
 								<span>Performing Duration</span>
 							</div>
-							<div class="col-md-6 description-details">
+							<div class="col-md-6 description-details sub-text">
 								<span>
 									<?php
 										$ev_id=$_COOKIE["ev_id"];
@@ -213,7 +219,7 @@ if(! $retval ) {
 							<div class="col-md-6 description-title text-center">
 								<span>Language Know</span>
 							</div>
-							<div class="col-md-6 description-details">
+							<div class="col-md-6 description-details description-details sub-text">
 								<span><?php echo "{$row['anchor_language']}"; ?></span>
 							</div>
 						</div>
@@ -221,7 +227,7 @@ if(! $retval ) {
 							<div class="col-md-6 description-title text-center">
 								<span>Event Prefered</span>
 							</div>
-							<div class="col-md-6 description-details">
+							<div class="col-md-6 description-details sub-text">
 								<span>CAMPUS EVENTS, CONCERTS/FESTIVALS, CORPORATE EVENTS, RESTAURANTS-PUBS-BARS, WEDDINGS</span>
 							</div>
 						</div>
@@ -229,7 +235,7 @@ if(! $retval ) {
 							<div class="col-md-6 description-title text-center">
 								<span>Open to travel</span>
 							</div>
-							<div class="col-md-6 description-details">
+							<div class="col-md-6 description-details sub-text">
 								<span><?php echo "{$row['travel']}"; ?></span>
 							</div>
 						</div>
