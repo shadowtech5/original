@@ -9,6 +9,9 @@
 body{
 	font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
 }
+.footer-dynamic-block{
+	padding: 0;
+}
 #budget-fix_container{
 	display: none;
 }

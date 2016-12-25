@@ -112,7 +112,7 @@
 				height: 500px;
 				width: 100%;
 		</style>
-<script type="text/javascript">
+		<script type="text/javascript">
 			$(document).ready(function(){
 				console.log("nf");
 				$(".background_image").scroll(function(){
@@ -551,6 +551,11 @@
 				}
 			?>
 			</style>
+			<div class="col-md-12 container-fluid footer-dynamic-block">
+			<?php
+				include 'footer.php';
+			?>
+			</div>
 		</div>
 	</body>
 </html>

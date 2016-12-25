@@ -44,7 +44,6 @@ if(! $retval ) {
 		.btn-1{
 			height: 49px;
 			font-family: raleway;
-			}
 		}
 		</style>
 		<script type="text/javascript">
@@ -367,6 +366,11 @@ if(! $retval ) {
 
 		</div>
 		<!-- ends user complete details container -->
+		<div class="col-md-12 container-fluid footer-dynamic-block">
+		<?php
+			include 'footer.php';
+		?>
+		</div>
 
 		
 	</body>
