@@ -7,7 +7,7 @@ session_start();
 <!DOCTYPE html>
 <html>
 	<head>
-		<title></title>
+		<title>book my anchor</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -21,26 +21,66 @@ session_start();
 	    <link href="css/bootstrap-social.css" rel="stylesheet" >
 		<link rel="stylesheet" type="text/css" href="css/custom_style.css">
 		<script type="text/javascript" src="js/custom_js.js"></script>
+		<style type="text/css">
+			.background_image{
+				background-image: none;
+				background-color: #ffffff !important;
+			}
+			.social-container1{
+				position: fixed;
+				z-index: 1000;
+			}
+		</style>
+		<style type="text/css">
+			#myCarousel{
+				height: 600px;
+				width: 100%;
+			}
+
+		</style>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				console.log("nf");
+				$(".background_image").scroll(function(){
+					if($(this).scrollTop()>400)
+					{
+						$(".social-container1").removeClass("hide");
+					}
+					else{
+						$(".social-container1").addClass("hide");	
+					}
+				});
+			});
+		</script>
 	</head>
 	<body>
-		
+		<div class="social-container1 hide">
+			<div class="col-md-12 container-fluid light-black">
+				<!-- icon bar -->
+				<div class="container-fluid light-black icon-container">
+					<img src="img/logo.png" class="img-responsive logo">
+				</div>
+				<!-- ends icon bar -->
+			</div>
+		</div>
+			
 		<div class="container-fluid background_image img-responsive img-responsive">
 			<!-- social media bar -->
 			<div class="container-fluid light-white social-container">
 				<div class="social-menus left">
-					<a class="btn btn-social-icon btn-google">
-				    	<span class="fa fa-google"></span>
-					</a>
-					<a class="btn btn-social-icon btn-twitter">
-				    	<span class="fa fa-twitter"></span>
-					</a>
-					<a class="btn btn-social-icon btn-facebook">
-				    	<span class="fa fa-facebook"></span>
-					</a>
-					<a class="btn btn-social-icon btn-instagram">
-				    	<span class="fa fa-instagram"></span>
-					</a>
-				</div>
+				<a class="btn btn-social-icon btn-google" href="http://bit.ly/2isAQYF 	">
+			    	<span class="fa fa-google"></span>
+				</a>
+				<a class="btn btn-social-icon btn-twitter" href="http://bit.ly/2ho0cuF">
+			    	<span class="fa fa-twitter"></span>
+				</a>
+				<a class="btn btn-social-icon btn-facebook" href="http://bit.ly/2hDBPFf">
+			    	<span class="fa fa-facebook"></span>
+				</a>
+				<a class="btn btn-social-icon btn-instagram" href="http://bit.ly/2i6upOr">
+			    	<span class="fa fa-instagram"></span>
+				</a>
+			</div>
 				<div class="menu-list">
 					<span><a href="">OFFERS</a></span>
 					<span><a href="">GIFITING</a></span>
@@ -86,23 +126,14 @@ session_start();
 					</div>
 				</div>
 				<!-- Ends Wrapper for slides -->
-
-				<!-- Left and right controls -->
-				<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-					<span class="sr-only">Previous</span>
-				</a>
-				<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-					<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-					<span class="sr-only">Next</span>
-				</a>
 			</div>
 			<!-- ends slider -->
 
 			<!-- event types -->
 			<div class="container-fluid text-center event-container">
+				<p> FEATURED EVENTS </p>
 				<a href="landingpage.php?ev_id=1">
-					<div class="col-md-4 event-type">
+					<div class="col-md-3 event-type">
 						<div class="border">
 							<div class="event-logo">
 								<img src="img/icons/Campus.png" class="img-responsive">
@@ -114,7 +145,7 @@ session_start();
 					</div>
 				</a>
 				<a href="landingpage.php?ev_id=2">
-					<div class="col-md-4 event-type">
+					<div class="col-md-3 event-type">
 						<div class="border">
 							<div class="event-logo">
 								<img src="img/icons/Charity.png" class="img-responsive">
@@ -126,7 +157,7 @@ session_start();
 					</div>
 				</a>
 				<a href="landingpage.php?ev_id=3">
-					<div class="col-md-4 event-type">
+					<div class="col-md-3 event-type">
 						<div class="border">
 							<div class="event-logo">
 								<img src="img/icons/Corporate.png" class="img-responsive">
@@ -138,7 +169,7 @@ session_start();
 					</div>
 				</a>
 				<a href="landingpage.php?ev_id=4">
-					<div class="col-md-4 event-type">
+					<div class="col-md-3 event-type">
 						<div class="border">
 							<div class="event-logo">
 								<img src="img/icons/Fashion.png" class="img-responsive">
@@ -150,7 +181,7 @@ session_start();
 					</div>
 				</a>
 				<a href="landingpage.php?ev_id=5">
-					<div class="col-md-4 event-type">
+					<div class="col-md-3 event-type">
 						<div class="border">
 							<div class="event-logo">
 								<img src="img/icons/Kids Party.png" class="img-responsive">
@@ -162,7 +193,7 @@ session_start();
 					</div>
 				</a>
 				<a href="landingpage.php?ev_id=6">
-					<div class="col-md-4 event-type">
+					<div class="col-md-3 event-type">
 						<div class="border">
 							<div class="event-logo">
 								<img src="img/icons/Wedding.png" class="img-responsive">
@@ -174,7 +205,7 @@ session_start();
 					</div>
 				</a>
 				<a href="landingpage.php?ev_id=7">
-					<div class="col-md-4 event-type">
+					<div class="col-md-3 event-type">
 						<div class="border">
 							<div class="event-logo">
 								<img src="img/icons/Private.png" class="img-responsive">
@@ -186,7 +217,7 @@ session_start();
 					</div>
 				</a>
 				<a href="landingpage.php?ev_id=8">
-					<div class="col-md-4 event-type">
+					<div class="col-md-3 event-type">
 						<div class="border">
 							<div class="event-logo">
 								<img src="img/icons/Exhibition.png" class="img-responsive">
@@ -198,7 +229,7 @@ session_start();
 					</div>
 				</a>
 				<a href="landingpage.php?ev_id=9">
-					<div class="col-md-4 event-type">
+					<div class="col-md-3 event-type">
 						<div class="border">
 							<div class="event-logo">
 								<img src="img/icons/Campus.png" class="img-responsive">
@@ -210,7 +241,7 @@ session_start();
 					</div>
 				</a>
 				<a href="landingpage.php?ev_id=10">
-					<div class="col-md-4 event-type">
+					<div class="col-md-3 event-type">
 						<div class="border">
 							<div class="event-logo">
 								<img src="img/icons/Religion.png" class="img-responsive">
@@ -222,7 +253,7 @@ session_start();
 					</div>
 				</a>
 				<a href="landingpage.php?ev_id=11">
-					<div class="col-md-4 event-type">
+					<div class="col-md-3 event-type">
 						<div class="border">
 							<div class="event-logo">
 								<img src="img/icons/Promotion.png" class="img-responsive">
@@ -234,7 +265,7 @@ session_start();
 					</div>
 				</a>
 				<a href="landingpage.php?ev_id=12">
-					<div class="col-md-4 event-type">
+					<div class="col-md-3 event-type">
 						<div class="border">
 							<div class="event-logo">
 								<img src="img/icons/Concert.png" class="img-responsive">
@@ -249,8 +280,28 @@ session_start();
 			<!-- ends event types -->
 
 			<!-- footer starts -->
+
 			<div class="footer-bar container-fluid">
-				<div class="col-md-2 type_of_events">
+				<div class="col-md-3 type_of_events">
+					<div class="footer-logo">
+						<img src="img/logo.png" class="img-responsive logo ">
+						<div class="social-menus left">
+							<a class="btn btn-social-icon btn-google" href="http://bit.ly/2isAQYF 	">
+						    	<span class="fa fa-google"></span>
+							</a>
+							<a class="btn btn-social-icon btn-twitter" href="http://bit.ly/2ho0cuF">
+						    	<span class="fa fa-twitter"></span>
+							</a>
+							<a class="btn btn-social-icon btn-facebook" href="http://bit.ly/2hDBPFf">
+						    	<span class="fa fa-facebook"></span>
+							</a>
+							<a class="btn btn-social-icon btn-instagram" href="http://bit.ly/2i6upOr">
+						    	<span class="fa fa-instagram"></span>
+							</a>
+						  </div>
+					</div>
+				</div>
+				<div class="col-md-3 type_of_events">
 					<span>TYPE OF EVENTS</span>
 					<ul>
 						<li><a href="landingpage.php?ev_id=1">Campus</a></li>
@@ -258,66 +309,44 @@ session_start();
 						<li><a href="landingpage.php?ev_id=1">Corporate</a></li>
 						<li><a href="landingpage.php?ev_id=1">Fashion Show</a></li>
 						<li><a href="landingpage.php?ev_id=1">Kids Party</a></li>
-						<li><a href="landingpage.php?ev_id=1">Kids Party</a></li>
 						<li><a href="landingpage.php?ev_id=1">Wedding</a></li>
 						<li><a href="landingpage.php?ev_id=1">Private Party</a></li>
 						<li><a href="landingpage.php?ev_id=1">Exhibition</a></li>
 						<li><a href="landingpage.php?ev_id=1">Inaguration</a></li>
 						<li><a href="landingpage.php?ev_id=1">Religion</a></li>
 						<li><a href="landingpage.php?ev_id=1">Promotion</a></li>
-						<li><a href="landingpage.php?ev_id=1">Concert<</li>
+						<li><a href="landingpage.php?ev_id=1">Concert</a></li>
 					</ul>
 				</div>
-				<div class="col-md-2">
+
+				<div class="col-md-3">
 					<span>BOOKMYANCHORS APP</span>
 					<ul>
-						<li>Android</li>
-						<li>iPhone</li>
+						<li><a href="landingpage.php?ev_id=1">Android</a></li>
+						<li><a href="landingpage.php?ev_id=1">iPhone</a></li>
 					</ul>
-				</div>
-				<div class="col-md-2">
 					<span>COUNTRIES</span>
 					<ul>
-						<li>India</li>
+						<li><a href="landingpage.php?ev_id=1">India</a></li>
 					</ul>
-				</div>
-				<div class="col-md-2">
 					<span>HELP</span>
 					<ul>
-						<li>FAQs</li>
-						<li>Terms and Conditions</li>
-						<li>Privacy Policy</li>
+						<li><a href="landingpage.php?ev_id=1">FAQs</a></li>
+						<li><a href="landingpage.php?ev_id=1">Terms and Conditions</a></li>
+						<li><a href="landingpage.php?ev_id=1">Privacy Policy</a></li>
 					</ul>
 				</div>
-				<div class="col-md-2">
+				<div class="col-md-3">
 					<span>BOOKMYANCHORS NEWS</span>
 					<ul>
-						<li>Blog</li>
-						<li>Press Release</li>
-						<li>Press Coverage</li>
-						<li>Contact Us</li>
+						<li><a href="landingpage.php?ev_id=1">Blog</a></li>
+						<li><a href="landingpage.php?ev_id=1">Press Release</a></li>
+						<li><a href="landingpage.php?ev_id=1">Press Coverage</a></li>
+						<li><a href="landingpage.php?ev_id=1">Contact Us</a></li>
 					</ul>
 				</div>
 			</div>
-			<div class="container-fluid footer-company">
-				<div class="footer-logo">
-					<img src="img/logo.png" class="img-responsive logo left">
-					<div class="social-menus right">
-						<a class="btn btn-social-icon btn-google">
-					    	<span class="fa fa-google"></span>
-						</a>
-						<a class="btn btn-social-icon btn-twitter">
-					    	<span class="fa fa-twitter"></span>
-						</a>
-						<a class="btn btn-social-icon btn-facebook">
-					    	<span class="fa fa-facebook"></span>
-						</a>
-						<a class="btn btn-social-icon btn-instagram">
-					    	<span class="fa fa-instagram"></span>
-						</a>
-					</div>
-				</div>
-			</div>
+			
 			<!-- ends footer -->
 		</div>
 
