@@ -1,6 +1,6 @@
 <?php
 	include 'db_connnection.php';
-	$achor_id = $_POST['jishnu'];
+	$achor_id = $_POST['anchor_id'];
 	$days = $_POST['days'];
 	// $time_duration = $_POST['time_duration'];
 	$hour = $_POST['hour'];
@@ -63,4 +63,5 @@
 	
 		
 	echo $anchor_name." costs almost for :". $amount;
+	echo '<button type="button" class="btn btn-info col-md-12 book_now_button">BOOK NOW</button>';
 ?>
