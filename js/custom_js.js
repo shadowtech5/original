@@ -3,6 +3,9 @@ $(document).ready(function(){
         console.log("ai");
     });
     console.log("test");
+    $(".sign_button").click(function(e){
+        $(".login-box").toggle("slow");
+    });
     $("#booking-info").click(function(){
     	$("#booking-info").addClass("active");
     	$("#biography").removeClass("active");
