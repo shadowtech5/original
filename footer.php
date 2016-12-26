@@ -59,8 +59,8 @@
 					<span>BOOKMYANCHORS NEWS</span>
 					<ul>
 						<li><a href="landingpage.php?ev_id=1">Blog</a></li>
-						<li><a href="landingpage.php?ev_id=1">Press Release</a></li>
-						<li><a href="landingpage.php?ev_id=1">Press Coverage</a></li>
+						<li><a href="landingpage.php?ev_id=1">Team</a></li>
+						<li><a href="landingpage.php?ev_id=1">Media Coverage</a></li>
 						<li><a href="landingpage.php?ev_id=1">Contact Us</a></li>
 					</ul>
 				</div>

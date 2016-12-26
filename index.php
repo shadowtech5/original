@@ -21,6 +21,7 @@ session_start();
 	    <link href="css/bootstrap-social.css" rel="stylesheet" >
 		<link rel="stylesheet" type="text/css" href="css/custom_style.css">
 		<script type="text/javascript" src="js/custom_js.js"></script>
+		
 		<style type="text/css">
 			.background_image{
 				background-image: none;
@@ -29,6 +30,21 @@ session_start();
 			.social-container1{
 				position: fixed;
 				z-index: 1000;
+			}
+			input[type=text] {
+			    min-width: 350px;
+			    height: 60px;
+			    box-sizing: border-box;
+			    border: 2px solid #ccc;
+			    border-radius: 4px;
+			    font-size: 16px;
+			    background-color: white;
+			    background-image: url('searchicon.png');
+			    background-position: 10px 10px; 
+			    background-repeat: no-repeat;
+			    padding: 12px 20px 12px 40px;
+			    -webkit-transition: width 0.4s ease-in-out;
+			    transition: width 0.4s ease-in-out;
 			}
 		</style>
 		<style type="text/css">
@@ -80,19 +96,45 @@ session_start();
 				<a class="btn btn-social-icon btn-instagram" href="http://bit.ly/2i6upOr">
 			    	<span class="fa fa-instagram"></span>
 				</a>
-			</div>
+				</div>
 				<div class="menu-list">
 					<span><a href="">OFFERS</a></span>
 					<span><a href="">GIFITING</a></span>
 					<span><a href="">SUPPORT</a></span>
-					<span><span class="glyphicon glyphicon-user"></span><a href="">SIGN IN</a></span>
+					<span><span class="glyphicon glyphicon-user"></span><a href="#" class="sign_button">SIGN IN</a></span>
 				</div>
+				<!-- login box -->
+					<div class="login-box text-center container-fluid col-md-6 right">
+    					<div class="social-login col-md-12 text-center">
+	      					<!-- <a href="#">
+						        <i class="fa fa-facebook fa-lg"></i>
+						        Login in with facebook
+	      					</a> -->
+	      					<a href="#">
+	        					<i class="fa fa-google-plus fa-lg"></i>
+	        					log in with Google
+	      					</a>
+    					</div>
+  					</div>
+  				<!-- end -->
 			</div>
+
 			<!-- ends social media bar -->
 
 			<!-- icon bar -->
-			<div class="container-fluid light-white icon-container">
-				<img src="img/logo.png" class="img-responsive logo">
+			<div class="container-fluid light-white icon-container col-md-12">
+				<div class="col-md-4 logo">
+					<img src="img/logo.png" class="img-responsive">
+				</div>
+
+				<div class="col-md-4">
+					<form>
+					  <input type="text" name="search" placeholder="search..." >
+					</form>
+				</div>
+				<div class="col-md-4 logo celebrity-anchors">
+					<button type="button" class="btn btn-primary">Celebrity Anchors</button>
+				</div>
 			</div>
 			<!-- ends icon bar -->
 
@@ -110,7 +152,7 @@ session_start();
 				<!-- Wrapper for slides -->
 				<div class="carousel-inner" role="listbox">
 					<div class="item active">
-						<img src="img/slider1.jpeg" alt="Chania">
+						<img src="img/slider1.jpg" alt="Chania">
 					</div>
 
 					<div class="item">
