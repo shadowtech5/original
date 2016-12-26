@@ -351,7 +351,7 @@ body{
 	margin-top: 10px;
 }
 .profile-image-container{
-	height: 150px;
+	height: 160px;
 	overflow: hidden;
 	padding: 0;
 }
@@ -360,7 +360,7 @@ body{
 	padding-left: 10px;
 	line-height: 23px;
 	font-family: Fra;
-	height: 150px;
+	height: 160px;
 }
 .profile-content-main-outer{
 	padding: 0;

@@ -217,28 +217,7 @@
 
 		<div class="container-fluid background_image img-responsive img-responsive">
 			<!-- social media bar -->
-			<div class="container-fluid light-white social-container">
-				<div class="social-menus left">
-				<a class="btn btn-social-icon btn-google" href="http://bit.ly/2isAQYF 	">
-			    	<span class="fa fa-google"></span>
-				</a>
-				<a class="btn btn-social-icon btn-twitter" href="http://bit.ly/2ho0cuF">
-			    	<span class="fa fa-twitter"></span>
-				</a>
-				<a class="btn btn-social-icon btn-facebook" href="http://bit.ly/2hDBPFf">
-			    	<span class="fa fa-facebook"></span>
-				</a>
-				<a class="btn btn-social-icon btn-instagram" href="http://bit.ly/2i6upOr">
-			    	<span class="fa fa-instagram"></span>
-				</a>
-				</div>
-				<div class="menu-list">
-					<span><a href="">OFFERS</a></span>
-					<span><a href="">GIFITING</a></span>
-					<span><a href="">SUPPORT</a></span>
-					<span><span class="glyphicon glyphicon-user"></span><a href="">SIGN IN</a></span>
-				</div>
-			</div>
+			<?php include('header.php');?>
 			<!-- ends social media bar -->
 
 			<!-- icon bar -->
@@ -422,6 +401,9 @@
 								<br>
 								<span class="glyphicon glyphicon-map-marker"></span>
 								<span> <?php echo "{$row['anchor_place']}"; ?></span>
+								<br>
+								<span>BMA Code: </span>
+								<span> <?php echo "{$row['bma_code']}"; ?></span>
 							</div>
 							<?php
 								$name = str_replace(' ', '', $row['anchor_name']);

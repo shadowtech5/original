@@ -76,28 +76,7 @@ if(! $retval ) {
 	</head>
 	<body>
 		<!-- social media bar -->
-		<div class="container-fluid light-white social-container">
-			<div class="social-menus left">
-				<a class="btn btn-social-icon btn-google" href="http://bit.ly/2isAQYF 	">
-			    	<span class="fa fa-google"></span>
-				</a>
-				<a class="btn btn-social-icon btn-twitter" href="http://bit.ly/2ho0cuF">
-			    	<span class="fa fa-twitter"></span>
-				</a>
-				<a class="btn btn-social-icon btn-facebook" href="http://bit.ly/2hDBPFf">
-			    	<span class="fa fa-facebook"></span>
-				</a>
-				<a class="btn btn-social-icon btn-instagram" href="http://bit.ly/2i6upOr">
-			    	<span class="fa fa-instagram"></span>
-				</a>
-			</div>
-			<div class="menu-list">
-				<span><a href="">OFFERS</a></span>
-				<span><a href="">GIFITING</a></span>
-				<span><a href="">SUPPORT</a></span>
-				<span><span class="glyphicon glyphicon-user"></span><a href="">SIGN IN</a></span>
-			</div>
-		</div>
+		<?php include ('header.php'); ?>
 		<!-- ends social media bar -->
 
 		<!-- icon bar -->
@@ -245,6 +224,14 @@ if(! $retval ) {
 							</div>
 							<div class="col-md-12 description-container">
 								<div class="col-md-6 description-title text-center">
+									<span>Preffered Place</span>
+								</div>
+								<div class="col-md-6 description-details description-details sub-text">
+									<span><?php echo "{$row['preffered_place']}"; ?></span>
+								</div>
+							</div>
+							<div class="col-md-12 description-container">
+								<div class="col-md-6 description-title text-center">
 									<span>Fee</span>
 								</div>
 								<div class="col-md-6 description-details">
@@ -364,7 +351,7 @@ if(! $retval ) {
 				</div>
 
 				<!-- booking container -->
-				<div class="container booking_container col-md-6 hide">
+				<div class="container booking_container col-md-12 hide">
 
 		            <div class="row">
 		            	<button type="button" class="close" data-dismiss="modal">&times;</button> 
