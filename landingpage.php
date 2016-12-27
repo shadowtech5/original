@@ -109,7 +109,7 @@
 				z-index: 1000;
 			}
 			#myCarousel{
-				height: 500px;
+				/*height: 500px;*/
 				width: 100%;
 		</style>
 		<script type="text/javascript">
@@ -217,35 +217,8 @@
 
 		<div class="container-fluid background_image img-responsive img-responsive">
 			<!-- social media bar -->
-			<div class="container-fluid light-white social-container">
-				<div class="social-menus left">
-				<a class="btn btn-social-icon btn-google" href="http://bit.ly/2isAQYF 	">
-			    	<span class="fa fa-google"></span>
-				</a>
-				<a class="btn btn-social-icon btn-twitter" href="http://bit.ly/2ho0cuF">
-			    	<span class="fa fa-twitter"></span>
-				</a>
-				<a class="btn btn-social-icon btn-facebook" href="http://bit.ly/2hDBPFf">
-			    	<span class="fa fa-facebook"></span>
-				</a>
-				<a class="btn btn-social-icon btn-instagram" href="http://bit.ly/2i6upOr">
-			    	<span class="fa fa-instagram"></span>
-				</a>
-				</div>
-				<div class="menu-list">
-					<span><a href="">OFFERS</a></span>
-					<span><a href="">GIFITING</a></span>
-					<span><a href="">SUPPORT</a></span>
-					<span><span class="glyphicon glyphicon-user"></span><a href="">SIGN IN</a></span>
-				</div>
-			</div>
+			<?php include('header.php');?>
 			<!-- ends social media bar -->
-
-			<!-- icon bar -->
-			<div class="container-fluid light-white icon-container">
-				<img src="img/logo.png" class="img-responsive logo">
-			</div>
-			<!-- ends icon bar -->
 
 			<!-- slider -->
 			<div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -422,10 +395,15 @@
 								<br>
 								<span class="glyphicon glyphicon-map-marker"></span>
 								<span> <?php echo "{$row['anchor_place']}"; ?></span>
+								<br>
+								<span>BMA Code: </span>
+								<span> <?php echo "{$row['bma_code']}"; ?></span>
 							</div>
 							<?php
 								$name = str_replace(' ', '', $row['anchor_name']);
 								$name_link = $name."_link";
+								$price_contianer = "price_container_".$name;
+								$anchor_booking_container = "container col-md-12 hide ". $name. "_booking_container";
 							?>
 							
 						</div>
@@ -445,21 +423,21 @@
 							</div>
 						</div>
 						<!-- booking container -->
-				<div class="container booking_container col-md-6 hide">	
+				<div class="<?php echo $anchor_booking_container;?>">	
 		            <div class="row">	
 		                <div class="col-lg-12 col-lg-offset-2" style="padding-top: 80px; margin-left: 20px;">
 		                    <form id="contact-form" method="post" action="contact.php" role="form">
 		                        <div class="controls">
 		                        <div class="book-now-style">    
 				                            <div class="row">
-				                                <div class="col-md-6">
+				                                <div class="col-md-12">
 				                                    <div class="form-group">
 				                                        <label for="form_name">Firstname *</label>
 				                                        <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
 				                                        <div class="help-block with-errors"></div>
 				                                    </div>
 				                                </div>
-				                                <div class="col-md-6">
+				                                <div class="col-md-12">
 				                                    <div class="form-group">
 				                                        <label for="form_lastname">Lastname *</label>
 				                                        <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
@@ -468,14 +446,14 @@
 				                                </div>
 				                            </div>
 				                            <div class="row">
-				                                <div class="col-md-6">
+				                                <div class="col-md-12">
 				                                    <div class="form-group">
 				                                        <label for="form_email">Email *</label>
 				                                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
 				                                        <div class="help-block with-errors"></div>
 				                                    </div>
 				                                </div>
-				                                <div class="col-md-6">
+				                                <div class="col-md-12">
 				                                    <div class="form-group">
 				                                        <label for="form_phone">Event Type</label>
 				                                        <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Please enter your Event*">
@@ -484,21 +462,21 @@
 				                                </div>
 				                            </div>
 				                            <div class="row">
-				                                <div class="col-md-4">
+				                                <div class="col-md-12">
 				                                    <div class="form-group">
 				                                        <label for="form_email">Mobile *</label>
 				                                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your mobile *" required="required" data-error="Valid email is required.">
 				                                        <div class="help-block with-errors"></div>
 				                                    </div>
 				                                </div>
-				                                <div class="col-md-4">
+				                                <div class="col-md-12">
 				                                    <div class="form-group">
 				                                        <label for="form_email">Phone *</label>
 				                                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your Phone number *" required="required" data-error="Valid email is required.">
 				                                        <div class="help-block with-errors"></div>
 				                                    </div>
 				                                </div>
-				                                <div class="col-md-4">
+				                                <div class="col-md-12">
 				                                    <div class="form-group">
 				                                        <label for="form_email">Costume *</label>
 				                                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter costume *" required="required" data-error="Valid email is required.">
@@ -537,7 +515,6 @@
 							<div>
 								<?php 
 									$form_name = "check_available_form_".$name;
-									$price_contianer = "price_container_".$name;
 									$check_available_form_contents = "check_available_form_contents_".$name;
 								?>
 								<form id=<?php echo $form_name ?> method="POST">

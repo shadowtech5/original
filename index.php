@@ -49,7 +49,7 @@ session_start();
 		</style>
 		<style type="text/css">
 			#myCarousel{
-				height: 600px;
+				/*height: 600px;*/
 				width: 100%;
 			}
 
@@ -82,61 +82,8 @@ session_start();
 			
 		<div class="container-fluid background_image img-responsive img-responsive">
 			<!-- social media bar -->
-			<div class="container-fluid light-white social-container">
-				<div class="social-menus left">
-				<a class="btn btn-social-icon btn-google" href="http://bit.ly/2isAQYF 	">
-			    	<span class="fa fa-google"></span>
-				</a>
-				<a class="btn btn-social-icon btn-twitter" href="http://bit.ly/2ho0cuF">
-			    	<span class="fa fa-twitter"></span>
-				</a>
-				<a class="btn btn-social-icon btn-facebook" href="http://bit.ly/2hDBPFf">
-			    	<span class="fa fa-facebook"></span>
-				</a>
-				<a class="btn btn-social-icon btn-instagram" href="http://bit.ly/2i6upOr">
-			    	<span class="fa fa-instagram"></span>
-				</a>
-				</div>
-				<div class="menu-list">
-					<span><a href="">OFFERS</a></span>
-					<span><a href="">GIFITING</a></span>
-					<span><a href="">SUPPORT</a></span>
-					<span><span class="glyphicon glyphicon-user"></span><a href="#" class="sign_button">SIGN IN</a></span>
-				</div>
-				<!-- login box -->
-					<div class="login-box text-center container-fluid col-md-6 right">
-    					<div class="social-login col-md-12 text-center">
-	      					<!-- <a href="#">
-						        <i class="fa fa-facebook fa-lg"></i>
-						        Login in with facebook
-	      					</a> -->
-	      					<a href="#">
-	        					<i class="fa fa-google-plus fa-lg"></i>
-	        					log in with Google
-	      					</a>
-    					</div>
-  					</div>
-  				<!-- end -->
-			</div>
-
+			<?php include('header.php'); ?>
 			<!-- ends social media bar -->
-
-			<!-- icon bar -->
-			<div class="container-fluid light-white icon-container col-md-12">
-				<div class="col-md-4 logo">
-					<img src="img/logo.png" class="img-responsive">
-				</div>
-
-				<div class="col-md-4">
-					<form>
-					  <input type="text" name="search" placeholder="search..." >
-					</form>
-				</div>
-				<div class="col-md-4 logo celebrity-anchors">
-					<button type="button" class="btn btn-primary">Celebrity Anchors</button>
-				</div>
-			</div>
-			<!-- ends icon bar -->
 
 			<!-- slider -->
 			<div id="myCarousel" class="carousel slide" data-ride="carousel">

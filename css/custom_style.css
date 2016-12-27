@@ -27,6 +27,7 @@ body{
 	padding: 0;
 	/*opacity: 0.5;*/
 	overflow-y: scroll;
+	overflow-x: hidden;
 }
 .light-white{
 	opacity: 0.9;
@@ -341,7 +342,7 @@ body{
 	padding: 0;
 }
 .landing-page-carousel{
-	height: 500px !important;
+	/*height: 500px !important;*/
 }
 .profile-outer-container{
 	border: 20px solid #CDCBCB;
@@ -351,16 +352,19 @@ body{
 	margin-top: 10px;
 }
 .profile-image-container{
-	height: 150px;
+	height: 160px;
 	overflow: hidden;
 	padding: 0;
+}
+.profile_details{
+	list-style: none;
 }
 .profile-content{
 	background-color: #ffffff;
 	padding-left: 10px;
 	line-height: 23px;
 	font-family: Fra;
-	height: 150px;
+	height: 160px;
 }
 .profile-content-main-outer{
 	padding: 0;
