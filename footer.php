@@ -65,36 +65,38 @@
 					</ul>
 					<span style="padding-bottom: 10px;">FEEDBACK</span>
 					<div class="book-now-style" style=" padding-top: 10px;">   
-				        <div class="row">
-				            <div class="col-md-12">
-				                <div class="form-group">
-				                    <label for="form_name">Firstname *</label>
-				                    <input id="form_name" type="text" name="fname" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
-				                    <div class="help-block with-errors"></div>
-				                </div>
-				            </div>
-				        </div>
-				        <div class="row">
-				            <div class="col-md-12">
-				            	<div class="form-group">
-				                    <label for="form_email">Email *</label>
-				                    <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
-				                    <div class="help-block with-errors"></div>
-				                </div>
-				            </div>
-				        </div>
-				        <div class="row">
-				         	<div class="col-md-12">
-				            	<div class="form-group">
-				                	<label for="form_message">Address *</label>
-				                    <textarea id="form_message" name="address" class="form-control" placeholder="Please enter address *" rows="4" required="required" data-error="Please,enter address."></textarea>
-				                    <div class="help-block with-errors"></div>
-				                </div>
-				            </div>
-					        <div class="col-md-12" style="padding-bottom: 10px;">
-					        	<button id="book_confirmation"type="button" class="btn btn-success btn-send">Book Now</button>
+						<form id="feedback-form" method="post" role="form">
+					        <div class="row">
+					            <div class="col-md-12">
+					                <div class="form-group">
+					                    <label for="form_name">Firstname *</label>
+					                    <input id="form_name" type="text" name="fname" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
+					                    <div class="help-block with-errors"></div>
+					                </div>
+					            </div>
 					        </div>
-				        </div>
+					        <div class="row">
+					            <div class="col-md-12">
+					            	<div class="form-group">
+					                    <label for="form_email">Email *</label>
+					                    <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
+					                    <div class="help-block with-errors"></div>
+					                </div>
+					            </div>
+					        </div>
+					        <div class="row">
+					         	<div class="col-md-12">
+					            	<div class="form-group">
+					                	<label for="form_message">Feedback *</label>
+					                    <textarea id="form_message" name="address" class="form-control" placeholder="Please enter your feedback *" rows="4" required="required" data-error="Please,enter your feedback."></textarea>
+					                    <div class="help-block with-errors"></div>
+					                </div>
+					            </div>
+						        <div class="col-md-12" style="padding-bottom: 10px;">
+						        	<button id="feedback"type="button" class="btn btn-success btn-send">Book Now</button>
+						        </div>
+					        </div>
+				        </form>
 				    </div>        
 				</div>
 				<div class="col-md-12" style="border-top: 1px solid #c4c4c4; padding-top: 5px;">

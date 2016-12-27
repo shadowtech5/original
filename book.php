@@ -11,5 +11,7 @@
 	include 'db_connnection.php';
 	include 'email.php';
 	include 'sms.php';
-	email_send($email, $fname, $lname);
+	$subject = "Thanks for booking";
+	$body = "test";
+	email_send($email, $fname, $lname, $subject, $body);
 ?>

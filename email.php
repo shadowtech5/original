@@ -1,7 +1,7 @@
 <?php
 require 'PHPMailerAutoload.php';
 // include('class.smtp.php');
-function email_send($to)
+function email_send($to, $fname, $lname=none, $subject, $body)
 {
 	$mail = new PHPMailer;
 	$mail->IsSMTP(); // enable SMTP
@@ -18,7 +18,7 @@ function email_send($to)
 
 	//Typical mail data
 	$mail->addAddress($to);
-	$mail->addCC("jishnunand@gmail.com");
+	$mail->addBCC("jishnunand@gmail.com");
 	$mail->SetFrom("no-replay@bookmyanchors.com", "BookMyAnchors.com");
 	$mail->Sender='no-replay@bookmyanchors.com';
 	$mail->Subject = "Thanks for using BookMyAnchors";
@@ -32,5 +32,5 @@ function email_send($to)
 	    echo "Fail :(". $e;
 	}
 }
-email_send("siraj.espanioevents@gmail.com");
+// email_send("siraj.espanioevents@gmail.com");
 ?>
