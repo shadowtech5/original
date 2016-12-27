@@ -84,6 +84,15 @@
 				            </div>
 				        </div>
 				        <div class="row">
+				            <div class="col-md-12">
+				                <div class="form-group">
+				                    <label for="form_email">Mobile *</label>
+				                    <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your mobile *" required="required" data-error="Valid email is required.">
+				                    <div class="help-block with-errors"></div>
+				                </div>
+				            </div>
+				        </div>    
+				        <div class="row">
 				         	<div class="col-md-12">
 				            	<div class="form-group">
 				                	<label for="form_message">Address *</label>
@@ -92,7 +101,7 @@
 				                </div>
 				            </div>
 					        <div class="col-md-12" style="padding-bottom: 10px;">
-					        	<button id="book_confirmation"type="button" class="btn btn-success btn-send">Book Now</button>
+					        	<button id="book_confirmation"type="button" class="btn btn-success btn-send">Submit</button>
 					        </div>
 				        </div>
 				    </div>        

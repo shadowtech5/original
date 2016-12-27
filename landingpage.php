@@ -227,26 +227,21 @@
 					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 					<li data-target="#myCarousel" data-slide-to="1"></li>
 					<li data-target="#myCarousel" data-slide-to="2"></li>
-					<li data-target="#myCarousel" data-slide-to="3"></li>
 				</ol>
 				<!-- Ends Indicators -->			
 
 				<!-- Wrapper for slides -->
 				<div class="carousel-inner landing-page-carousel" role="listbox">
 					<div class="item active">
-						<img src="img/slider1.jpg" alt="Chania">
+						<img src="img/slider1.jpg" alt="Banner-1">
 					</div>
 
 					<div class="item">
-						<img src="img/slider2.jpg" alt="Chania">
+						<img src="img/slider2.jpg" alt="Banner-2">
 					</div>
 
 					<div class="item">
-						<img src="img/slider3.jpg" alt="Flower">
-					</div>
-
-					<div class="item">
-						<img src="img/slider4.jpg" alt="Flower">
+						<img src="img/slider3.jpg" alt="Banner-3">
 					</div>
 				</div>
 				<!-- Ends Wrapper for slides -->
@@ -425,9 +420,11 @@
 						<!-- booking container -->
 				<div class="<?php echo $anchor_booking_container;?>">	
 		            <div class="row">	
-		                <div class="col-lg-12 col-lg-offset-2" style="padding-top: 80px; margin-left: 20px;">
+		                <div class="col-lg-12 col-lg-offset-2" style="padding-top: 28px; margin-left: 2px;">
+		                	<button type="button" class="close" data-dismiss="modal">&times;</button>
 		                    <form id="contact-form" method="post" action="contact.php" role="form">
 		                        <div class="controls">
+		                        <span class="customer-details">Customer Details</span>
 		                        <div class="book-now-style">    
 				                            <div class="row">
 				                                <div class="col-md-12">
@@ -455,8 +452,8 @@
 				                                </div>
 				                                <div class="col-md-12">
 				                                    <div class="form-group">
-				                                        <label for="form_phone">Event Type</label>
-				                                        <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Please enter your Event*">
+				                                        <label for="form_phone">Company Name</label>
+				                                        <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Please enter your company Name*">
 				                                        <div class="help-block with-errors"></div>
 				                                    </div>
 				                                </div>
@@ -465,21 +462,14 @@
 				                                <div class="col-md-12">
 				                                    <div class="form-group">
 				                                        <label for="form_email">Mobile *</label>
-				                                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your mobile *" required="required" data-error="Valid email is required.">
+				                                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your mobile number*" required="required" data-error="Valid email is required.">
 				                                        <div class="help-block with-errors"></div>
 				                                    </div>
 				                                </div>
 				                                <div class="col-md-12">
 				                                    <div class="form-group">
 				                                        <label for="form_email">Phone *</label>
-				                                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your Phone number *" required="required" data-error="Valid email is required.">
-				                                        <div class="help-block with-errors"></div>
-				                                    </div>
-				                                </div>
-				                                <div class="col-md-12">
-				                                    <div class="form-group">
-				                                        <label for="form_email">Costume *</label>
-				                                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter costume *" required="required" data-error="Valid email is required.">
+				                                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your phone number *" required="required" data-error="Valid email is required.">
 				                                        <div class="help-block with-errors"></div>
 				                                    </div>
 				                                </div>

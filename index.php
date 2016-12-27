@@ -77,22 +77,21 @@ session_start();
 					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 					<li data-target="#myCarousel" data-slide-to="1"></li>
 					<li data-target="#myCarousel" data-slide-to="2"></li>
-					<li data-target="#myCarousel" data-slide-to="3"></li>
 				</ol>
 				<!-- Ends Indicators -->			
 
 				<!-- Wrapper for slides -->
 				<div class="carousel-inner" role="listbox">
 					<div class="item active">
-						<img src="img/slider1.jpg" alt="Chania">
+						<img src="img/slider1.jpg" alt="Banner-1">
 					</div>
 
 					<div class="item">
-						<img src="img/slider2.jpg" alt="Chania">
+						<img src="img/slider2.jpg" alt="Banner-2">
 					</div>
 
 					<div class="item">
-						<img src="img/slider3.jpg" alt="Flower">
+						<img src="img/slider3.jpg" alt="Banner-3">
 					</div>
 				</div>
 				<!-- Ends Wrapper for slides -->

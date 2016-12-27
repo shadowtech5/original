@@ -2,6 +2,16 @@
 	<div class="col-md-4 logo">
 		<img src="img/logo.png" class="img-responsive">
 	</div>
+	<div class="col-md-4 col-sm-offset-2 Search-box">
+		<div class="input-group stylish-input-group">
+            <input type="text" class="form-control"  placeholder="Search with name or bma code" >
+		        <span class="input-group-addon">
+	                <button type="submit">
+						<span class="glyphicon glyphicon-search"></span>
+                    </button>  
+                </span>
+        </div>
+	</div>
 	<div class="menu-list">
 		<span><a href="">OFFERS</a></span>
 		<span><a href="">GIFITING</a></span>
