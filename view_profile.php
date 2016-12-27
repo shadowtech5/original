@@ -320,20 +320,41 @@ if(! $retval ) {
 					<div class="video-container hide col-md-12">
 						<span class="main-title">Videos</span>
 						<div class="col-md-12 container-fluid">
-							<?php 
-								for ($i=1; $i<=5; $i++)
+							<?php
+								$sql_video = 'SELECT * from anchors_performance where anchor_name="'.$row['anchor_name'].'"';
+								$retval_video = mysql_query( $sql_video, $conn );
+
+								if(! $retval_video ) 
 								{
-									$photos = $row['image_path'].$i.'.jpg"';
+									die('Could not get data: ' . mysql_error());
+								}
+								$size = mysql_num_rows($retval_video);
+								if($size>0)
+								{
+									$i = 1;
+									while($row_video = mysql_fetch_array($retval_video, MYSQL_ASSOC)) 
+									{ 
+										if($i<=$size)
+										{
+											$photos = '"'.$row_video['video_link_photos'].'/'.$i.'.png"';
+											$i = $i + 1;
+											$video_link = '"'.$row_video['video_link'].'"';
 							?>
 							<div class="col-md-4 photo-outer-container">
 								<div class="photos_indi_container">
-									<a class="swipebox-video" rel="youtube" href="https://www.youtube.com/watch?v=FIRT7lf8byw">
+									<a class="swipebox-video" rel="youtube" href=<?php echo $video_link; ?>>
 										<img src=<?php echo "$photos"; ?> alt="image" class="img-responsive">
 									</a>
 								</div>
 							</div>
 							<?php
+									}
 								}
+							}
+							else
+							{
+								echo "no data";
+							}
 							?>
 						</div>
 					</div>
