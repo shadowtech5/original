@@ -1,6 +1,8 @@
 <div class="container-fluid light-white social-container">
 	<div class="col-md-4 logo">
-		<img src="img/logo.png" class="img-responsive">
+		<a href="index.php">
+			<img src="img/logo.png" class="img-responsive">
+		</a>
 	</div>
 	<div class="col-md-4 col-sm-offset-2 Search-box">
 		<div class="input-group stylish-input-group">
