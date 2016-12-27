@@ -31,21 +31,6 @@ session_start();
 				position: fixed;
 				z-index: 1000;
 			}
-			input[type=text] {
-			    min-width: 350px;
-			    height: 60px;
-			    box-sizing: border-box;
-			    border: 2px solid #ccc;
-			    border-radius: 4px;
-			    font-size: 16px;
-			    background-color: white;
-			    background-image: url('searchicon.png');
-			    background-position: 10px 10px; 
-			    background-repeat: no-repeat;
-			    padding: 12px 20px 12px 40px;
-			    -webkit-transition: width 0.4s ease-in-out;
-			    transition: width 0.4s ease-in-out;
-			}
 		</style>
 		<style type="text/css">
 			#myCarousel{
@@ -108,10 +93,6 @@ session_start();
 
 					<div class="item">
 						<img src="img/slider3.jpg" alt="Flower">
-					</div>
-
-					<div class="item">
-						<img src="img/slider4.jpg" alt="Flower">
 					</div>
 				</div>
 				<!-- Ends Wrapper for slides -->
