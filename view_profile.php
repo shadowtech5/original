@@ -351,7 +351,7 @@ if(! $retval ) {
 				</div>
 
 				<!-- booking container -->
-				<div class="container booking_container col-md-12 hide">
+				<div class="container booking_container col-md-6 hide">
 
 		            <div class="row">
 		            	<button type="button" class="close" data-dismiss="modal">&times;</button> 
