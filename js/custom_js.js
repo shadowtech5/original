@@ -83,6 +83,20 @@ $(document).ready(function(){
             });
         }
     });
+    $("#feedback").click(function(e){
+        console.log("feedback");
+        var frm = $('#feedback-form');
+        e.preventDefault;
+        $.ajax({
+            url: 'feedback.php',
+            type: 'POST',
+            data: frm.serialize(),
+            success: function (data) 
+            {
+                alert("Thank you for sending your feedback");
+            }
+        });
+    });
     // $(".budget-fix").click(function (e) {
     //     console.log("inside")
     //     var Id=$(this).attr('data-ids');
