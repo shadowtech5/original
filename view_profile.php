@@ -367,8 +367,7 @@ if(! $retval ) {
 				<div class="container booking_container col-md-6 hide">
 
 		            <div class="row">
-		            	<button type="button" class="close" data-dismiss="modal">&times;</button> 
-
+		            	<button type="button" class="close" data-dismiss="modal">&times;</button>
 		                <div class="col-lg-12 col-lg-offset-2" style="padding-top: 80px; margin-left: 20px;">
 		                	<div id="available_result_book">
 		                		booking confirmed
@@ -376,6 +375,7 @@ if(! $retval ) {
 
 		                    <form id="contact-form" method="post" role="form">
 		                        <div class="controls">
+		                        <span class="customer-details">Customer Details</span>
 		                        <div class="book-now-style">   
 				                            <div class="row">
 				                                <div class="col-md-6">

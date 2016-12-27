@@ -66,6 +66,11 @@ body{
 	width: 20%;
 	min-width: 250px;
 }
+.customer-details{
+	font-family: raleway;
+	font-size: 24px;
+	padding-top: 10px;
+}
 .celebrity-anchors{
 	font-family: raleway;
 	padding-top: 23px;
@@ -183,6 +188,12 @@ body{
 	margin-right: 5px;
 	border: 1px solid #8d8d8d;
 	height: 200px;	
+}
+.sp-copyright{
+	text-align: center;
+	font-size: 12px;
+	font-family: raleway;
+	font-weight: 100;
 }
 .footer-bar{
 	color: white;
