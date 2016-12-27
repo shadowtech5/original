@@ -369,8 +369,8 @@ if(! $retval ) {
 				<div class="container booking_container col-md-6 hide">
 
 		            <div class="row">
-		            	<button type="button" class="close" data-dismiss="modal">&times;</button>
 		                <div class="col-lg-12 col-lg-offset-2" style="padding-top: 80px; margin-left: 20px;">
+		                	<button type="button" class="close" data-dismiss="modal">&times;</button>
 		                	<div id="available_result_book">
 		                		booking confirmed
 		                	</div>
@@ -405,31 +405,24 @@ if(! $retval ) {
 				                                </div>
 				                                <div class="col-md-6">
 				                                    <div class="form-group">
-				                                        <label for="form_phone">Event Type</label>
-				                                        <input id="form_phone" type="tel" name="event_type" class="form-control" placeholder="Please enter your Event*">
+				                                        <label for="form_phone">Company Name</label>
+				                                        <input id="form_phone" type="tel" name="event_type" class="form-control" placeholder="Please enter your company name*">
 				                                        <div class="help-block with-errors"></div>
 				                                    </div>
 				                                </div>
 				                            </div>
 				                            <div class="row">
-				                                <div class="col-md-4">
+				                                <div class="col-md-6">
 				                                    <div class="form-group">
 				                                        <label for="form_email">Mobile *</label>
 				                                        <input id="form_email" type="tel" name="mobile" class="form-control" placeholder="Please enter your mobile *" required="required" data-error="Valid email is required.">
 				                                        <div class="help-block with-errors"></div>
 				                                    </div>
 				                                </div>
-				                                <div class="col-md-4">
+				                                <div class="col-md-6">
 				                                    <div class="form-group">
 				                                        <label for="form_email">Phone *</label>
 				                                        <input id="form_email" type="tel" name="phone" class="form-control" placeholder="Please enter your Phone number *" required="required" data-error="Valid email is required.">
-				                                        <div class="help-block with-errors"></div>
-				                                    </div>
-				                                </div>
-				                                <div class="col-md-4">
-				                                    <div class="form-group">
-				                                        <label for="form_email">Costume *</label>
-				                                        <input id="form_email" type="text" name="costume" class="form-control" placeholder="Please enter costume *" required="required" data-error="Valid email is required.">
 				                                        <div class="help-block with-errors"></div>
 				                                    </div>
 				                                </div>
