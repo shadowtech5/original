@@ -1,23 +1,12 @@
 <div class="container-fluid light-white social-container">
-	<div class="social-menus left">
-	<a class="btn btn-social-icon btn-google" href="http://bit.ly/2isAQYF 	">
-    	<span class="fa fa-google"></span>
-	</a>
-	<a class="btn btn-social-icon btn-twitter" href="http://bit.ly/2ho0cuF">
-    	<span class="fa fa-twitter"></span>
-	</a>
-	<a class="btn btn-social-icon btn-facebook" href="http://bit.ly/2hDBPFf">
-    	<span class="fa fa-facebook"></span>
-	</a>
-	<a class="btn btn-social-icon btn-instagram" href="http://bit.ly/2i6upOr">
-    	<span class="fa fa-instagram"></span>
-	</a>
+	<div class="col-md-4 logo">
+		<img src="img/logo.png" class="img-responsive">
 	</div>
 	<div class="menu-list">
 		<span><a href="">OFFERS</a></span>
 		<span><a href="">GIFITING</a></span>
 		<span><a href="">SUPPORT</a></span>
-		<span>
+		<span class="">
 		<?php
 		if(!isset($_COOKIE['user_email']))
 		{
@@ -29,11 +18,36 @@
 		{
 		?>
 		<span class="glyphicon glyphicon-user"></span>
-		<?php 
-			echo $_COOKIE['user_email']; 
+		<span></span>
+		<ul class="profile_details">
+			<li class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+					<?php 
+						include 'db_connnection.php';
+
+						$sql = 'SELECT * from admin where username ="'.$_COOKIE['user_email'].'"';
+						$retval = mysql_query( $sql, $conn );
+						if(! $retval ) {
+							die('Could not get data: ' . mysql_error());
+						} 
+						while($row = mysql_fetch_array($retval, MYSQL_ASSOC)) 
+						{
+							echo $row['first_name']." ". $row['last_name']; 
+						}
+					?>
+					<span class="caret"></span>
+				</a>
+				<ul class="dropdown-menu">
+          			<li><a href="#">Dashboard</a></li>
+          			<li><a href="#">Profile</a></li>
+          			<li><a href="logout.php">Logout</a></li>
+          		</ul>
+          	</li>
+        </ul>
+		</span>
+		<?php
 		}
 		?>
-		</span>
 	</div>
 	<!-- login box -->
 		<div class="login-box text-center container-fluid col-md-6 right">

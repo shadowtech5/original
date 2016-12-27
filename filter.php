@@ -207,28 +207,7 @@
 		</div>
 		<div class="container-fluid background_image img-responsive img-responsive">
 			<!-- social media bar -->
-			<div class="container-fluid light-white social-container">
-				<div class="social-menus left">
-					<a class="btn btn-social-icon btn-google">
-				    	<span class="fa fa-google"></span>
-					</a>
-					<a class="btn btn-social-icon btn-twitter">
-				    	<span class="fa fa-twitter"></span>
-					</a>
-					<a class="btn btn-social-icon btn-facebook">
-				    	<span class="fa fa-facebook"></span>
-					</a>
-					<a class="btn btn-social-icon btn-instagram">
-				    	<span class="fa fa-instagram"></span>
-					</a>
-				</div>
-				<div class="menu-list">
-					<span><a href="">OFFERS</a></span>
-					<span><a href="">GIFITING</a></span>
-					<span><a href="">SUPPORT</a></span>
-					<span><span class="glyphicon glyphicon-user"></span><a href="">SIGN IN</a></span>
-				</div>
-			</div>
+			<?php include('header.php'); ?>
 			<!-- ends social media bar -->
 
 			<!-- icon bar -->

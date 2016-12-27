@@ -2,7 +2,7 @@
    session_start();
    
    if(session_destroy()) {
-   	setcookie("ev_id", "", time() - 3600);
-    header("Location: login.php");
+   	setcookie("user_email", "", time() - 3600);
+    header("Location: index.php");
    }
 ?>

@@ -79,12 +79,6 @@ if(! $retval ) {
 		<?php include ('header.php'); ?>
 		<!-- ends social media bar -->
 
-		<!-- icon bar -->
-		<div class="container-fluid light-white icon-container">
-			<img src="img/logo.png" class="img-responsive logo">
-		</div>
-		<!-- ends icon bar -->
-
 		<?php 
 			while($row = mysql_fetch_array($retval, MYSQL_ASSOC))
 			{ 

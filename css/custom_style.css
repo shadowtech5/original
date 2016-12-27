@@ -27,6 +27,7 @@ body{
 	padding: 0;
 	/*opacity: 0.5;*/
 	overflow-y: scroll;
+	overflow-x: hidden;
 }
 .light-white{
 	opacity: 0.9;
@@ -341,7 +342,7 @@ body{
 	padding: 0;
 }
 .landing-page-carousel{
-	height: 500px !important;
+	/*height: 500px !important;*/
 }
 .profile-outer-container{
 	border: 20px solid #CDCBCB;
@@ -354,6 +355,9 @@ body{
 	height: 160px;
 	overflow: hidden;
 	padding: 0;
+}
+.profile_details{
+	list-style: none;
 }
 .profile-content{
 	background-color: #ffffff;

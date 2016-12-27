@@ -49,7 +49,7 @@ session_start();
 		</style>
 		<style type="text/css">
 			#myCarousel{
-				height: 600px;
+				/*height: 600px;*/
 				width: 100%;
 			}
 
@@ -84,23 +84,6 @@ session_start();
 			<!-- social media bar -->
 			<?php include('header.php'); ?>
 			<!-- ends social media bar -->
-
-			<!-- icon bar -->
-			<div class="container-fluid light-white icon-container col-md-12">
-				<div class="col-md-4 logo">
-					<img src="img/logo.png" class="img-responsive">
-				</div>
-
-				<div class="col-md-4">
-					<form>
-					  <input type="text" name="search" placeholder="search..." >
-					</form>
-				</div>
-				<div class="col-md-4 logo celebrity-anchors">
-					<button type="button" class="btn btn-primary">Celebrity Anchors</button>
-				</div>
-			</div>
-			<!-- ends icon bar -->
 
 			<!-- slider -->
 			<div id="myCarousel" class="carousel slide" data-ride="carousel">
