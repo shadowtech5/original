@@ -1,6 +1,8 @@
 <div class="container-fluid light-white social-container">
 	<div class="col-md-4 logo">
-		<img src="img/logo.png" class="img-responsive">
+		<a href="index.php">
+			<img src="img/logo.png" class="img-responsive">
+		</a>
 	</div>
 	<div class="menu-list">
 		<span><a href="">OFFERS</a></span>
