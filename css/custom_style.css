@@ -264,6 +264,27 @@ body{
 .view-profile-user-deails{
 	padding-top: 25px;
 }
+.celeb-profile-menu-bar{
+	padding-top: 18px;
+	padding-bottom: 10px;
+	padding-left: 18px;
+	font-size: 25.19px;
+	color: #7b7878;
+	font-family: raleway;
+}
+.celeb-profile-menu-bar>span{
+	padding-right: 18px;
+}
+.celeb-profile-menu-bar>div>span>a{
+	color: #7b7878;
+	cursor:pointer;
+}
+.celeb-profile-menu-bar>div>span>a:hover{
+	background-color: #7b7878;
+	text-decoration: none;
+	cursor:pointer;
+	opacity: 50;
+}
 .view-profile-menu-bar{
 	border-top: 2px solid #484a4a;
 	border-bottom: 2px solid #484a4a;
@@ -284,7 +305,6 @@ body{
 	color: #000000;
 	text-decoration: none;
 	cursor:pointer;
-
 }
 .biography-container>span{
 	font-size: 60px;
