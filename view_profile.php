@@ -73,6 +73,15 @@ if(! $retval ) {
 
 			} )( jQuery );
 		</script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$(".close_booking").click(function(e){
+					console.log("close");
+					$(".booking_container").addClass("hide");
+					$(".view-profile-user-deails").removeClass("hide");
+				})
+			});
+		</script>
 	</head>
 	<body>
 		<!-- social media bar -->
@@ -373,7 +382,7 @@ if(! $retval ) {
 
 		            <div class="row">
 		                <div class="col-lg-12 col-lg-offset-2" style="padding-top: 80px; margin-left: 20px;">
-		                	<button type="button" class="close" data-dismiss="modal">&times;</button>
+		                	<button type="button" class="close close_booking" data-dismiss="modal">&times;</button>
 		                	<div id="available_result_book">
 		                		booking confirmed
 		                	</div>
@@ -439,7 +448,7 @@ if(! $retval ) {
 				                                    </div>
 				                                </div>
 				                                <div class="col-md-12">
-				                                	<button id="book_confirmation"type="button" class="btn btn-success btn-send">Book Now</button>
+				                                	<button id="book_confirmation" type="button" class="btn btn-success btn-send">Book Now</button>
 				                                    
 				                                </div>
 				                            </div>
