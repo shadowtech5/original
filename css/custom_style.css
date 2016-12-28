@@ -87,12 +87,6 @@ body{
 	font-size: 24px;
 	padding-top: 10px;
 }
-.celebrity-anchors{
-	font-family: raleway;
-	padding-top: 23px;
-	padding-left: 0;
-	margin: 0px auto;
-}
 .icon-container{
 	/*border-top: 1px solid #a8acb4;*/
 	padding: 7px;
@@ -157,7 +151,6 @@ body{
 	font-family: raleway;
 	font-size: 14px;
 }
-
 /*end*/
 .event-logo{
 	width: 50%;

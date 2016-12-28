@@ -5,14 +5,16 @@
 		</a>
 	</div>
 	<div class="col-md-4 col-sm-offset-2 Search-box">
+		<form action="landingpage.php?search" method="post">
 		<div class="input-group stylish-input-group">
-            <input type="text" class="form-control"  placeholder="Search with name or bma code" >
+	            <input type="text" class="form-control"  placeholder="Search with name or bma code" name="bma_code">
 		        <span class="input-group-addon">
 	                <button type="submit">
 						<span class="glyphicon glyphicon-search"></span>
                     </button>  
                 </span>
         </div>
+        </form>
 	</div>
 	<div class="menu-list">
 		<span><a href="">OFFERS</a></span>

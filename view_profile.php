@@ -298,7 +298,10 @@ if(! $retval ) {
 						<span class="main-title">Photos</span>
 						<div class="col-md-12 container-fluid">
 							<?php 
-								for ($i=1; $i<=5; $i++)
+								$directory = str_replace('"', '', $row['image_path']);
+								$files = glob($directory . '*.jpg');
+								$filecount = count( $files ) - 1;
+								for ($i=1; $i<=$filecount; $i++)
 								{
 									$photos = $row['image_path'].$i.'.jpg"';
 							?>
