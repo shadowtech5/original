@@ -13,5 +13,5 @@
 	include 'sms.php';
 	$subject = "Thanks for booking";
 	$body = "test";
-	email_send($email, $fname, $lname, $subject, $body);
+	email_send($email, $fname, $subject, $body, $lname);
 ?>
