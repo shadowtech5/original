@@ -3,9 +3,9 @@
   // $dbuser = 'bookmyanchor';
   // $dbpass = 'radhika422';
 
-  $dbhost = 'localhost:3306';
+  $dbhost = 'localhost:8080';
   $dbuser = 'root';
-  $dbpass = '';
+  $dbpass = 'jishnu';
 
   $conn = mysql_connect($dbhost, $dbuser, $dbpass);
 

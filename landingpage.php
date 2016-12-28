@@ -597,8 +597,12 @@
 								<!-- booking container -->
 						<div class="<?php echo $anchor_booking_container;?>">	
 				            <div class="row">	
+				            <div id="available_result_book"></div>
 				                <div class="col-lg-12 col-lg-offset-2" style="padding-top: 28px; margin-left: 2px;">
-				                	<button type="button" class="close" data-dismiss="modal">&times;</button>
+				                	<?php
+				                		$close = $name. "_close_booking close"; 
+				                	?>
+				                	<button type="button" class="<?php echo $close; ?>" data-dismiss="modal">&times;</button>
 				                    <form id="contact-form" method="post" role="form">
 				                        <div class="controls">
 				                        <span class="customer-details">Customer Details</span>
@@ -614,7 +618,7 @@
 						                                <div class="col-md-12">
 						                                    <div class="form-group">
 						                                        <label for="form_lastname">Lastname *</label>
-						                                        <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
+						                                        <input id="form_lastname" type="text" name="lname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
 						                                        <div class="help-block with-errors"></div>
 						                                    </div>
 						                                </div>
@@ -630,7 +634,7 @@
 						                                <div class="col-md-12">
 						                                    <div class="form-group">
 						                                        <label for="form_phone">Company Name</label>
-						                                        <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Please enter your company Name*">
+						                                        <input id="form_phone" type="text" name="company" class="form-control" placeholder="Please enter your company Name*">
 						                                        <div class="help-block with-errors"></div>
 						                                    </div>
 						                                </div>
@@ -639,14 +643,14 @@
 						                                <div class="col-md-12">
 						                                    <div class="form-group">
 						                                        <label for="form_email">Mobile *</label>
-						                                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your mobile number*" required="required" data-error="Valid email is required.">
+						                                        <input id="form_email" type="text" name="mobile" class="form-control" placeholder="Please enter your mobile number*" required="required" data-error="Valid email is required.">
 						                                        <div class="help-block with-errors"></div>
 						                                    </div>
 						                                </div>
 						                                <div class="col-md-12">
 						                                    <div class="form-group">
 						                                        <label for="form_email">Phone *</label>
-						                                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your phone number *" required="required" data-error="Valid email is required.">
+						                                        <input id="form_email" type="text" name="phone" class="form-control" placeholder="Please enter your phone number *" required="required" data-error="Valid email is required.">
 						                                        <div class="help-block with-errors"></div>
 						                                    </div>
 						                                </div>
@@ -660,7 +664,7 @@
 						                                    </div>
 						                                </div>
 						                                <div class="col-md-12">
-						                                    <input type="submit" class="btn btn-success btn-send" value="Book Now">
+						                                    <input type="button" id="book_confirmation" class="btn btn-success btn-send" value="Book Now">
 						                                </div>
 						                            </div>
 						                        </div>        
@@ -746,9 +750,14 @@
 							$show_class = '".'.$name.'"';
 							// $price_contianer = '".'.$price_contianer.'"';
 							// $check_available_form_contents = '".'.$check_available_form_contents.'"';
+							$close_container = $name. "_booking_container";
+
 
 						?>
 						$(document).ready(function(){
+							$(".<?php echo $name;?>_close_booking").click(function(e){
+								$(".<?php echo $close_container;?>").addClass("hide");
+							});
 							$(<?php echo $main_class;?>).click(function(){
 						        console.log("test22");
 						        $(<?php echo $show_class;?>).slideToggle("slow");
