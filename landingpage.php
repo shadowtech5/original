@@ -86,9 +86,11 @@
 		<title></title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      	<link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+      	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		
 		<!-- <link rel="stylesheet" href="css/bootstrap.min.css">
 		<script src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script> -->
@@ -97,6 +99,8 @@
 	    <link href="css/bootstrap-social.css" rel="stylesheet" >
 	    <script type="text/javascript" src="js/bootstrap-slider.js"></script>
 	    <link rel="stylesheet" type="text/css" href="css/bootstrap-slider.css">
+	    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+      	<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/custom_style.css">
 		<script type="text/javascript" src="js/custom_js.js"></script>
 		<style type="text/css">
@@ -111,6 +115,11 @@
 			#myCarousel{
 				/*height: 500px;*/
 				width: 100%;
+			}
+			.nav-fltr-text{
+				font-size: 20px;
+				font-family: raleway;
+			}	
 		</style>
 		<script type="text/javascript">
 			$(document).ready(function(){
@@ -126,95 +135,62 @@
 				});
 			});
 		</script>
+		<!-- Javascript -->
+      <script>
+         $(function() {
+            $( "#slider-3" ).slider({
+               range:true,
+               min: 0,
+               max: 100000,
+               values: [ 5000, 7000 ],
+               slide: function( event, ui ) {
+                  $( "#price1" ).val(ui.values[ 0 ]);
+                  $( "#price2" ).val(ui.values[ 1 ]);
+               }
+           });
+         $( "#price1" ).val($( "#slider-3" ).slider( "values", 0 ));
+         $( "#price2" ).val($( "#slider-3" ).slider( "values", 1 ));
+         });
+
+         $(function() {
+            $( "#slider-4" ).slider({
+               range:true,
+               min: 1,
+               max: 6,
+               values: [ 1, 6 ],
+               slide: function( event, ui ) {
+                  $( "#price3" ).val(ui.values[ 0 ]);
+                  $( "#price4" ).val(ui.values[ 1 ]);
+               }
+           });
+         $( "#price3" ).val($( "#slider-4" ).slider( "values", 0 ));
+         $( "#price4" ).val($( "#slider-4" ).slider( "values", 1 ));
+         });
+      </script>
 	</head>
 	<body>
 		<div class="social-container1 hide">
 			<div class="col-md-12 container-fluid light-black">
 				<!-- icon bar -->
-				<div class="container-fluid light-black icon-container">
-					<img src="img/logo.png" class="img-responsive logo">
-				</div>
-				<!-- ends icon bar -->
-			</div>
-			<!-- filter container -->
-			<div class="col-md-12 container-fluid">
-				<div class="col-md-12 container-fluid filter-options text-center">
-					<div class="col-md-2">
-						<span>Filter by&nbsp;&nbsp;&nbsp;&nbsp;</span>
-						<span class="glyphicon glyphicon-filter"></span> <a class="filter">PRICE RANGE</a>
+				<div class="container-fluid light-black icon-container col-md-12">
+					<div class="col-md-4 logo">
+						<a href="index.php">
+						<img src="img/logo.png" class="img-responsive">
+						</a>
 					</div>
-					<div class="col-md-2">
-						<span class="glyphicon glyphicon-filter"></span> <a class="filter">AVAILABLE</a>
+					<div class="col-md-8  Search-box">
+						<div class="input-group stylish-input-group">
+	            			<input type="text" class="form-control"  placeholder="Search with name or bma code" >
+			        			<span class="input-group-addon">
+		                			<button type="submit">
+										<span class="glyphicon glyphicon-search"></span>
+	                    			</button>  
+	                			</span>
+	        			</div>
 					</div>
-					<div class="col-md-2">
-						<span class="glyphicon glyphicon-filter"></span> <a class="filter">GENDER</a>
-					</div>
-					<div class="col-md-2">
-						<span class="glyphicon glyphicon-filter"></span> <a class="filter">PERFORMING MEMBERS</a>
-					</div>
-					<div class="col-md-2">
-						<span class="glyphicon glyphicon-filter"></span> <a class="filter">EVENT TYPE</a>
-					</div>
-					<div class="col-md-2">
-						<span class="glyphicon glyphicon-filter"></span> <a class="filter">LANGUAGES</a>
-					</div>
-				</div>
-				<div class="col-md-12 container-fluid filter-options-details">
-					<form action="filter.php" method="post">
-						<div class="col-md-2">
-							<input id="price" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20000" data-slider-step="1" data-slider-value="7000" class="form-control" name="price" />
-						</div>
-						<div class="col-md-2">
-							<input type="checkbox" name="online">  Online</input>
-							<br>
-							<input type="checkbox" name="offline">  Offline</input>
-						</div>
-						<div class="col-md-2">
-							<input type="checkbox" name="male">  Male</input>
-				            <br/>
-				            <input type="checkbox" name="female">  Female</input>
-						</div>
-						<div class="col-md-2">
-							<input id="performing_members" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="6" data-slider-step="1" data-slider-value="4" class="form-control" name="performing_members" />
-						</div>
-						<div class="col-md-2">
-							<select class="form-control" name="event_type">
-							<?php 
-								$event_sql = 'SELECT * from M_EVENT_TYPE';
-								$event_retval = mysql_query( $event_sql, $conn );
-								if(! $event_retval ) 
-								{
-									die('Could not get data: ' . mysql_error());
-								}
-								while($event_row = mysql_fetch_array($event_retval, MYSQL_ASSOC)) 
-								{
-	              			?>
-	              				<option value=<?php echo "{$event_row['event_type']}"; ?>><?php echo "{$event_row['event_type']}"; ?></option>
-	              			<?php
-	              				}
-	              			?>
-	              			</select>
-						</div>
-						<div class="col-md-2">
-							<input type="checkbox" name="english">English</input><br>
-				            <input type="checkbox" name="malayalam">Malayalam</input><br>
-				            <input type="checkbox" name="tamil">Tamil</input><br>
-				            <input type="checkbox" name="kanada">Kanada</input><br>
-				            <input type="checkbox" name="punjabi">Punjabi</input><br>
-				            <input type="checkbox" name="telugu">Telugu</input><br>
-				            <input type="checkbox" name="marati">Marathi</input>
-						</div>
-						<div class="col-md-12 text-center">
-							<button type="submit">Done</button>
-						</div>
-					</form>
 				</div>
 			</div>
-			<!-- ends filter container -->
-		</div>
-
-
-
+		</div>	
 		<div class="container-fluid background_image img-responsive img-responsive">
 			<!-- social media bar -->
 			<?php include('header.php');?>
@@ -244,364 +220,342 @@
 						<img src="img/slider3.jpg" alt="Banner-3">
 					</div>
 				</div>
-				<!-- Ends Wrapper for slides -->
-
-				<!-- Left and right controls -->
-				<!-- <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-					<span class="sr-only">Previous</span>
-				</a>
-				<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-					<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-					<span class="sr-only">Next</span>
-				</a> -->
 			</div>
 			<!-- ends slider -->
-
-			<!-- filter container -->
-			<div class="col-md-12 container-fluid hide">
-				<div class="col-md-12 container-fluid filter-options text-center">
-					<div class="col-md-2">
-						<span>Filter by&nbsp;&nbsp;&nbsp;&nbsp;</span>
-						<span class="glyphicon glyphicon-filter"></span> <a class="filter">PRICE RANGE</a>
-					</div>
-					<div class="col-md-2">
-						<span class="glyphicon glyphicon-filter"></span> <a class="filter">AVAILABLE</a>
-					</div>
-					<div class="col-md-2">
-						<span class="glyphicon glyphicon-filter"></span> <a class="filter">GENDER</a>
-					</div>
-					<div class="col-md-2">
-						<span class="glyphicon glyphicon-filter"></span> <a class="filter">PERFORMING MEMBERS</a>
-					</div>
-					<div class="col-md-2">
-						<span class="glyphicon glyphicon-filter"></span> <a class="filter">EVENT TYPE</a>
-					</div>
-					<div class="col-md-2">
-						<span class="glyphicon glyphicon-filter"></span> <a class="filter">LANGUAGES</a>
-					</div>
-				</div>
-				<div class="col-md-12 container-fluid filter-options-details">
-					<form action="filter.php" method="post">
-						<div class="col-md-2">
-							<input id="price" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20000" data-slider-step="1" data-slider-value="7000" class="form-control" name="price" />
-						</div>
-						<div class="col-md-2">
-							<input type="checkbox" name="online">  Online</input>
-							<br>
-							<input type="checkbox" name="offline">  Offline</input>
-						</div>
-						<div class="col-md-2">
-							<input type="checkbox" name="male">  Male</input>
-				            <br/>
-				            <input type="checkbox" name="female">  Female</input>
-						</div>
-						<div class="col-md-2">
-							<input id="performing_members" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="6" data-slider-step="1" data-slider-value="4" class="form-control" name="performing_members" />
-						</div>
-						<div class="col-md-2">
-							<select class="form-control" name="event_type">
-							<?php 
-								$event_sql = 'SELECT * from M_EVENT_TYPE';
-								$event_retval = mysql_query( $event_sql, $conn );
-								if(! $event_retval ) 
-								{
-									die('Could not get data: ' . mysql_error());
-								}
-								while($event_row = mysql_fetch_array($event_retval, MYSQL_ASSOC)) 
-								{
-	              			?>
-	              				<option value=<?php echo "{$event_row['event_type']}"; ?>><?php echo "{$event_row['event_type']}"; ?></option>
-	              			<?php
-	              				}
-	              			?>
-	              			</select>
-						</div>
-						<div class="col-md-2">
-							<input type="checkbox" name="english">English</input><br>
+					
+			<!-- Filter Container -->
+			<div class="row">
+      			<div class="col-sm-3 sidenav">
+        			<form action="filter.php" method="post">
+        				<p style="font-family: raleway; font-size: 24px; padding-top: 10px; padding-bottom: 10px;" class="text-center">Filter By</p>
+          				<div class="price-container">
+            				<h4 class=" nav-fltr-text">Price Range</h4>
+            					<input type="text" id="price1" name="min_price" class="form-control text-center">
+              					<div id="slider-3"></div>
+            					<input type="text" id="price2" name="max_price" class="form-control text-center">
+          				</div>
+          				<div>
+            				<h4 class="text-center nav-fltr-text">Available</h4>
+            				<input type="checkbox" name="online">Online
+            			<br/>
+            				<input type="checkbox" name="offline">Offline
+          				</div>
+          				<div>
+            				<h4 class="text-center nav-fltr-text">Gender</h4>
+					            <input type="checkbox" name="male">Male
+					         <br/>
+					            <input type="checkbox" name="female">Female
+          				</div>
+          				<div>
+				            <h4 class="nav-fltr-text">Performing Members</h4>
+				            	<input type="text" id="price3" name="min_members" class="form-control">
+				             	<div id="slider-4"></div>
+				            	<input type="text" id="price4" name="max_members" class="form-control">
+				        </div>
+          				<div>
+            					<h4 class="nav-fltr-text">Event Type</h4>
+            					<select class="form-control" name="event_type">
+						              <?php 
+						              $event_sql = 'SELECT * from M_EVENT_TYPE';
+						              $event_retval = mysql_query( $event_sql, $conn );
+						       
+						              if(! $event_retval ) {
+						                die('Could not get data: ' . mysql_error());
+						              }   
+						              while($event_row = mysql_fetch_array($event_retval, MYSQL_ASSOC)) {
+						              ?>
+						              <option value=<?php echo "{$event_row['event_type']}"; ?>><?php echo "{$event_row['event_type']}"; ?></option>
+						              <?php } ?>
+            					</select>
+          				</div>
+          				<div>
+				            <h4 class="nav-fltr-text">Languages</h4>
+				            <input type="checkbox" name="english">English</input><br>
 				            <input type="checkbox" name="malayalam">Malayalam</input><br>
 				            <input type="checkbox" name="tamil">Tamil</input><br>
 				            <input type="checkbox" name="kanada">Kanada</input><br>
 				            <input type="checkbox" name="punjabi">Punjabi</input><br>
 				            <input type="checkbox" name="telugu">Telugu</input><br>
 				            <input type="checkbox" name="marati">Marathi</input>
-						</div>
-						<div class="col-md-12 text-center">
-							<button type="submit">Done</button>
-						</div>
-					</form>
-				</div>
-			</div>
-			<!-- ends filter container -->
-			<?php
-				while($row = mysql_fetch_array($retval, MYSQL_ASSOC)) 
-				{
-					$dp = $row['image_path'].'main.jpg"';
-					$status = 'glyphicon glyphicon-record right '.$row['status'];
-			?>
+          				</div>
+          				<div class="text-center">
+            				<button class="btn btn-primary" type="submit">Apply Filter</button>
+          				</div>
+        			</form>
+      			</div>
+			<!-- ends -->
+			<div class="col-sm-9">
+				<?php
+					while($row = mysql_fetch_array($retval, MYSQL_ASSOC)) 
+					{
+						$dp = $row['image_path'].'main.jpg"';
+						$status = 'glyphicon glyphicon-record right '.$row['status'];
+				?>
 			<!-- profile shows -->
-			<div class="col-md-4">
-				<div class="profile-outer-container">
-					<div class="profile-content-container container-fluid">
-						<div class="profile-image-container col-md-6">
-							<img src=<?php echo $dp; ?> class="img-responsive">
-						</div>
-						<div class="col-md-6 profile-content-main-outer">
-							<div class="profile-content">
-								<span class="anchor_name_inner"><?php echo "{$row['anchor_name']}"; ?></span> 
-								<span class="<?php echo $status;?>"></span>
-								<br>
-								<!-- designation query -->
-								<?php
-									$sql = 'SELECT * from ANCHOR_CATEGORY_CONNECTER where anchor_id='.$row['anchor_id'];
-									$retval2 = mysql_query( $sql, $conn );
-
-									if(! $retval2 ) 
-									{
-										die('Could not get data: ' . mysql_error());
-									}
-
-									while($row2 = mysql_fetch_array($retval2, MYSQL_ASSOC)) 
-									{
-										$sql = 'SELECT * from anchor_category where category_id='.$row2['category_id'];
-										$retval3 = mysql_query( $sql, $conn );
-
-										if(! $retval3 ) 
-										{
-											die('Could not get data: ' . mysql_error());
-										}
-										while($row3 = mysql_fetch_array($retval3, MYSQL_ASSOC)) 
-										{
-								?>
-								<span><?php echo "{$row3['category']}". " /"; ?></span>
-								<?php
-										}
-									}
-								?>
-								<br>
-									<?php
-										for($i=0; $i<$row['rating']; $i++)
-										{
-										?>
-										<span class="glyphicon glyphicon-star golden"></span>
-										<?php
-										}
-									?>
-								<br>
-								<span class="glyphicon glyphicon-map-marker"></span>
-								<span> <?php echo "{$row['anchor_place']}"; ?></span>
-								<br>
-								<span>BMA Code: </span>
-								<span> <?php echo "{$row['bma_code']}"; ?></span>
-							</div>
-							<?php
-								$name = str_replace(' ', '', $row['anchor_name']);
-								$name_link = $name."_link";
-								$price_contianer = "price_container_".$name;
-								$anchor_booking_container = "container col-md-12 hide ". $name. "_booking_container";
-							?>
-							
-						</div>
-						<!-- <div class="col-md-12">
-							<button class="right">Book Now</button>
-						</div> -->
-						<div class="landingpage_buttons_container">
-							<div class="col-md-6 landingpage_buttons">
-								<a href="#" class="<?php echo $name_link;?>">
-									<button class="btn btn-info col-md-12">Check Availability</button>
-								</a>
-							</div>
-							<div class="col-md-6 landingpage_buttons">
-								<a href="view_profile.php?ac_id=<?php echo"{$row['anchor_id']}";?>">
-									<button class="btn btn-info col-md-12">ViewProfile</button>
-								</a>
-							</div>
-						</div>
-						<!-- booking container -->
-				<div class="<?php echo $anchor_booking_container;?>">	
-		            <div class="row">	
-		                <div class="col-lg-12 col-lg-offset-2" style="padding-top: 28px; margin-left: 2px;">
-		                	<button type="button" class="close" data-dismiss="modal">&times;</button>
-		                    <form id="contact-form" method="post" action="contact.php" role="form">
-		                        <div class="controls">
-		                        <span class="customer-details">Customer Details</span>
-		                        <div class="book-now-style">    
-				                            <div class="row">
-				                                <div class="col-md-12">
-				                                    <div class="form-group">
-				                                        <label for="form_name">Firstname *</label>
-				                                        <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
-				                                        <div class="help-block with-errors"></div>
-				                                    </div>
-				                                </div>
-				                                <div class="col-md-12">
-				                                    <div class="form-group">
-				                                        <label for="form_lastname">Lastname *</label>
-				                                        <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
-				                                        <div class="help-block with-errors"></div>
-				                                    </div>
-				                                </div>
-				                            </div>
-				                            <div class="row">
-				                                <div class="col-md-12">
-				                                    <div class="form-group">
-				                                        <label for="form_email">Email *</label>
-				                                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
-				                                        <div class="help-block with-errors"></div>
-				                                    </div>
-				                                </div>
-				                                <div class="col-md-12">
-				                                    <div class="form-group">
-				                                        <label for="form_phone">Company Name</label>
-				                                        <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Please enter your company Name*">
-				                                        <div class="help-block with-errors"></div>
-				                                    </div>
-				                                </div>
-				                            </div>
-				                            <div class="row">
-				                                <div class="col-md-12">
-				                                    <div class="form-group">
-				                                        <label for="form_email">Mobile *</label>
-				                                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your mobile number*" required="required" data-error="Valid email is required.">
-				                                        <div class="help-block with-errors"></div>
-				                                    </div>
-				                                </div>
-				                                <div class="col-md-12">
-				                                    <div class="form-group">
-				                                        <label for="form_email">Phone *</label>
-				                                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your phone number *" required="required" data-error="Valid email is required.">
-				                                        <div class="help-block with-errors"></div>
-				                                    </div>
-				                                </div>
-				                            </div>
-				                            <div class="row">
-				                                <div class="col-md-12">
-				                                    <div class="form-group">
-				                                        <label for="form_message">Address *</label>
-				                                        <textarea id="form_message" name="message" class="form-control" placeholder="Please enter address *" rows="4" required="required" data-error="Please,enter address."></textarea>
-				                                        <div class="help-block with-errors"></div>
-				                                    </div>
-				                                </div>
-				                                <div class="col-md-12">
-				                                    <input type="submit" class="btn btn-success btn-send" value="Book Now">
-				                                </div>
-				                            </div>
-				                        </div>        
-		                        </div>
-
-		                    </form>
-
-		                </div><!-- /.8 -->
-
-		            </div> <!-- /.row-->
-
-		        </div> <!-- /.container-->
-		        <!-- ends booking container -->
-						
-						<?php 
-							$check_available = "col-md-12 " . $name;
-						?>
-						<div class="<?php echo $check_available;?>">
-							<div>
-								<?php 
-									$form_name = "check_available_form_".$name;
-									$check_available_form_contents = "check_available_form_contents_".$name;
-								?>
-								<form id=<?php echo $form_name ?> method="POST">
-									<div class="<?php echo $check_available_form_contents; ?>">
-										Event date:<input type="date" name="" class="form-control">
-										<span>Duration: Hours &amp; Miniutes</span>
+					<div class="col-md-6">
+						<div class="profile-outer-container">
+							<div class="profile-content-container container-fluid">
+								<div class="profile-image-container col-md-6">
+									<img src=<?php echo $dp; ?> class="img-responsive">
+								</div>
+								<div class="col-md-6 profile-content-main-outer">
+									<div class="profile-content">
+										<span class="anchor_name_inner"><?php echo "{$row['anchor_name']}"; ?></span> 
+										<span class="<?php echo $status;?>"></span>
 										<br>
-										<select class="form-control time left" name="hour">
-				              			<?php 
-				              				for($i=0;$i<=24;$i++)
-				              				{
-				              			?>
-				              				<option value=<?php echo (string)$i;  ?>><?php echo $i;  ?></option>
-				              			<?php
-				              				}
-				              			?>
-										</select>
-										<select class="form-control time" name="hour">
-				              			<?php 
-				              				for($i=0;$i<=60;$i++)
-				              				{
-				              			?>
-				              				<option value=<?php echo (string)$i;  ?>><?php echo $i;  ?></option>
-				              			<?php
-				              				}
-				              			?>
-										</select>
-										<input type="hidden" name="anchor_id" value=<?php echo "{$row['anchor_id']}"; ?>>
+										<!-- designation query -->
+										<?php
+											$sql = 'SELECT * from ANCHOR_CATEGORY_CONNECTER where anchor_id='.$row['anchor_id'];
+											$retval2 = mysql_query( $sql, $conn );
+
+											if(! $retval2 ) 
+											{
+												die('Could not get data: ' . mysql_error());
+											}
+
+											while($row2 = mysql_fetch_array($retval2, MYSQL_ASSOC)) 
+											{
+												$sql = 'SELECT * from anchor_category where category_id='.$row2['category_id'];
+												$retval3 = mysql_query( $sql, $conn );
+
+												if(! $retval3 ) 
+												{
+													die('Could not get data: ' . mysql_error());
+												}
+												while($row3 = mysql_fetch_array($retval3, MYSQL_ASSOC)) 
+												{
+										?>
+										<span><?php echo "{$row3['category']}". " /"; ?></span>
+										<?php
+												}
+											}
+										?>
+										<br>
+											<?php
+												for($i=0; $i<$row['rating']; $i++)
+												{
+												?>
+												<span class="glyphicon glyphicon-star golden"></span>
+												<?php
+												}
+											?>
+										<br>
+										<span class="glyphicon glyphicon-map-marker"></span>
+										<span> <?php echo "{$row['anchor_place']}"; ?></span>
+										<br>
+										<span>BMA Code: </span>
+										<span> <?php echo "{$row['bma_code']}"; ?></span>
 									</div>
-									<div class="<?php echo $price_contianer; ?>"></div>
 									<?php
-										$button_name = "check_available_form_button_".$name;
+										$name = str_replace(' ', '', $row['anchor_name']);
+										$name_link = $name."_link";
+										$price_contianer = "price_container_".$name;
+										$anchor_booking_container = "container col-md-12 hide ". $name. "_booking_container";
 									?>
-									<button type="button" class="btn btn-info col-md-12" id="<?php echo $button_name; ?>">Check available</button>
-					            </form>
+									
+								</div>
+								<!-- <div class="col-md-12">
+									<button class="right">Book Now</button>
+								</div> -->
+								<div class="landingpage_buttons_container">
+									<div class="col-md-6 landingpage_buttons">
+										<a href="#" class="<?php echo $name_link;?>">
+											<button class="btn btn-info col-md-12">Check Availability</button>
+										</a>
+									</div>
+									<div class="col-md-6 landingpage_buttons">
+										<a href="view_profile.php?ac_id=<?php echo"{$row['anchor_id']}";?>">
+											<button class="btn btn-info col-md-12">ViewProfile</button>
+										</a>
+									</div>
+								</div>
+								<!-- booking container -->
+						<div class="<?php echo $anchor_booking_container;?>">	
+				            <div class="row">	
+				                <div class="col-lg-12 col-lg-offset-2" style="padding-top: 28px; margin-left: 2px;">
+				                	<button type="button" class="close" data-dismiss="modal">&times;</button>
+				                    <form id="contact-form" method="post" role="form">
+				                        <div class="controls">
+				                        <span class="customer-details">Customer Details</span>
+				                        <div class="book-now-style">    
+						                            <div class="row">
+						                                <div class="col-md-12">
+						                                    <div class="form-group">
+						                                        <label for="form_name">Firstname *</label>
+						                                        <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
+						                                        <div class="help-block with-errors"></div>
+						                                    </div>
+						                                </div>
+						                                <div class="col-md-12">
+						                                    <div class="form-group">
+						                                        <label for="form_lastname">Lastname *</label>
+						                                        <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
+						                                        <div class="help-block with-errors"></div>
+						                                    </div>
+						                                </div>
+						                            </div>
+						                            <div class="row">
+						                                <div class="col-md-12">
+						                                    <div class="form-group">
+						                                        <label for="form_email">Email *</label>
+						                                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
+						                                        <div class="help-block with-errors"></div>
+						                                    </div>
+						                                </div>
+						                                <div class="col-md-12">
+						                                    <div class="form-group">
+						                                        <label for="form_phone">Company Name</label>
+						                                        <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Please enter your company Name*">
+						                                        <div class="help-block with-errors"></div>
+						                                    </div>
+						                                </div>
+						                            </div>
+						                            <div class="row">
+						                                <div class="col-md-12">
+						                                    <div class="form-group">
+						                                        <label for="form_email">Mobile *</label>
+						                                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your mobile number*" required="required" data-error="Valid email is required.">
+						                                        <div class="help-block with-errors"></div>
+						                                    </div>
+						                                </div>
+						                                <div class="col-md-12">
+						                                    <div class="form-group">
+						                                        <label for="form_email">Phone *</label>
+						                                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your phone number *" required="required" data-error="Valid email is required.">
+						                                        <div class="help-block with-errors"></div>
+						                                    </div>
+						                                </div>
+						                            </div>
+						                            <div class="row">
+						                                <div class="col-md-12">
+						                                    <div class="form-group">
+						                                        <label for="form_message">Address *</label>
+						                                        <textarea id="form_message" name="message" class="form-control" placeholder="Please enter address *" rows="4" required="required" data-error="Please,enter address."></textarea>
+						                                        <div class="help-block with-errors"></div>
+						                                    </div>
+						                                </div>
+						                                <div class="col-md-12">
+						                                    <input type="submit" class="btn btn-success btn-send" value="Book Now">
+						                                </div>
+						                            </div>
+						                        </div>        
+				                        </div>
+
+				                    </form>
+
+				                </div><!-- /.8 -->
+
+				            </div> <!-- /.row-->
+
+				        </div> <!-- /.container-->
+				        <!-- ends booking container -->
+								
+								<?php 
+									$check_available = "col-md-12 " . $name;
+								?>
+								<div class="<?php echo $check_available;?>">
+									<div>
+										<?php 
+											$form_name = "check_available_form_".$name;
+											$check_available_form_contents = "check_available_form_contents_".$name;
+										?>
+										<form id=<?php echo $form_name ?> method="POST">
+											<div class="<?php echo $check_available_form_contents; ?>">
+												Event date:<input type="date" name="" class="form-control">
+												<span>Duration: Hours &amp; Miniutes</span>
+												<br>
+												<select class="form-control time left" name="hour">
+						              			<?php 
+						              				for($i=0;$i<=24;$i++)
+						              				{
+						              			?>
+						              				<option value=<?php echo (string)$i;  ?>><?php echo $i;  ?></option>
+						              			<?php
+						              				}
+						              			?>
+												</select>
+												<select class="form-control time" name="hour">
+						              			<?php 
+						              				for($i=0;$i<=60;$i++)
+						              				{
+						              			?>
+						              				<option value=<?php echo (string)$i;  ?>><?php echo $i;  ?></option>
+						              			<?php
+						              				}
+						              			?>
+												</select>
+												<input type="hidden" name="anchor_id" value=<?php echo "{$row['anchor_id']}"; ?>>
+											</div>
+											<div class="<?php echo $price_contianer; ?>"></div>
+											<?php
+												$button_name = "check_available_form_button_".$name;
+											?>
+											<button type="button" class="btn btn-info col-md-12" id="<?php echo $button_name; ?>">Check available</button>
+							            </form>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
+					<!-- ends profile shows -->
+
+					
+					
+					<style type="text/css">
+						.<?php echo $price_contianer; ?>{
+							display: none;
+						}
+						.<?php echo $check_available_form_contents; ?>{
+							display: none;
+						}
+						.<?php echo $name;?>{
+							display: none;
+						}
+						#<?php echo $button_name;?>{
+							margin-top: 5px;
+							margin-bottom: 5px;
+						}
+					</style>
+					<script type="text/javascript">
+						<?php
+							$main_class = '".'.$name_link.'"';
+							$show_class = '".'.$name.'"';
+							// $price_contianer = '".'.$price_contianer.'"';
+							// $check_available_form_contents = '".'.$check_available_form_contents.'"';
+
+						?>
+						$(document).ready(function(){
+							$(<?php echo $main_class;?>).click(function(){
+						        console.log("test22");
+						        $(<?php echo $show_class;?>).slideToggle("slow");
+						        $('.<?php echo $price_contianer;?>').empty();
+						        $("#<?php echo $button_name;?>").show();
+		                		$('.<?php echo $check_available_form_contents;?>').show();
+						    });
+						    $("#<?php echo $button_name;?>").click(function (e) {
+						        console.log("fdjg");
+						        // this.disabled = true;
+						        $("<?php echo $button_name;?>").hide();
+						        var frm = $('#<?php echo $form_name; ?>');
+						        $.ajax({
+						            url: 'check_available.php',
+						            type: 'POST',
+						            data: frm.serialize(),
+						            success: function (data) {
+						                $('.<?php echo $price_contianer;?>').append(data).show(); // appending data response to result-page div
+						                $('.<?php echo $check_available_form_contents;?>').hide();  //hiding form
+						                $('#<?php echo $button_name;?>').hide();
+						            }
+						        });
+						    });
+						});
+					</script>
+						<?php
+							}
+						?>
+						</style>
+					</div>
 				</div>
-			</div>
-			<!-- ends profile shows -->
-
-			
-			
-			<style type="text/css">
-				.<?php echo $price_contianer; ?>{
-					display: none;
-				}
-				.<?php echo $check_available_form_contents; ?>{
-					display: none;
-				}
-				.<?php echo $name;?>{
-					display: none;
-				}
-				#<?php echo $button_name;?>{
-					margin-top: 5px;
-					margin-bottom: 5px;
-				}
-			</style>
-			<script type="text/javascript">
-				<?php
-					$main_class = '".'.$name_link.'"';
-					$show_class = '".'.$name.'"';
-					// $price_contianer = '".'.$price_contianer.'"';
-					// $check_available_form_contents = '".'.$check_available_form_contents.'"';
-
-				?>
-				$(document).ready(function(){
-					$(<?php echo $main_class;?>).click(function(){
-				        console.log("test22");
-				        $(<?php echo $show_class;?>).slideToggle("slow");
-				        $('.<?php echo $price_contianer;?>').empty();
-				        $("#<?php echo $button_name;?>").show();
-                		$('.<?php echo $check_available_form_contents;?>').show();
-				    });
-				    $("#<?php echo $button_name;?>").click(function (e) {
-				        console.log("fdjg");
-				        // this.disabled = true;
-				        $("<?php echo $button_name;?>").hide();
-				        var frm = $('#<?php echo $form_name; ?>');
-				        $.ajax({
-				            url: 'check_available.php',
-				            type: 'POST',
-				            data: frm.serialize(),
-				            success: function (data) {
-				                $('.<?php echo $price_contianer;?>').append(data).show(); // appending data response to result-page div
-				                $('.<?php echo $check_available_form_contents;?>').hide();  //hiding form
-				                $('#<?php echo $button_name;?>').hide();
-				            }
-				        });
-				    });
-				});
-			</script>
-			<?php
-				}
-			?>
-			</style>
 			<div class="col-md-12 container-fluid footer-dynamic-block">
 			<?php
 				include 'footer.php';
