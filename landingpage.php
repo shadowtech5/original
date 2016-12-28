@@ -331,7 +331,13 @@
 			.nav-fltr-text{
 				font-size: 20px;
 				font-family: raleway;
-			}	
+				padding-top: 10px;
+				padding-bottom: 10px;
+			}
+			.subfltr-text{
+				font-size: 17px; 
+				font-family: raleway;
+				}	
 		</style>
 		<script type="text/javascript">
 			$(document).ready(function(){
@@ -440,33 +446,31 @@
       			<div class="col-sm-3 sidenav">
         			<form action="landingpage.php?searching" method="post">
         				<p style="font-family: raleway; font-size: 24px; padding-top: 10px; padding-bottom: 10px;" class="text-center">Filter By</p>
-          				<div class="price-container">
+          				<div class="price-container" style="margin-left: 10px;">
             				<h4 class=" nav-fltr-text">Price Range</h4>
             					<input type="text" id="price1" name="min_price" class="form-control text-center">
               					<div id="slider-3"></div>
             					<input type="text" id="price2" name="max_price" class="form-control text-center">
           				</div>
-          				<div>
-            				<h4 class="text-center nav-fltr-text">Available</h4>
-            				<input type="checkbox" name="online">Online
-            			<br/>
-            				<input type="checkbox" name="offline">Offline
+          				<div class="subfltr-text">
+            				<h4 class="nav-fltr-text" style="margin-left: 10px;">Available</h4>
+            					<input type="checkbox" name="online" style="margin-left: 10px;">Online 
+            					<input type="checkbox" name="offline" style="margin-left: 13px;">Offline
           				</div>
-          				<div>
-            				<h4 class="text-center nav-fltr-text">Gender</h4>
-					            <input type="checkbox" name="male">Male
-					         <br/>
-					            <input type="checkbox" name="female">Female
+          				<div class="subfltr-text">
+            				<h4 class="nav-fltr-text" style="margin-left: 10px;">Gender</h4>
+					            <input type="checkbox" name="male" style="margin-left: 10px;">Male
+					            <input type="checkbox" name="female" style="margin-left: 18px;">Female
           				</div>
-          				<div>
+          				<div class="subfltr-text" style="margin-left: 10px;">
 				            <h4 class="nav-fltr-text">Performing Members</h4>
-				            	<input type="text" id="price3" name="min_members" class="form-control">
+				            	<input type="text" id="price3" name="min_members" class="form-control text-center">
 				             	<div id="slider-4"></div>
-				            	<input type="text" id="price4" name="max_members" class="form-control">
+				            	<input type="text" id="price4" name="max_members" class="form-control text-center">
 				        </div>
-          				<div>
-            					<h4 class="nav-fltr-text">Event Type</h4>
-            					<select class="form-control" name="event_type">
+          				<div class="subfltr-text">
+            					<h4 class="nav-fltr-text" style="margin-left: 10px;">Event Type</h4>
+            					<select class="form-control" name="event_type"  style="margin-left: 10px;">
 						              <?php 
 						              $event_sql = 'SELECT * from M_EVENT_TYPE';
 						              $event_retval = mysql_query( $event_sql, $conn );
@@ -480,24 +484,33 @@
 						              <?php } ?>
             					</select>
           				</div>
-          				<div>
-				            <h4 class="nav-fltr-text">Languages</h4>
-				            <input type="checkbox" name="english">English</input><br>
-				            <input type="checkbox" name="malayalam">Malayalam</input><br>
-				            <input type="checkbox" name="tamil">Tamil</input><br>
-				            <input type="checkbox" name="kanada">Kanada</input><br>
-				            <input type="checkbox" name="punjabi">Punjabi</input><br>
-				            <input type="checkbox" name="telugu">Telugu</input><br>
-				            <input type="checkbox" name="marati">Marathi</input>
+          				<div class="subfltr-text">
+				            <h4 class="nav-fltr-text" style="margin-left: 10px;">Languages</h4>
+				            <input type="checkbox" name="english" style="margin-left: 15px;">English</input>
+				            <input type="checkbox" name="malayalam" style="margin-left: 15px;">Malayalam</input>
+				            <input type="checkbox" name="tamil" style="margin-left: 10px;">Tamil</input><br>
+				            <input type="checkbox" name="kanada" style="margin-left: 15px;">Kanada</input>
+				            <input type="checkbox" name="punjabi" style="margin-left: 13px;">Punjabi</input>
+				            <input type="checkbox" name="telugu" style="margin-left: 38px;">Telugu</input><br>
+				            <input type="checkbox" name="marati" style="margin-left: 15px;">Marathi</input>
           				</div>
-          				<div class="text-center">
+          				<br/><br/>
+          				<div class="text-center col-md-12"  style="margin-left: 10px;">
             				<button class="btn btn-primary" type="submit">Apply Filter</button>
           				</div>
         			</form>
       			</div>
 			<!-- ends -->
 			<div class="col-sm-9">
-
+			<!-- menu bar starts -->
+				<div class="row celeb-profile-menu-bar">
+					<div class="col-md-6">
+						<span><a  class="active" id="Anchor" style="padding: 20px;">Anchor</a></span>
+						<span><a  name="celebrity-anchor" style="margin-left: 25px;padding: 20px;">Celebrity Anchor</a></span>
+					</div>
+				</div>	
+			<!-- ends menu bar -->
+				
 				<?php
 					while($row = mysql_fetch_array($retval, MYSQL_ASSOC)) 
 					{
