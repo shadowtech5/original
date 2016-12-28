@@ -10,7 +10,7 @@ ob_start();
 
 include 'db_connnection.php';
 
-$sql = 'SELECT * from B_ANCHOR_DETAILS where anchor_id ='.$_GET['ac_id'];
+$sql = 'SELECT * from celebrity_anchors where id ='.$_GET['ac_id'];
 $retval = mysql_query( $sql, $conn );
 if(! $retval ) {
 	die('Could not get data: ' . mysql_error());
@@ -98,32 +98,6 @@ if(! $retval ) {
 				<!-- name container -->
 				<div class="col-md-12 user-name-container">
 					<span><?php echo "{$row['anchor_name']}"; ?></span>
-					<br/>
-					<span class="anchor-category">
-						<?php
-							$sql = 'SELECT * from ANCHOR_CATEGORY_CONNECTER where anchor_id='.$_GET['ac_id'];
-							$retval2 = mysql_query( $sql, $conn );
-	   
-							if(! $retval2 ) 
-							{
-								die('Could not get data: ' . mysql_error());
-							}
-	             
-							while($row2 = mysql_fetch_array($retval2, MYSQL_ASSOC)) 
-							{
-	                			$sql = 'SELECT * from anchor_category where category_id='.$row2['category_id'];
-	                			$retval3 = mysql_query( $sql, $conn );
-	   
-				                if(! $retval3 ) {
-				                	die('Could not get data: ' . mysql_error());
-				                }
-	                			while($row3 = mysql_fetch_array($retval3, MYSQL_ASSOC)) 
-	                			{ 
-				        			echo "{$row3['category']}"." / "; 
-	                			}
-	                		}
-	                	?>
-                	</span>
 				</div>
 				<!-- ends name container -->
 				<!-- anchor profile image -->
@@ -140,7 +114,6 @@ if(! $retval ) {
 					<!-- menu bar starts -->
 					<div class="view-profile-menu-bar col-md-12">
 						<span><a  class="active" id="biography">Biography</a></span>
-						<span><a  id="booking-info">Booking Info</a></span>
 						<span><a  id="photos">Photos</a></span>
 						<span><a  id="videos">Videos</a></span>
 					</div>
@@ -151,153 +124,11 @@ if(! $retval ) {
 						<span>Biography</span>
 						<div class="col-md-12 biography-deails">
 							<span>
-								<?php echo "{$row['anchor_biography']}"; ?>
+								<?php echo "{$row['bioraphy']}"; ?>
 							</span>
 						</div>
 					</div>
 					<!-- ends biography container -->
-
-					<!-- booking info container -->
-					<div class="col-md-12 booking-info-container hide">
-						<span class="main-title">Booking info</span>
-						<div class="col-md-12 booking-info-deails">
-							<div class="col-md-12 description-container">
-								<div class="col-md-6 description-title text-center">
-									<span>Performing Team</span>
-								</div>
-								<div class="col-md-6 sub-text">
-									<span>
-										<?php 
-											echo "{$row['anchor_performing_team']}" . " Member/s"; 
-										?>
-									</span>
-								</div>
-							</div>
-							<div class="col-md-12 description-container">
-								<div class="col-md-6 description-title text-center">
-									<span>Performing Duration</span>
-								</div>
-								<div class="col-md-6 description-details sub-text">
-									<span>
-										<?php
-											$ev_id=$_COOKIE["ev_id"];
-											$sql = 'SELECT * from M_EVENT_TYPE where event_id='.$ev_id;
-											$retvl = mysql_query( $sql, $conn );
-
-											if(! $retvl ) 
-											{
-												die('Could not get data: ' . mysql_error());
-											}
-
-
-											while($row5 = mysql_fetch_array($retvl, MYSQL_ASSOC)) 
-											{
-												echo "{$row5['performance_duration']}"; 
-											}
-										?>
-									</span>
-								</div>
-							</div>
-							<div class="col-md-12 description-container">
-								<div class="col-md-6 description-title text-center">
-									<span>Language Know</span>
-								</div>
-								<div class="col-md-6 description-details description-details sub-text">
-									<span><?php echo "{$row['anchor_language']}"; ?></span>
-								</div>
-							</div>
-							<div class="col-md-12 description-container">
-								<div class="col-md-6 description-title text-center">
-									<span>Event Prefered</span>
-								</div>
-								<div class="col-md-6 description-details sub-text">
-									<span>CAMPUS EVENTS, CONCERTS/FESTIVALS, CORPORATE EVENTS, RESTAURANTS-PUBS-BARS, WEDDINGS</span>
-								</div>
-							</div>
-							<div class="col-md-12 description-container">
-								<div class="col-md-6 description-title text-center">
-									<span>Open to travel</span>
-								</div>
-								<div class="col-md-6 description-details sub-text">
-									<span><?php echo "{$row['travel']}"; ?></span>
-								</div>
-							</div>
-							<div class="col-md-12 description-container">
-								<div class="col-md-6 description-title text-center">
-									<span>Preffered Place</span>
-								</div>
-								<div class="col-md-6 description-details description-details sub-text">
-									<span><?php echo "{$row['preffered_place']}"; ?></span>
-								</div>
-							</div>
-							<div class="col-md-12 description-container">
-								<div class="col-md-6 description-title text-center">
-									<span>Fee</span>
-								</div>
-								<div class="col-md-6 description-details">
-									<a id="budget-fix">
-										<button class="col-md-12 btn btn-info btn-1">Fix Budget</button>
-									</a>
-								</div>
-							</div>
-							<div class="col-md-12" id="budget-fix_container">
-								<div id="available_form">
-									<form id="form1" method="POST">
-										<input type="hidden" value=<?php echo "{$row['anchor_id']}"; ?> name="anchor_id">
-										Duration
-										<br>
-										<div class="col-md-6">
-											<span>Hour</span>
-										</div>
-										<div class="col-md-6">
-											<span>Min</span>
-										</div>
-										<div class="col-md-6">
-											<select class="form-control time left" name="hour">
-											<?php 
-												for($i=0;$i<=24;$i++){
-											?>
-											<option value=<?php echo (string)$i;  ?>><?php echo $i;  ?></option>
-											<?php
-												}
-											?>
-											</select>
-										</div>
-										<div class="col-md-6">
-											<select class="form-control time" name="minute">
-											<?php 
-												for($i=0;$i<=60;$i++){
-											?>
-											<option value=<?php echo (string)$i;  ?>><?php echo $i;  ?></option>
-											<?php
-												}
-											?>
-											</select>
-										</div> 
-										<div class="col-md-12">
-										Days:
-											<select class="form-control " name="days">
-											<?php 
-												for($i=1;$i<=30;$i++){
-											?>
-											<option value=<?php echo (string)$i;  ?>><?php echo $i;  ?></option>
-											<?php
-												}
-											?>
-											</select>
-										</div>
-										<div id="append"></div>
-										<button id="test" type="button" class="btn btn-info">Check Amount</button>
-									</form>
-								</div>
-							</div>
-							<div id="available_result">
-
-							</div>
-							</div>
-						</div>
-					</div>
-					<!-- ends booking-info container -->
 
 					<!-- photos container -->
 					<div class="photos-container hide col-md-12">
