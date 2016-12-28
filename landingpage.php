@@ -422,7 +422,7 @@
 		            <div class="row">	
 		                <div class="col-lg-12 col-lg-offset-2" style="padding-top: 28px; margin-left: 2px;">
 		                	<button type="button" class="close" data-dismiss="modal">&times;</button>
-		                    <form id="contact-form" method="post" action="contact.php" role="form">
+		                    <form id="contact-form" method="post" role="form">
 		                        <div class="controls">
 		                        <span class="customer-details">Customer Details</span>
 		                        <div class="book-now-style">    

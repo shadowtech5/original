@@ -1,8 +1,10 @@
 <?php
 require 'PHPMailerAutoload.php';
 // include('class.smtp.php');
-function email_send($to, $fname, $lname=none, $subject, $body)
+function email_send($to, $fname, $subject, $body, $lname="")
 {
+	// echo "---->subject:".$subject;
+	// echo "---->body:".$body;
 	$mail = new PHPMailer;
 	$mail->IsSMTP(); // enable SMTP
 	$mail->SMTPDebug = 2;
@@ -18,11 +20,12 @@ function email_send($to, $fname, $lname=none, $subject, $body)
 
 	//Typical mail data
 	$mail->addAddress($to);
-	$mail->addBCC("jishnunand@gmail.com");
+	$mail->addBCC("bookmyanchors@gmail.com");
 	$mail->SetFrom("no-replay@bookmyanchors.com", "BookMyAnchors.com");
 	$mail->Sender='no-replay@bookmyanchors.com';
-	$mail->Subject = "Thanks for using BookMyAnchors";
-	$mail->Body = "test email";
+	$mail->Subject = $subject;
+	$mail->Body = $body;
+	$mail->IsHTML(true);
 
 	try{
 	    $mail->Send();
