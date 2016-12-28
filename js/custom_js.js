@@ -74,6 +74,7 @@ $(document).ready(function(){
                 data: frm.serialize(),
                 success: function (data) 
                 {
+                    alert("Booking Confirmed please check your mail");
                     $("#available_result_book").show(); // appending data response to result-page div
                     setTimeout(function () {
                         $("#result-page").hide(); 
