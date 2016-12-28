@@ -16,61 +16,273 @@
 		}
 	}
 	include 'db_connnection.php';
-	if(strpos($_SERVER['REQUEST_URI'], "landingpage.php?ev_id=") or strpos($_SERVER['REQUEST_URI'], "landingpage.php"))
+	if(strpos($_SERVER['REQUEST_URI'], "landingpage.php?ev_id="))
 	{
 		$sql = 'SELECT * from B_ANCHOR_DETAILS';
 	}
-	else
+	elseif(strpos($_SERVER['REQUEST_URI'], "landingpage.php?searching"))
 	{
-
-		$event_type = $_POST['event_type'];
-		$min_price = "1";
-		$max_price = $_POST['max_price'];
-		$min_members = "1";
-		$max_members = $_POST['max_members'];
-		$sql = "select * from B_ANCHOR_DETAILS where";
-		$sql = $sql . "(price between " . $min_price . " and " .  $max_price . " ) and";
-		$sql = $sql . "(anchor_performing_team between " . $min_members . " and " .  $max_members . ")";
-		$flag_status = True;
-
-		if (isset($_POST['online'])){
-			$sql = $sql. "and (status = 'online'";
-			if (isset($_POST['offline'])){
-				$flag_status = False;
-				$sql = $sql. "or status = 'ofline')";
-			}
-			else{
-				$sql = $sql. ")";
-			}
-		}
-
-		if ($flag_status)
+		if(isset($_POST['event_type']))
 		{
-			if (isset($_POST['offline'])){
-				$sql = $sql. "and (status = 'ofline')";
+			$event_type = $_POST['event_type'];
+			$min_price = $_POST['min_price'];
+			$max_price = $_POST['max_price'];
+			$min_members = $_POST['min_members'];
+			$max_members = $_POST['max_members'];
+			$sql = "select * from B_ANCHOR_DETAILS where";
+			$sql = $sql . "(price between " . $min_price . " and " .  $max_price . " ) and";
+			$sql = $sql . "(anchor_performing_team between " . $min_members . " and " .  $max_members . ")";
+			$flag_status = True;
+
+			if (isset($_POST['online'])){
+				$sql = $sql. "and (status = 'online'";
+				if (isset($_POST['offline'])){
+					$flag_status = False;
+					$sql = $sql. "or status = 'ofline')";
+				}
+				else{
+					$sql = $sql. ")";
+				}
+			}
+
+			if ($flag_status)
+			{
+				if (isset($_POST['offline'])){
+					$sql = $sql. "and (status = 'ofline')";
+				}
+			}
+
+
+			$flag_gender = True;
+
+			if (isset($_POST['male'])){
+				$sql = $sql. "and (gender = 'male'";
+				if (isset($_POST['female'])){
+					$flag_gender = False;
+					$sql = $sql. "or gender = 'female')";
+				}
+				else{
+					$sql = $sql. ")";
+				}
+			}
+
+			if ($flag_gender)
+			{
+				if (isset($_POST['female'])){
+					$sql = $sql. "and (gender = 'female')";
+				}
+			}
+			$flag_english = True;
+			$flag_malayalam = True;
+			$flag_tamil = True;
+			$flag_kanada = True;
+			$flag_panjabi = True;
+			$flag_telugu = True;
+			$flag_marati = True;
+			//language filter for english
+			if($flag_english)
+			{
+				if(isset($_POST['english']))
+				{
+					$sql = $sql. "and (anchor_language like '%english%'";
+					$flag_english = false;
+					if(isset($_POST['malayalam']))
+					{
+						$flag_malayalam = False;
+						$sql = $sql. "or anchor_language like '%malayalam%'";
+						if(isset($_POST['tamil']))
+						{
+							$flag_tamil = False;
+							$sql = $sql. "or anchor_language like '%tamil%'";
+							if(isset($_POST['kanada']))
+							{
+								$flag_kanada = False;
+								$sql = $sql. "or anchor_language like '%kanada%'";
+								if(isset($_POST['panjabi']))
+								{
+									$flag_panjabi = Flase;
+									$sql = $sql. "or anchor_language like '%panjabi%'";
+									if(isset($_POST['telugu']))
+									{
+										$flag_telugu = False;
+										$sql = $sql. "or anchor_language like '%telugu%'";
+										if(isset($_POST['marati']))
+										{
+											$flag_marati = False;
+											$sql = $sql. "or anchor_language like '%marati%'";
+										}
+									}
+								}
+							}
+						}
+
+					}
+					if($flag_english == False)
+					{
+						$sql = $sql.")";
+					}
+				}
+			}
+			//ends english language filter
+
+			//langage filter malayalam
+			if($flag_malayalam)
+			{
+				if(isset($_POST['malayalam']))
+				{
+					$sql = $sql. "and (anchor_language like '%malayalam%'";
+					$flag_malayalam = False;
+					if(isset($_POST['tamil']))
+					{
+						$flag_tamil =False;
+						$sql = $sql. "or anchor_language like '%tamil%'";
+						if(isset($_POST['kanada']))
+						{
+							$flag_kanada = Flase;
+							$sql = $sql. "or anchor_language like '%kanada%'";
+							if(isset($_POST['panjabi']))
+							{
+								$flag_panjabi = False;
+								$sql = $sql. "or anchor_language like '%panjabi%'";
+								if(isset($_POST['telugu']))
+								{
+									$flag_telugu = False;
+									$sql = $sql. "or anchor_language like '%telugu%'";
+									if(isset($_POST['marati']))
+									{
+										$flag_marati = False;
+										$sql = $sql. "or anchor_language like '%marati%'";
+									}
+								}
+							}
+						}
+					}
+					if($flag_malayalam == False)
+					{
+						$sql = $sql.")";
+					}
+				}
+			}
+			//ends malayalam language filter
+			//language filter tamil
+			if($flag_tamil)
+			{
+				if(isset($_POST['tamil']))
+				{
+					$sql = $sql. "and (anchor_language like '%tamil%'";
+					$flag_tamil = Flase;
+					if(isset($_POST['kanada']))
+					{
+						$flag_kanada = Flase;
+						$sql = $sql. "or anchor_language like '%kanada%'";
+						if(isset($_POST['panjabi']))
+						{
+							$flag_panjabi = False;
+							$sql = $sql. "or anchor_language like '%panjabi%'";
+							if(isset($_POST['telugu']))
+							{
+								$flag_telugu = False;
+								$sql = $sql. "or anchor_language like '%telugu%'";
+								if(isset($_POST['marati']))
+								{
+									$flag_marati = Flase;
+									$sql = $sql. "or anchor_language like '%marati%'";
+								}
+							}
+						}
+					}
+					if($flag_tamil == Flase)
+					{
+						$sql = $sql.")";
+					}
+				}
+			}
+			
+			//ends tamil
+			if($flag_kanada)
+			{
+				if(isset($_POST['kanada']))
+				{
+					$sql = $sql. "and (anchor_language like '%kanada%'";
+					$flag_kanada = Flase;
+					if(isset($_POST['panjabi']))
+					{
+						$flag_panjabi = False;
+						$sql = $sql. "or anchor_language like '%panjabi%'";
+						if(isset($_POST['telugu']))
+						{
+							$flag_telugu = False;
+							$sql = $sql. "or anchor_language like '%telugu%'";
+							if(isset($_POST['marati']))
+							{
+								$flag_marati = False;
+								$sql = $sql. "or anchor_language like '%marati%'";
+							}
+						}
+					}
+					if($flag_kanada == Flase)
+					{
+						$sql = $sql.")";
+					}
+				}
+			}
+			if($flag_panjabi)
+			{
+				if(isset($_POST['panjabi']))
+				{
+					$sql = $sql. "and(anchor_language like '%panjabi%'";
+					$flag_panjabi = Flase;
+					if(isset($_POST['telugu']))
+					{
+						$flag_telugu = False;
+						$sql = $sql. "or anchor_language like '%telugu%'";
+						if(isset($_POST['marati']))
+						{
+							$sql = $sql. "or anchor_language like '%marati%'";
+						}
+					}
+					if($flag_panjabi == Flase)
+					{
+						$sql = $sql.")";
+					}
+				}
+			}
+			if($flag_telugu)
+			{
+				if(isset($_POST['telugu']))
+				{
+					$sql = $sql. "and (anchor_language like '%telugu%'";
+					$flag_telugu = False;
+					if(isset($_POST['marati']))
+					{
+						$flag_marati = False;
+						$sql = $sql. "or anchor_language like '%marati%'";
+					}
+					if($flag_telugu == False)
+					{
+						$sql = $sql.")";
+					}
+				}
+			}
+			if($flag_marati)
+			{
+				if(isset($_POST['marati']))
+				{
+					$sql = $sql. "and (anchor_language like '%marati%')";
+				}
 			}
 		}
-
-
-		$flag_gender = True;
-
-		if (isset($_POST['male'])){
-			$sql = $sql. "and (gender = 'male'";
-			if (isset($_POST['female'])){
-				$flag_status = False;
-				$sql = $sql. "or gender = 'female')";
-			}
-			else{
-				$sql = $sql. ")";
-			}
-		}
-
-		if ($flag_gender)
+		else
 		{
-			if (isset($_POST['female'])){
-				$sql = $sql. "and (gender = 'female')";
-			}
+			$sql = 'SELECT * from B_ANCHOR_DETAILS';
 		}
+	}
+	elseif(strpos($_SERVER['REQUEST_URI'], "landingpage.php?search"))
+	{
+		$sql = "SELECT * from B_ANCHOR_DETAILS where bma_code like '%".$_POST["bma_code"]."%' or anchor_name like '%".$_POST["bma_code"]."%'";
+	}
+	else{
+		$sql = 'SELECT * from B_ANCHOR_DETAILS';
 	}
 	$retval = mysql_query( $sql, $conn );
 
@@ -226,7 +438,7 @@
 			<!-- Filter Container -->
 			<div class="row">
       			<div class="col-sm-3 sidenav">
-        			<form action="filter.php" method="post">
+        			<form action="landingpage.php?searching" method="post">
         				<p style="font-family: raleway; font-size: 24px; padding-top: 10px; padding-bottom: 10px;" class="text-center">Filter By</p>
           				<div class="price-container">
             				<h4 class=" nav-fltr-text">Price Range</h4>
@@ -285,6 +497,7 @@
       			</div>
 			<!-- ends -->
 			<div class="col-sm-9">
+
 				<?php
 					while($row = mysql_fetch_array($retval, MYSQL_ASSOC)) 
 					{
