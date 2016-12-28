@@ -351,8 +351,7 @@
 										$name_link = $name."_link";
 										$price_contianer = "price_container_".$name;
 										$anchor_booking_container = "container col-md-12 hide ". $name. "_booking_container";
-									?>
-									
+									?>	
 								</div>
 								<!-- <div class="col-md-12">
 									<button class="right">Book Now</button>
@@ -440,7 +439,6 @@
 						                            </div>
 						                        </div>        
 				                        </div>
-
 				                    </form>
 
 				                </div><!-- /.8 -->
