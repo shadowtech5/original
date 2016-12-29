@@ -93,7 +93,7 @@
 					                </div>
 					            </div>
 						        <div class="col-md-12" style="padding-bottom: 10px;">
-						        	<button id="feedback"type="button" class="btn btn-success btn-send">Book Now</button>
+						        	<button id="feedback"type="button" class="btn btn-success btn-send">Submit</button>
 						        </div>
 					        </div>
 				        </form>
