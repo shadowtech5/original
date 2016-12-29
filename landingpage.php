@@ -415,33 +415,11 @@
 			<!-- ends social media bar -->
 
 			<!-- slider -->
-			<div id="myCarousel" class="carousel slide" data-ride="carousel">
-				<!-- Indicators -->
-				<ol class="carousel-indicators">
-					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-					<li data-target="#myCarousel" data-slide-to="1"></li>
-					<li data-target="#myCarousel" data-slide-to="2"></li>
-				</ol>
-				<!-- Ends Indicators -->			
-
-				<!-- Wrapper for slides -->
-				<div class="carousel-inner landing-page-carousel" role="listbox">
-					<div class="item active">
-						<img src="img/slider1.jpg" alt="Banner-1">
-					</div>
-
-					<div class="item">
-						<img src="img/slider2.jpg" alt="Banner-2">
-					</div>
-
-					<div class="item">
-						<img src="img/slider3.jpg" alt="Banner-3">
-					</div>
-				</div>
+			<div class="landingpagebanner">
+				<img src="img/landing-page-banner.jpg" class="img-responsive">
 			</div>
 			<!-- ends slider -->
 					
-			<!-- Filter Container -->
 			<div class="row">
       			<div class="col-sm-3 sidenav">
         			<form action="landingpage.php?searching" method="post">

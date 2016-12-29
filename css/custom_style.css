@@ -82,11 +82,17 @@ body{
     border:0;
     background:transparent;
 }
+.landingpagebanner{
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
 .customer-details{
 	font-family: raleway;
 	font-size: 24px;
 	padding-top: 10px;
 }
+
 .icon-container{
 	/*border-top: 1px solid #a8acb4;*/
 	padding: 7px;
@@ -265,12 +271,10 @@ body{
 	padding-top: 25px;
 }
 .celeb-profile-menu-bar{
-	padding-top: 18px;
-	padding-bottom: 10px;
-	padding-left: 18px;
-	font-size: 25.19px;
+	font-size: 24px;
 	color: #7b7878;
 	font-family: raleway;
+
 }
 .celeb-profile-menu-bar>span{
 	padding-right: 18px;
