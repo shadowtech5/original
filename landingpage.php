@@ -295,7 +295,8 @@
 <html>
 	<head>
 		<?php ob_start(); ?>
-		<title></title>
+		<title>bookmyanchors</title>
+		<link rel="icon" type="image/png" href="img/logo/title-logo.png">
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
       	<link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
@@ -481,12 +482,19 @@
 			<!-- ends -->
 			<div class="col-sm-9 real_anchor">
 			<!-- menu bar starts -->
-				<div class="row celeb-profile-menu-bar">
+				<!-- <div class="row celeb-profile-menu-bar">
 					<div class="col-md-6">
 						<span><a  class="active real_anchor" style="padding: 20px;">Anchor</a></span>
 						<span><a  class="celebrity-anchor" style="margin-left: 25px;padding: 20px;">Celebrity Anchor</a></span>
 					</div>
-				</div>	
+				</div>	 -->
+				<div id="cssmenu">
+					<ul>
+					   <li class="active real_anchor"><a href="#">Anchor</a></li>
+					   <li><a class="celebrity-anchor" href="#">Celebrity Anchor</a></li>
+					</ul>
+				</div>
+
 			<!-- ends menu bar -->
 				
 				<?php
