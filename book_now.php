@@ -66,8 +66,9 @@ if(! $retval ) {
 		<?php 
 			}
 		 ?>
-		<div class="col-md-6 view-profile-user-deails">x		 
-			 <div class="col-lg-12 col-lg-offset-2" style="padding-top: 28px; margin-left: 2px;">
+		<!-- booking container -->
+		<div class="col-md-6 view-profile-user-deails">
+			<div class="col-lg-12 col-lg-offset-2" style="padding-top: 28px; margin-left: 2px;">
 				<button type="button" class="close" data-dismiss="modal">&times;</button>
 			    <form id="contact-form" method="post" role="form">
 			        <div class="controls">
@@ -138,6 +139,7 @@ if(! $retval ) {
 			    </form>
 			</div>
 		</div>	<!-- /.8 -->
+		        <!-- ends booking container -->
 	</div>
 		<div class="col-md-12 container-fluid footer-dynamic-block">
 			<?php
