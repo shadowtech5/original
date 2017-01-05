@@ -7,7 +7,8 @@ session_start();
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>book my anchor</title>
+		<title>bookmyanchors</title>
+		<link rel="icon" type="image/png" href="img/logo/title-logo.png">
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -21,6 +22,7 @@ session_start();
 	    <link href="css/bootstrap-social.css" rel="stylesheet" >
 		<link rel="stylesheet" type="text/css" href="css/custom_style.css">
 		<script type="text/javascript" src="js/custom_js.js"></script>
+		
 		<style type="text/css">
 			.background_image{
 				background-image: none;
@@ -33,7 +35,7 @@ session_start();
 		</style>
 		<style type="text/css">
 			#myCarousel{
-				height: 600px;
+				/*height: 600px;*/
 				width: 100%;
 			}
 
@@ -66,35 +68,8 @@ session_start();
 			
 		<div class="container-fluid background_image img-responsive img-responsive">
 			<!-- social media bar -->
-			<div class="container-fluid light-white social-container">
-				<div class="social-menus left">
-				<a class="btn btn-social-icon btn-google" href="http://bit.ly/2isAQYF 	">
-			    	<span class="fa fa-google"></span>
-				</a>
-				<a class="btn btn-social-icon btn-twitter" href="http://bit.ly/2ho0cuF">
-			    	<span class="fa fa-twitter"></span>
-				</a>
-				<a class="btn btn-social-icon btn-facebook" href="http://bit.ly/2hDBPFf">
-			    	<span class="fa fa-facebook"></span>
-				</a>
-				<a class="btn btn-social-icon btn-instagram" href="http://bit.ly/2i6upOr">
-			    	<span class="fa fa-instagram"></span>
-				</a>
-			</div>
-				<div class="menu-list">
-					<span><a href="">OFFERS</a></span>
-					<span><a href="">GIFITING</a></span>
-					<span><a href="">SUPPORT</a></span>
-					<span><span class="glyphicon glyphicon-user"></span><a href="">SIGN IN</a></span>
-				</div>
-			</div>
+			<?php include('header.php'); ?>
 			<!-- ends social media bar -->
-
-			<!-- icon bar -->
-			<div class="container-fluid light-white icon-container">
-				<img src="img/logo.png" class="img-responsive logo">
-			</div>
-			<!-- ends icon bar -->
 
 			<!-- slider -->
 			<div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -103,26 +78,21 @@ session_start();
 					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 					<li data-target="#myCarousel" data-slide-to="1"></li>
 					<li data-target="#myCarousel" data-slide-to="2"></li>
-					<li data-target="#myCarousel" data-slide-to="3"></li>
 				</ol>
 				<!-- Ends Indicators -->			
 
 				<!-- Wrapper for slides -->
 				<div class="carousel-inner" role="listbox">
 					<div class="item active">
-						<img src="img/slider1.jpeg" alt="Chania">
+						<img src="img/slider1.jpg" alt="Banner-1">
 					</div>
 
 					<div class="item">
-						<img src="img/slider2.jpg" alt="Chania">
+						<img src="img/slider2.jpg" alt="Banner-2">
 					</div>
 
 					<div class="item">
-						<img src="img/slider3.jpg" alt="Flower">
-					</div>
-
-					<div class="item">
-						<img src="img/slider4.jpg" alt="Flower">
+						<img src="img/slider3.jpg" alt="Banner-3">
 					</div>
 				</div>
 				<!-- Ends Wrapper for slides -->

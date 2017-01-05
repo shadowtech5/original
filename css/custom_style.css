@@ -27,6 +27,7 @@ body{
 	padding: 0;
 	/*opacity: 0.5;*/
 	overflow-y: scroll;
+	overflow-x: hidden;
 }
 .light-white{
 	opacity: 0.9;
@@ -61,15 +62,103 @@ body{
 .social-menus>a{
 	background-color: #fff;
 	color: #333;
+	padding-top: 10px;
 }
 .logo{
 	width: 20%;
-	box-shadow: 1px 1px 5px #888888;
+	min-width: 250px;
 }
+.Search-box{
+	padding-top: 15px;
+}
+.stylish-input-group .input-group-addon{
+    background: white !important; 
+}
+.stylish-input-group .form-control{
+	border-right:0; 
+	box-shadow:0 0 0; 
+	border-color:#ccc;
+}
+.stylish-input-group button{
+    border:0;
+    background:transparent;
+}
+.landingpagebanner{
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+.customer-details{
+	font-family: raleway;
+	font-size: 24px;
+	padding-top: 10px;
+}
+
 .icon-container{
 	/*border-top: 1px solid #a8acb4;*/
 	padding: 7px;
 }
+.sign_button{
+	cursor: pointer;
+}
+.login-box{
+	display: none;
+}
+/*sigup-box*/
+.login-box{
+  width: 15%;
+  min-height: 70px;
+  height: auto;
+  background-color: #d8d8d8;
+  border-radius: 3px;
+}
+.social-login{
+  float: left;
+  width: 100%;
+  height:auto;
+  padding: 10px 0 15px 0;
+  border-bottom: 1px solid #eee;
+}
+.social-login a{
+  float: left;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid rgba(0,0,0,0.05);
+  padding: 12px;
+  border-radius: 2px;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin: 1%;
+  text-align:center;
+}
+.social-login a i{
+  float: left;
+  width: 20px;
+  top: 2px;
+}
+.social-login a:first-child{
+  background-color: #49639F;
+}
+.social-login a:last-child{
+  background-color: #DF4A32;
+}
+.form-module {
+  background: #ffffff;
+  width: 500px;
+  cursor: pointer;
+  margin: 0 auto;
+}
+/*end*/
+
+/*serach bar*/
+.webdesigntuts-workshop {
+	height: 100%;
+	text-align: center;
+	width: 100%;
+	font-family: raleway;
+	font-size: 14px;
+}
+/*end*/
 .event-logo{
 	width: 50%;
 	margin: 0 auto;
@@ -115,6 +204,12 @@ body{
 	margin-right: 5px;
 	border: 1px solid #8d8d8d;
 	height: 200px;	
+}
+.sp-copyright{
+	text-align: center;
+	font-size: 12px;
+	font-family: raleway;
+	font-weight: 100;
 }
 .footer-bar{
 	color: white;
@@ -176,6 +271,129 @@ body{
 .view-profile-user-deails{
 	padding-top: 25px;
 }
+/*.celeb-profile-menu-bar{
+	font-size: 24px;
+	color: #7b7878;
+	font-family: raleway;
+
+}
+.celeb-profile-menu-bar>span{
+	padding-right: 18px;
+}
+.celeb-profile-menu-bar>div>span>a{
+	color: #7b7878;
+	cursor:pointer;
+}
+.celeb-profile-menu-bar>div>span>a:hover{
+	background-color: #7b7878;
+	text-decoration: none;
+	cursor:pointer;
+	opacity: 50;*/
+/*landing-page Menus*/
+
+#cssmenu,
+#cssmenu ul,
+#cssmenu ul li,
+#cssmenu ul li a {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  line-height: 1;
+  display: block;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#cssmenu:after,
+#cssmenu > ul:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+#cssmenu {
+  width: 97%;
+  margin-left: 16px;
+  mask-type: 10px;
+  border-bottom: 3px solid #5bc0de;
+  font-family: Raleway, sans-serif;
+  line-height: 1;
+}
+#cssmenu ul {
+  background: #ffffff;
+}
+#cssmenu > ul > li {
+  float: left;
+}
+#cssmenu.align-center > ul {
+  font-size: 0;
+  text-align: center;
+}
+#cssmenu.align-center > ul > li {
+  display: inline-block;
+  float: none;
+}
+#cssmenu.align-right > ul > li {
+  float: right;
+}
+#cssmenu.align-right > ul > li > a {
+  margin-right: 0;
+  margin-left: -4px;
+}
+
+#cssmenu > ul > li > a {
+  z-index: 2;
+  padding: 18px 25px 12px 25px;
+  font-size: 18px;
+  font-weight: 400;
+  text-decoration: none;
+  color: #444444;
+  -webkit-transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  -ms-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+  margin-right: -4px;
+}
+
+#cssmenu > ul > li.active > a,
+#cssmenu > ul > li:hover > a,
+#cssmenu > ul > li > a:hover {
+  color: #ffffff;
+}
+
+#cssmenu > ul > li > a:after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  width: 100%;
+  height: 120%;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  content: "";
+  -webkit-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+  -webkit-transform: perspective(5px) rotateX(2deg);
+  -webkit-transform-origin: bottom;
+  -moz-transform: perspective(5px) rotateX(2deg);
+  -moz-transform-origin: bottom;
+  transform: perspective(5px) rotateX(2deg);
+  transform-origin: bottom;
+}
+#cssmenu > ul > li.active > a:after,
+#cssmenu > ul > li:hover > a:after,
+#cssmenu > ul > li > a:hover:after {
+  background: #5bc0de;
+}
+
+/*ends*/
 .view-profile-menu-bar{
 	border-top: 2px solid #484a4a;
 	border-bottom: 2px solid #484a4a;
@@ -196,7 +414,6 @@ body{
 	color: #000000;
 	text-decoration: none;
 	cursor:pointer;
-
 }
 .biography-container>span{
 	font-size: 60px;
@@ -233,12 +450,7 @@ body{
 	font-weight: 600;
 }
 .booking-info-deails{
-	padding: 0;
-}
-.book-now-style{
-	font-size: 18px;
-	font-family: raleway;
-}
+	padding: 0;}
 .description-container{
 	background-color: #E3E3E3;
 	padding: 0;
@@ -273,7 +485,7 @@ body{
 	padding: 0;
 }
 .landing-page-carousel{
-	height: 500px !important;
+	/*height: 500px !important;*/
 }
 .profile-outer-container{
 	border: 20px solid #CDCBCB;
@@ -283,16 +495,19 @@ body{
 	margin-top: 10px;
 }
 .profile-image-container{
-	height: 150px;
+	height: 160px;
 	overflow: hidden;
 	padding: 0;
+}
+.profile_details{
+	list-style: none;
 }
 .profile-content{
 	background-color: #ffffff;
 	padding-left: 10px;
 	line-height: 23px;
 	font-family: Fra;
-	height: 150px;
+	height: 160px;
 }
 .profile-content-main-outer{
 	padding: 0;

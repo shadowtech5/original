@@ -3,6 +3,19 @@ $(document).ready(function(){
         console.log("ai");
     });
     console.log("test");
+    $(".sign_button").click(function(e){
+        $(".login-box").toggle("slow");
+    });
+    $(".celebrity-anchor").click(function(e){
+        console.log("hi");
+        $(".celebrity-anchor_tab").removeClass("hide");
+        $(".real_anchor").addClass("hide");
+    });
+    $(".real-anchor").click(function(e){
+        console.log("hey");
+        $(".celebrity-anchor_tab").addClass("hide");
+        $(".real_anchor").removeClass("hide");
+    });
     $("#booking-info").click(function(){
     	$("#booking-info").addClass("active");
     	$("#biography").removeClass("active");
@@ -71,6 +84,7 @@ $(document).ready(function(){
                 data: frm.serialize(),
                 success: function (data) 
                 {
+                    alert("Booking Confirmed please check your mail");
                     $("#available_result_book").show(); // appending data response to result-page div
                     setTimeout(function () {
                         $("#result-page").hide(); 
@@ -79,6 +93,20 @@ $(document).ready(function(){
                 }
             });
         }
+    });
+    $("#feedback").click(function(e){
+        console.log("feedback");
+        var frm = $('#feedback-form');
+        e.preventDefault;
+        $.ajax({
+            url: 'feedback.php',
+            type: 'POST',
+            data: frm.serialize(),
+            success: function (data) 
+            {
+                alert("Thank you for sending your feedback");
+            }
+        });
     });
     // $(".budget-fix").click(function (e) {
     //     console.log("inside")

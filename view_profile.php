@@ -19,7 +19,8 @@ if(! $retval ) {
 <!DOCTYPE html>
 	<html>
 	<head>
-		<title></title>
+		<title>bookmyanchors</title>
+		<link rel="icon" type="image/png" href="img/logo/title-logo.png">
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -40,6 +41,12 @@ if(! $retval ) {
 		#myCarousel{
 			height: 600px;
 			width: 100%;
+		}
+		html{
+			overflow-x: hidden;
+		}
+		body{
+			overflow-x: hidden;
 		}
 		.btn-1{
 			height: 49px;
@@ -73,38 +80,20 @@ if(! $retval ) {
 
 			} )( jQuery );
 		</script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$(".close_booking").click(function(e){
+					console.log("close");
+					$(".booking_container").addClass("hide");
+					$(".view-profile-user-deails").removeClass("hide");
+				})
+			});
+		</script>
 	</head>
 	<body>
 		<!-- social media bar -->
-		<div class="container-fluid light-white social-container">
-			<div class="social-menus left">
-				<a class="btn btn-social-icon btn-google" href="http://bit.ly/2isAQYF 	">
-			    	<span class="fa fa-google"></span>
-				</a>
-				<a class="btn btn-social-icon btn-twitter" href="http://bit.ly/2ho0cuF">
-			    	<span class="fa fa-twitter"></span>
-				</a>
-				<a class="btn btn-social-icon btn-facebook" href="http://bit.ly/2hDBPFf">
-			    	<span class="fa fa-facebook"></span>
-				</a>
-				<a class="btn btn-social-icon btn-instagram" href="http://bit.ly/2i6upOr">
-			    	<span class="fa fa-instagram"></span>
-				</a>
-			</div>
-			<div class="menu-list">
-				<span><a href="">OFFERS</a></span>
-				<span><a href="">GIFITING</a></span>
-				<span><a href="">SUPPORT</a></span>
-				<span><span class="glyphicon glyphicon-user"></span><a href="">SIGN IN</a></span>
-			</div>
-		</div>
+		<?php include ('header.php'); ?>
 		<!-- ends social media bar -->
-
-		<!-- icon bar -->
-		<div class="container-fluid light-white icon-container">
-			<img src="img/logo.png" class="img-responsive logo">
-		</div>
-		<!-- ends icon bar -->
 
 		<?php 
 			while($row = mysql_fetch_array($retval, MYSQL_ASSOC))
@@ -245,6 +234,14 @@ if(! $retval ) {
 							</div>
 							<div class="col-md-12 description-container">
 								<div class="col-md-6 description-title text-center">
+									<span>Preffered Place</span>
+								</div>
+								<div class="col-md-6 description-details description-details sub-text">
+									<span><?php echo "{$row['preffered_place']}"; ?></span>
+								</div>
+							</div>
+							<div class="col-md-12 description-container">
+								<div class="col-md-6 description-title text-center">
 									<span>Fee</span>
 								</div>
 								<div class="col-md-6 description-details">
@@ -317,7 +314,10 @@ if(! $retval ) {
 						<span class="main-title">Photos</span>
 						<div class="col-md-12 container-fluid">
 							<?php 
-								for ($i=1; $i<=5; $i++)
+								$directory = str_replace('"', '', $row['image_path']);
+								$files = glob($directory . '*.jpg');
+								$filecount = count( $files ) - 1;
+								for ($i=1; $i<=$filecount; $i++)
 								{
 									$photos = $row['image_path'].$i.'.jpg"';
 							?>
@@ -339,20 +339,41 @@ if(! $retval ) {
 					<div class="video-container hide col-md-12">
 						<span class="main-title">Videos</span>
 						<div class="col-md-12 container-fluid">
-							<?php 
-								for ($i=1; $i<=5; $i++)
+							<?php
+								$sql_video = 'SELECT * from anchors_performance where anchor_name="'.$row['anchor_name'].'"';
+								$retval_video = mysql_query( $sql_video, $conn );
+
+								if(! $retval_video ) 
 								{
-									$photos = $row['image_path'].$i.'.jpg"';
+									die('Could not get data: ' . mysql_error());
+								}
+								$size = mysql_num_rows($retval_video);
+								if($size>0)
+								{
+									$i = 1;
+									while($row_video = mysql_fetch_array($retval_video, MYSQL_ASSOC)) 
+									{ 
+										if($i<=$size)
+										{
+											$photos = '"'.$row_video['video_link_photos'].'/'.$i.'.png"';
+											$i = $i + 1;
+											$video_link = '"'.$row_video['video_link'].'"';
 							?>
 							<div class="col-md-4 photo-outer-container">
 								<div class="photos_indi_container">
-									<a class="swipebox-video" rel="youtube" href="https://www.youtube.com/watch?v=FIRT7lf8byw">
+									<a class="swipebox-video" rel="youtube" href=<?php echo $video_link; ?>>
 										<img src=<?php echo "$photos"; ?> alt="image" class="img-responsive">
 									</a>
 								</div>
 							</div>
 							<?php
+									}
 								}
+							}
+							else
+							{
+								echo "no data";
+							}
 							?>
 						</div>
 					</div>
@@ -367,15 +388,15 @@ if(! $retval ) {
 				<div class="container booking_container col-md-6 hide">
 
 		            <div class="row">
-		            	<button type="button" class="close" data-dismiss="modal">&times;</button> 
-
 		                <div class="col-lg-12 col-lg-offset-2" style="padding-top: 80px; margin-left: 20px;">
+		                	<button type="button" class="close close_booking" data-dismiss="modal">&times;</button>
 		                	<div id="available_result_book">
 		                		booking confirmed
 		                	</div>
 
 		                    <form id="contact-form" method="post" role="form">
 		                        <div class="controls">
+		                        <span class="customer-details">Customer Details</span>
 		                        <div class="book-now-style">   
 				                            <div class="row">
 				                                <div class="col-md-6">
@@ -403,31 +424,24 @@ if(! $retval ) {
 				                                </div>
 				                                <div class="col-md-6">
 				                                    <div class="form-group">
-				                                        <label for="form_phone">Event Type</label>
-				                                        <input id="form_phone" type="tel" name="event_type" class="form-control" placeholder="Please enter your Event*">
+				                                        <label for="form_phone">Company Name</label>
+				                                        <input id="form_phone" type="tel" name="event_type" class="form-control" placeholder="Please enter your company name*">
 				                                        <div class="help-block with-errors"></div>
 				                                    </div>
 				                                </div>
 				                            </div>
 				                            <div class="row">
-				                                <div class="col-md-4">
+				                                <div class="col-md-6">
 				                                    <div class="form-group">
 				                                        <label for="form_email">Mobile *</label>
 				                                        <input id="form_email" type="tel" name="mobile" class="form-control" placeholder="Please enter your mobile *" required="required" data-error="Valid email is required.">
 				                                        <div class="help-block with-errors"></div>
 				                                    </div>
 				                                </div>
-				                                <div class="col-md-4">
+				                                <div class="col-md-6">
 				                                    <div class="form-group">
 				                                        <label for="form_email">Phone *</label>
 				                                        <input id="form_email" type="tel" name="phone" class="form-control" placeholder="Please enter your Phone number *" required="required" data-error="Valid email is required.">
-				                                        <div class="help-block with-errors"></div>
-				                                    </div>
-				                                </div>
-				                                <div class="col-md-4">
-				                                    <div class="form-group">
-				                                        <label for="form_email">Costume *</label>
-				                                        <input id="form_email" type="text" name="costume" class="form-control" placeholder="Please enter costume *" required="required" data-error="Valid email is required.">
 				                                        <div class="help-block with-errors"></div>
 				                                    </div>
 				                                </div>
@@ -435,19 +449,76 @@ if(! $retval ) {
 				                            <div class="row">
 				                                <div class="col-md-12">
 				                                    <div class="form-group">
-				                                        <label for="form_message">Address *</label>
+				                                        <label for="form_message">Company Address *</label>
 				                                        <textarea id="form_message" name="address" class="form-control" placeholder="Please enter address *" rows="4" required="required" data-error="Please,enter address."></textarea>
 				                                        <div class="help-block with-errors"></div>
 				                                    </div>
 				                                </div>
-				                                <div class="col-md-12">
-				                                	<button id="book_confirmation"type="button" class="btn btn-success btn-send">Book Now</button>
-				                                    
+				                            </div>
+		                        <span class="customer-details">Event Details</span> 
+				                            <div class="row">
+				                                <div class="col-md-6">
+				                                    <div class="form-group">
+				                                        <label for="form_name">Event Type *</label>
+				                                        <input id="form_name" type="text" name="fname" class="form-control" placeholder="Please enter Event Type *" required="required" data-error="Firstname is required.">
+				                                        <div class="help-block with-errors"></div>
+				                                    </div>
+				                                </div>
+				                                <div class="col-md-6">
+				                                    <div class="form-group">
+				                                        <label for="form_lastname">State *</label>
+				                                        <input id="form_lastname" type="text" name="lname" class="form-control" placeholder="State *" required="required" data-error="Lastname is required.">
+				                                        <div class="help-block with-errors"></div>
+				                                    </div>
 				                                </div>
 				                            </div>
-				                        </div>        
+				                            <div class="row">
+				                                <div class="col-md-6">
+				                                    <div class="form-group">
+				                                        <label for="form_email">City *</label>
+				                                        <input id="form_email" type="email" name="email" class="form-control" placeholder="City *" required="required" data-error="Valid email is required.">
+				                                        <div class="help-block with-errors"></div>
+				                                    </div>
+				                                </div>
+				                                <div class="col-md-6">
+				                                    <div class="form-group">
+				                                        <label for="form_phone">Costume</label>
+				                                        <input id="form_phone" type="tel" name="event_type" class="form-control" placeholder="Costume Used*">
+				                                        <div class="help-block with-errors"></div>
+				                                    </div>
+				                                </div>
+				                            </div>
+				                            <div class="row">
+				                                <div class="col-md-6">
+				                                    <div class="form-group">
+				                                        <label for="form_email">Eevnt Starting Time *</label>
+				                                        <input id="form_email" type="tel" name="mobile" class="form-control" placeholder="Eevnt Start Time" required="required" data-error="Valid email is required.">
+				                                        <div class="help-block with-errors"></div>
+				                                    </div>
+				                                </div>
+				                                <div class="col-md-6">
+				                                    <div class="form-group">
+				                                        <label for="form_email">Event Ending Time *</label>
+				                                        <input id="form_email" type="tel" name="phone" class="form-control" placeholder="PEnd Time *" required="required" data-error="Valid email is required.">
+				                                        <div class="help-block with-errors"></div>
+				                                    </div>
+				                                </div>
+				                            </div>
+				                            <div class="row">
+				                                <div class="col-md-12">
+				                                    <div class="form-group">
+				                                        <label for="form_message">Event Briefing *</label>
+				                                        <textarea id="form_message" name="address" class="form-control" placeholder="Brief about the event *" rows="4" required="required" data-error="Please,enter address."></textarea>
+				                                        <div class="help-block with-errors"></div>
+				                                    </div>
+				                                </div>
+				                                <div class="col-md-12">
+				                                	<button id="book_confirmation" type="button" class="btn btn-success btn-send">Book Now</button>
+				                                </div>
+				                            </div>
+				                        </div>
+				                    </div>                
 		                        </div>
-
 		                    </form>
 
 		                </div><!-- /.8 -->
