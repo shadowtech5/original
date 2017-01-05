@@ -39,14 +39,14 @@
 					<?php 
 						include 'db_connnection.php';
 
-						$sql = 'SELECT * from admin where username ="'.$_COOKIE['user_email'].'"';
-						$retval = mysql_query( $sql, $conn );
-						if(! $retval ) {
+						$sql_login = 'SELECT * from admin where username ="'.$_COOKIE['user_email'].'"';
+						$retval_login = mysql_query( $sql_login, $conn );
+						if(! $retval_login ) {
 							die('Could not get data: ' . mysql_error());
 						} 
-						while($row = mysql_fetch_array($retval, MYSQL_ASSOC)) 
+						while($row_login = mysql_fetch_array($retval_login, MYSQL_ASSOC)) 
 						{
-							echo $row['first_name']." ". $row['last_name']; 
+							echo $row_login['first_name']." ". $row_login['last_name']; 
 						}
 					?>
 					<span class="caret"></span>
