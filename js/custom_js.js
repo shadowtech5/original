@@ -9,12 +9,12 @@ $(document).ready(function(){
     $(".celebrity-anchor").click(function(e){
         console.log("hi");
         $(".celebrity-anchor_tab").removeClass("hide");
-        $(".real_anchor").addClass("hide");
+        $(".real_anchor_tab").addClass("hide");
     });
     $(".real-anchor").click(function(e){
         console.log("hey");
         $(".celebrity-anchor_tab").addClass("hide");
-        $(".real_anchor").removeClass("hide");
+        $(".real_anchor_tab").removeClass("hide");
     });
     $("#booking-info").click(function(){
     	$("#booking-info").addClass("active");

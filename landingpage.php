@@ -480,7 +480,7 @@
         			</form>
       			</div>
 			<!-- ends -->
-			<div class="col-sm-9 real_anchor">
+			<div class="col-sm-9 real_anchor_tab">
 			<!-- menu bar starts -->
 				<!-- <div class="row celeb-profile-menu-bar">
 					<div class="col-md-6">
@@ -490,8 +490,8 @@
 				</div>	 -->
 				<div id="cssmenu">
 					<ul>
-					   <li class="active real_anchor"><a href="#">Anchor</a></li>
-					   <li><a class="celebrity-anchor" href="#">Celebrity Anchor</a></li>
+					   <li class="active"><a class="active real_anchor" href="#">Anchor</a></li>
+					   <li class="celebrity-anchor"><a class="celebrity-anchor" href="#">Celebrity Anchor</a></li>
 					</ul>
 				</div>
 
@@ -784,11 +784,11 @@
 					</div>
 					<div class="col-sm-9 celebrity-anchor_tab hide">
 						<!-- menu bar starts -->
-						<div class="row celeb-profile-menu-bar">
-							<div class="col-md-6">
-								<span><a class="real-anchor" style="padding: 20px;">Anchor</a></span>
-								<span><a class="active celebrity-anchor" style="margin-left: 25px;padding: 20px;">Celebrity Anchor</a></span>
-							</div>
+						<div id="cssmenu">
+							<ul>
+							   <li><a class="real_anchor" href="#">Anchor</a></li>
+							   <li class="active celebrity-anchor"><a class="active celebrity-anchor" href="#">Celebrity Anchor</a></li>
+							</ul>
 						</div>
 
 						<?php

@@ -41,7 +41,7 @@
 
 						$sql_login = 'SELECT * from admin where username ="'.$_COOKIE['user_email'].'"';
 						$retval_login = mysql_query( $sql_login, $conn );
-						if(! $retval ) {
+						if(! $retval_login ) {
 							die('Could not get data: ' . mysql_error());
 						} 
 						while($row_login = mysql_fetch_array($retval_login, MYSQL_ASSOC)) 
