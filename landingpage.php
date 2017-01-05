@@ -85,7 +85,7 @@
 				if(isset($_POST['english']))
 				{
 					$sql = $sql. "and (anchor_language like '%english%'";
-					$flag_english = false;
+					$flag_english = False;
 					if(isset($_POST['malayalam']))
 					{
 						$flag_malayalam = False;
@@ -100,7 +100,7 @@
 								$sql = $sql. "or anchor_language like '%kanada%'";
 								if(isset($_POST['panjabi']))
 								{
-									$flag_panjabi = Flase;
+									$flag_panjabi = False;
 									$sql = $sql. "or anchor_language like '%panjabi%'";
 									if(isset($_POST['telugu']))
 									{
@@ -138,7 +138,7 @@
 						$sql = $sql. "or anchor_language like '%tamil%'";
 						if(isset($_POST['kanada']))
 						{
-							$flag_kanada = Flase;
+							$flag_kanada = False;
 							$sql = $sql. "or anchor_language like '%kanada%'";
 							if(isset($_POST['panjabi']))
 							{
@@ -170,10 +170,10 @@
 				if(isset($_POST['tamil']))
 				{
 					$sql = $sql. "and (anchor_language like '%tamil%'";
-					$flag_tamil = Flase;
+					$flag_tamil = False;
 					if(isset($_POST['kanada']))
 					{
-						$flag_kanada = Flase;
+						$flag_kanada = False;
 						$sql = $sql. "or anchor_language like '%kanada%'";
 						if(isset($_POST['panjabi']))
 						{
@@ -185,13 +185,13 @@
 								$sql = $sql. "or anchor_language like '%telugu%'";
 								if(isset($_POST['marati']))
 								{
-									$flag_marati = Flase;
+									$flag_marati = False;
 									$sql = $sql. "or anchor_language like '%marati%'";
 								}
 							}
 						}
 					}
-					if($flag_tamil == Flase)
+					if($flag_tamil == False)
 					{
 						$sql = $sql.")";
 					}
@@ -204,7 +204,7 @@
 				if(isset($_POST['kanada']))
 				{
 					$sql = $sql. "and (anchor_language like '%kanada%'";
-					$flag_kanada = Flase;
+					$flag_kanada = False;
 					if(isset($_POST['panjabi']))
 					{
 						$flag_panjabi = False;
@@ -220,7 +220,7 @@
 							}
 						}
 					}
-					if($flag_kanada == Flase)
+					if($flag_kanada == False)
 					{
 						$sql = $sql.")";
 					}
@@ -231,7 +231,7 @@
 				if(isset($_POST['panjabi']))
 				{
 					$sql = $sql. "and(anchor_language like '%panjabi%'";
-					$flag_panjabi = Flase;
+					$flag_panjabi = False;
 					if(isset($_POST['telugu']))
 					{
 						$flag_telugu = False;
@@ -241,7 +241,7 @@
 							$sql = $sql. "or anchor_language like '%marati%'";
 						}
 					}
-					if($flag_panjabi == Flase)
+					if($flag_panjabi == False)
 					{
 						$sql = $sql.")";
 					}
@@ -480,21 +480,30 @@
         			</form>
       			</div>
 			<!-- ends -->
-			<div class="col-sm-9 ">
+			<div class="col-sm-9 real_anchor_tab">
+			<!-- menu bar starts -->
+				<!-- <div class="row celeb-profile-menu-bar">
+					<div class="col-md-6">
+						<span><a  class="active real_anchor" style="padding: 20px;">Anchor</a></span>
+						<span><a  class="celebrity-anchor" style="margin-left: 25px;padding: 20px;">Celebrity Anchor</a></span>
+					</div>
+				</div>	 -->
 				<div id="cssmenu">
 					<ul>
-					   <li class="active real_anchor"><a href="#">Anchor</a></li>
-					   <li><a class="celebrity-anchor" href="#">Celebrity Anchor</a></li>
+					   <li class="active"><a class="active real_anchor" href="#">Anchor</a></li>
+					   <li class="celebrity-anchor"><a class="celebrity-anchor" href="#">Celebrity Anchor</a></li>
 					</ul>
 				</div>
 
 			<!-- ends menu bar -->
 				
 				<?php
-					while($row = mysql_fetch_array($retval, MYSQL_ASSOC)) 
+					if(mysql_num_rows($retval)>0)
 					{
-						$dp = $row['image_path'].'main.jpg"';
-						$status = 'glyphicon glyphicon-record right '.$row['status'];
+						while($row = mysql_fetch_array($retval, MYSQL_ASSOC)) 
+						{
+							$dp = $row['image_path'].'main.jpg"';
+							$status = 'glyphicon glyphicon-record right '.$row['status'];
 				?>
 			<!-- profile shows -->
 					<div class="col-md-6">
@@ -680,7 +689,13 @@
 						});
 					</script>
 						<?php
+								}
 							}
+							else
+							{
+								echo "no data";
+							}
+
 						?>
 						</style>
 					</div>
@@ -688,8 +703,8 @@
 						<!-- menu bar starts -->
 						<div id="cssmenu">
 							<ul>
-							   <li class="active real_anchor"><a href="#">Anchor</a></li>
-							   <li><a class="celebrity-anchor" href="#">Celebrity Anchor</a></li>
+							   <li><a class="real_anchor" href="#">Anchor</a></li>
+							   <li class="active celebrity-anchor"><a class="active celebrity-anchor" href="#">Celebrity Anchor</a></li>
 							</ul>
 						</div>
 
