@@ -20,8 +20,9 @@
 		<link rel="stylesheet" type="text/css" href="css/custom_style.css">
 		<script type="text/javascript" src="js/custom_js.js"></script>
 		<style type="text/css">
+		@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
 			.bookmyanchor-privacypolicy{
-				font-family: raleway;
+				 font-family: 'Lato', sans-serif;
 			}
 			.bookmyanchor-privacypolicy h1{
 				font-family: Franklin Gothic Medium;
@@ -30,7 +31,15 @@
 			}
 			.bookmyanchor-privacypolicy p{
 				font-size: 100%;
-				line-height: 2;
+				font-weight: 800;
+			}
+			.bookmyanchor-privacypolicy ol li{
+				font-size: 100%;
+				font-weight: 800;
+			}
+			.bookmyanchor-privacypolicy ul li{
+				font-size: 100%;	
+				font-weight: 800;
 			}
 			.bookmyanchor-privacypolicy-check{
 				list-style-type: none;
@@ -43,7 +52,7 @@
 	</head>
 	<body>
 		<?php include('header.php');?>
-	<div class="container-fluid">
+	<div class="container-fluid col-md-12">
 		<div class="bookmyanchor-privacypolicy">
 			<h2>Privacy Policy</h2>
 			<p>
@@ -171,5 +180,10 @@
 			</p>
 		</div>
 	</div>	
+	<div class="col-md-12 container-fluid footer-dynamic-block">
+		<?php
+			include 'footer.php';
+		?>
+	</div>
 	</body>
 </html>
