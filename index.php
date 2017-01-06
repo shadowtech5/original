@@ -59,14 +59,16 @@ session_start();
 		<div class="social-container1 hide">
 			<div class="col-md-12 container-fluid light-black">
 				<!-- icon bar -->
-				<div class="container-fluid light-black icon-container">
-					<img src="img/logo.png" class="img-responsive logo">
+				<div class="container-fluid light-black icon-container col-md-12">
+					<div class="col-md-4 logo">
+						<a href="index.php">
+						<img src="img/logo.png" class="img-responsive">
+						</a>
+					</div>
 				</div>
-				<!-- ends icon bar -->
 			</div>
-		</div>
-			
-		<div class="container-fluid background_image img-responsive img-responsive">
+		</div>	
+		<div class="container-fluid background_image img-responsive background_image img-responsive img-responsive">
 			<!-- social media bar -->
 			<?php include('header.php'); ?>
 			<!-- ends social media bar -->

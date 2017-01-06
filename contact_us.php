@@ -19,44 +19,210 @@
 	    <link href="css/bootstrap-social.css" rel="stylesheet" >
 		<link rel="stylesheet" type="text/css" href="css/custom_style.css">
 		<script type="text/javascript" src="js/custom_js.js"></script>
+		<style type="text/css">
+		div, textarea, input {
+             -moz-box-sizing: border-box;
+             -webkit-box-sizing: border-box;
+             box-sizing: border-box;
+        }
+
+		.container {
+  			max-width: 510px;
+  			min-width: 324px;
+  			margin: 50px auto 0px;
+  			background-color: #fff;
+  			border: 1px solid #cfcfcf;
+  			border-bottom: 3px solid #ccc;
+		}
+
+		.row {
+  		width: 100%;
+  		margin: 0 0 1em 0;
+  		padding: 0 2.5em;
+		}
+		.row.body {
+  		padding: .5em 2.5em 1em;
+		}
+		.pull-right {
+  		float: right;
+		}
+
+		h1 {
+  		font-family: raleway;
+		font-weight: 300;
+		display: inline-block;
+		font-weight: 100;
+		font-size: 2.8125em;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+		margin: 0 0 0.1em 0;
+		padding: 0 0 0.4em 0;
+		}
+
+		h3 {
+		font-family: raleway;
+        font-weight: 400;
+        font-size: 1.25em;
+        margin: 1em 0 0.4em 0;
+        }
+		.btn {
+  		font-size: 1.0625em;
+  		display: inline-block;
+  		padding: 0.74em 1.5em;
+  		margin: 1.5em 0 0;
+  		color: #fff;
+  		border-width: 0 0 0 0;
+  		border-bottom: 5px solid;
+  		text-transform: uppercase;
+ 		background-color: #b3b3b3;
+  		border-bottom-color: #8c8c8c;
+  		font-family: raleway;
+  		font-weight: 300;
+		}
+		.btn:hover {
+  		background-color: #bfbfbf;
+		}
+		.btn.btn-submit {
+  		background-color: #4f6fad;
+  		border-bottom-color: #374d78;
+		}
+		.btn.btn-submit:hover {
+  		background-color: #5f7db6;
+		}
+		form {
+  		max-width: 100%;
+  		display: block;
+		}
+	form ul {
+	  margin: 0;
+	  padding: 0;
+	  list-style: none;
+	}
+	form ul li {
+	  margin: 0 0 0.25em 0;
+	  clear: both;
+	  display: inline-block;
+	  width: 100%;
+	}
+	form ul li:last-child {
+	  margin: 0;
+	}
+	form ul li p {
+	  margin: 0;
+	  padding: 0;
+	  float: left;
+	}
+	form ul li p.right {
+	  float: right;
+	}
+	form ul li .req {
+	  color: #ee9cb4;
+	}
+	form label {
+	  display: block;
+	  margin: 0 0 0.5em 0;
+	  color: #4f6fad;
+	  font-size: 1em;
+	}
+	form input {
+	  margin: 0 0 0.5em 0;
+	  border: 1px solid #ccc;
+	  padding: 6px 10px;
+	  color: #555;
+	  font-size: 1em;
+	}
+	form textarea {
+	  border: 1px solid #ccc;
+	  padding: 6px 10px;
+	  width: 100%;
+	  color: #555;
+	}
+	form small {
+	  color: #4f6fad;
+	  margin: 0 0 0 0.5em;
+	}
+
+	@media only screen and (max-width: 480px) {
+	  .pull-right {
+	    float: none;
+	  }
+
+	  input {
+	    width: 100%;
+	  }
+
+	  label {
+	    width: 100%;
+	    display: inline-block;
+	    float: left;
+	    clear: both;
+	  }
+
+	  li, p {
+	    width: 100%;
+	  }
+
+	  input.btn {
+	    margin: 1.5em 0 0.5em;
+	  }
+
+	  h1 {
+	    font-size: 2.25em;
+	  }
+
+	  h3 {
+	    font-size: 1.125em;
+	  }
+
+	  li small {
+	    display: none;
+	  }
+	}
+</style>
 	</head>
 	<body>
-	<?php include('header.php');?> 
-	<span style="padding-bottom: 10px;">FEEDBACK</span>
-		<div class="book-now-style" style=" padding-top: 10px;">   
-			<form id="feedback-form" method="post" role="form">
-		        <div class="row">
-		            <div class="col-md-12">
-			            <div class="form-group">
-				            <label for="form_name">Firstname *</label>
-				            <input id="form_name" type="text" name="fname" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
-					        <div class="help-block with-errors"></div>
-					    </div>
-					</div>
-				</div>
-				<div class="row">
-			        <div class="col-md-12">
-			    		<div class="form-group">
-					        <label for="form_email">Email *</label>
-				            <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required">
-					        <div class="help-block with-errors"></div>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-				   	<div class="col-md-12">
-						<div class="form-group">
-						   	<label for="form_message">Feedback *</label>
-					        <textarea id="form_message" name="address" class="form-control" placeholder="Please enter your feedback *" rows="4" required="required" data-error="Please,enter your feedback."></textarea>
-					        <div class="help-block with-errors"></div>
-					    </div>
-					</div>
-					<div class="col-md-12" style="padding-bottom: 10px;">
-					   	<button id="feedback"type="button" class="btn btn-success btn-send">Submit</button>
-					</div>
-				</div>
-			</form>
-		</div>
+		<?php include('header.php');?> 
+		<div class="container">
+			<div class="row header">
+				<h1 style="padding-top: 10px;">CONTACT US &nbsp;</h1>
+				<h3>Fill out the form below to Know more!</h3>
+			</div>
+		<div class="row body">
+    		<form action="#">
+      			<ul>
+        			<li>
+	          			<p class="left">
+	            			<label for="first_name">First Name</label>
+	            			<input type="text" name="first_name" placeholder="First name" />
+	          			</p>
+	          			<p class="pull-right">
+	            			<label for="last_name">Last Name</label>
+	            			<input type="text" name="last_name" placeholder="Last Name" />      
+	          			</p>
+        			</li>
+        			<li>
+          				<p class="left">
+            				<label for="email">Email <span class="req">*</span></label>
+            				<input type="email" name="email" placeholder="Enter your mail id" />
+          				</p>
+          				<p class="pull-right">
+            				<label for="email">Mobile <span class="req">*</span></label>
+            				<input type="email" name="email" placeholder="Enter your Number" />
+            			</p>	          				
+        			</li>        
+        			<li>
+          				<label for="comments">Message</label>
+          				<textarea cols="46" rows="3" name="comments"></textarea>
+        			</li>
+        			<li>
+          				<input class="btn btn-submit" type="submit" value="Submit" />
+        			</li>
+         		</ul>
+    		</form>  
+  		</div>
+  		<div class="row">
+
+  		</div>
+  	</div>	
 		<div class="col-md-12 container-fluid footer-dynamic-block">
 			<?php
 				include 'footer.php';

@@ -1,6 +1,6 @@
 <?php 
 session_start();
-if(!isset($_GET['ac_id'])){
+if(!isset($_GET['anchor_id'])){
 	header("Location: landingpage.php");
 }
 if(!isset($_COOKIE["ev_id"])){
@@ -10,7 +10,7 @@ ob_start();
 
 include 'db_connnection.php';
 
-$sql = 'SELECT * from celebrity_anchors where id ='.$_GET['ac_id'];
+$sql = 'SELECT * from celebrity_anchors where id ='.$_GET['anchor_id'];
 $retval = mysql_query( $sql, $conn );
 if(! $retval ) {
 	die('Could not get data: ' . mysql_error());

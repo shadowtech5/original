@@ -730,7 +730,34 @@
 								</div>
 								<div class="col-md-6 profile-content-main-outer">
 									<div class="profile-content">
-										<span class="anchor_name_inner"><?php echo "{$row['anchor_name']}"; ?></span> 
+										<span class="anchor_name_inner"><?php echo "{$row['anchor_name']}"; ?></span>
+										<br>
+										<?php
+											$sql = 'SELECT * from cele_category_connecter where anchor_id='.$row['id'];
+											$retval2 = mysql_query( $sql, $conn );
+
+											if(! $retval2 ) 
+											{
+												die('Could not get data: ' . mysql_error());
+											}
+
+											while($row2 = mysql_fetch_array($retval2, MYSQL_ASSOC)) 
+											{
+												$sql = 'SELECT * from anchor_category where category_id='.$row2['category_id'];
+												$retval3 = mysql_query( $sql, $conn );
+
+												if(! $retval3 ) 
+												{
+													die('Could not get data: ' . mysql_error());
+												}
+												while($row3 = mysql_fetch_array($retval3, MYSQL_ASSOC)) 
+												{
+										?>
+										<span><?php echo "{$row3['category']}". " /"; ?></span>
+										<?php
+												}
+											}
+										?> 
 									</div>
 									<?php
 										$name = str_replace(' ', '', $row['anchor_name']);

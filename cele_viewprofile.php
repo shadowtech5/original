@@ -99,6 +99,32 @@ if(! $retval ) {
 				<!-- name container -->
 				<div class="col-md-12 user-name-container">
 					<span><?php echo "{$row['anchor_name']}"; ?></span>
+					<br/>
+					<span class="anchor-category">
+						<?php
+							$sql = 'SELECT * from cele_category_connecter where anchor_id='.$_GET['ac_id'];
+							$retval2 = mysql_query( $sql, $conn );
+	   
+							if(! $retval2 ) 
+							{
+								die('Could not get data: ' . mysql_error());
+							}
+	             
+							while($row2 = mysql_fetch_array($retval2, MYSQL_ASSOC)) 
+							{
+	                			$sql = 'SELECT * from anchor_category where category_id='.$row2['category_id'];
+	                			$retval3 = mysql_query( $sql, $conn );
+	   
+				                if(! $retval3 ) {
+				                	die('Could not get data: ' . mysql_error());
+				                }
+	                			while($row3 = mysql_fetch_array($retval3, MYSQL_ASSOC)) 
+	                			{ 
+				        			echo "{$row3['category']}"." / "; 
+	                			}
+	                		}
+	                	?>
+                	</span>
 				</div>
 				<!-- ends name container -->
 				<!-- anchor profile image -->
