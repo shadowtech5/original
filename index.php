@@ -79,7 +79,6 @@ session_start();
 				<ol class="carousel-indicators">
 					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 					<li data-target="#myCarousel" data-slide-to="1"></li>
-					<li data-target="#myCarousel" data-slide-to="2"></li>
 				</ol>
 				<!-- Ends Indicators -->			
 
@@ -91,10 +90,6 @@ session_start();
 
 					<div class="item">
 						<img src="img/slider2.jpg" alt="Banner-2">
-					</div>
-
-					<div class="item">
-						<img src="img/slider3.jpg" alt="Banner-3">
 					</div>
 				</div>
 				<!-- Ends Wrapper for slides -->

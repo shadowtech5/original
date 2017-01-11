@@ -20,26 +20,22 @@
 		<link rel="stylesheet" type="text/css" href="css/custom_style.css">
 		<script type="text/javascript" src="js/custom_js.js"></script>
 		<style type="text/css">
-		@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+		@import url('https://fonts.googleapis.com/css?family=Lato:700,900&subset=latin-ext');
 			.bookmyanchor-privacypolicy{
 				 font-family: 'Lato', sans-serif;
 			}
-			.bookmyanchor-privacypolicy h1{
-				font-family: Franklin Gothic Medium;
-				font-size: 20px;
-				font-weight: bold;
+			.bookmyanchor-privacypolicy h1,h2{
+				 font-family: 'Lato', sans-serif;
+				 font-size: 18px;
+				 font-weight: 900;
+				 line-height: 2;
 			}
 			.bookmyanchor-privacypolicy p{
-				font-size: 100%;
-				font-weight: 800;
-			}
-			.bookmyanchor-privacypolicy ol li{
-				font-size: 100%;
-				font-weight: 800;
-			}
-			.bookmyanchor-privacypolicy ul li{
-				font-size: 100%;	
-				font-weight: 800;
+				 font-family: 'Lato', sans-serif;
+				 font-size: 15px;
+				 font-weight: 700;
+				 line-height: 2;
+				 color: #383737;
 			}
 			.bookmyanchor-privacypolicy-check{
 				list-style-type: none;

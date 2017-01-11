@@ -19,7 +19,6 @@
 	<div class="menu-list">
 		<span><a href="">OFFERS</a></span>
 		<span><a href="">GIFITING</a></span>
-		<span><a href="">SUPPORT</a></span>
 		<span class="">
 		<?php
 		if(!isset($_COOKIE['user_email']))
