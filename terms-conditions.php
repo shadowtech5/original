@@ -20,27 +20,30 @@
 		<link rel="stylesheet" type="text/css" href="css/custom_style.css">
 		<script type="text/javascript" src="js/custom_js.js"></script>
 		<style type="text/css">
-		@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+		@import url('https://fonts.googleapis.com/css?family=Lato:700,900&subset=latin-ext');
 			.terms-conditions{
 				 font-family: 'Lato', sans-serif;
 			}
 			.terms-conditions h1{
-				font-family: Franklin Gothic Medium;
-				font-size: 20px;
-				font-weight: bold;
+				 font-family: 'Lato', sans-serif;
+				 font-size: 20px;
+				 font-weight: 900;
+				 line-height: 2;
+			}
+			.terms-conditions h2{
+				 font-family: 'Lato', sans-serif;
+				 font-size: 18px;
+				 font-weight: 900;
+				 line-height: 2;
 			}
 			.terms-conditions p{
-				font-size: 100%;
-				font-weight: 800;
+				 font-family: 'Lato', sans-serif;
+				 font-size: 15px;
+				 font-weight: 700;
+				 line-height: 2;
+				 color: #383737;
 			}
-			.terms-conditions ol li{
-				font-size: 100%;
-				font-weight: 800;
-			}
-			.terms-conditions ul li{
-				font-size: 100%;	
-				font-weight: 800;
-			}
+			
 			.terms-conditions-check{
 				list-style-type: none;
 	     	}
@@ -215,7 +218,8 @@
 		<div class="terms-conditions">
 			<h1><strong>Terms and Conditions and List of cards accepted</strong></h1>
 			<h2><strong>Debit cards (Visa& MasterCard’s )</strong></h2>
-			<ul>
+				<p>All Kinds of Debit Cards are accpected </p>
+			<!-- <ul>
 				<li>Andhra Bank Visa Debit Card</li>
 				<li>Axis Bank Mastercard Debit Card</li>
 				<li>Axis Bank Visa Debit Card</li>
@@ -257,7 +261,7 @@
 				<li>The Union Bank of India Mastercard Debit Card</li>
 				<li>Yes Bank Mastercard Debit Card</li>
 				<li>Other Visa debit Cards</li>
-			</ul>
+			</ul> -->
 			<h2><strong>Credit Cards (Visa, MasterCard’s &Amex)</strong></h2>
 			<ul>
 				<li>Visa</li>

@@ -172,7 +172,7 @@
 						<p>You can contact or visit us in our office from Monday to Friday from 8:00 - 19:00</p>
 						<ul class="information-list">
 							<li><i class="fa fa-map-marker"></i><span>BookMyAnchor 1<sup style="vertical-align: super; font-size: smaller;">st</sup> Floor 44/3567/A,PK Tower Deshabhimani Road, Kaloor, Cochin 17.</span></li>
-							<li><i class="fa fa-phone"></i><span>0484 2556125</span><span>+91-99551125635</span></li>
+							<li><i class="fa fa-phone"></i><span>0484 00000</span><span>+91-7356001111</span></li>
 							<li><i class="fa fa-envelope-o"></i><a href="#">info@bookmyanchors.com</a></li>
 						</ul>						
 					</div>
