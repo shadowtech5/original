@@ -703,7 +703,7 @@
 						<!-- menu bar starts -->
 						<div id="cssmenu">
 							<ul>
-							   <li><a class="real_anchor" href="#">Anchor</a></li>
+							   <li class="real_anchor"><a class="real_anchor" href="#">Anchor</a></li>
 							   <li class="active celebrity-anchor"><a class="active celebrity-anchor" href="#">Celebrity Anchor</a></li>
 							</ul>
 						</div>
