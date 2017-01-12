@@ -11,7 +11,7 @@ $(document).ready(function(){
         $(".celebrity-anchor_tab").removeClass("hide");
         $(".real_anchor_tab").addClass("hide");
     });
-    $(".real-anchor").click(function(e){
+    $(".real_anchor").click(function(e){
         console.log("hey");
         $(".celebrity-anchor_tab").addClass("hide");
         $(".real_anchor_tab").removeClass("hide");
