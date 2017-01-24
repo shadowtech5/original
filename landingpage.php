@@ -771,7 +771,7 @@
 								</div> -->
 								<div class="landingpage_buttons_container">
 									<div class="col-md-6 landingpage_buttons">
-										<a href="book_now.php?ac_id=<?php echo"{$row['id']}";?>">
+										<a href="celc_book_now.php?ac_id=<?php echo"{$row['id']}";?>">
 											<button class="btn btn-info col-md-12">Book Now</button>
 										</a>
 									</div>

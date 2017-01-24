@@ -77,7 +77,7 @@
 						<li><a href="privacypolicy.php">Privacy Policy</a></li>
 						<li><a href="faq.php">FAQ</a></li>						
 						<li><a href="landingpage.php?ev_id=1">Team</a></li>
-						<li><a href="landingpage.php?ev_id=1">AboutUs</a></li>
+						<li><a href="about_us.php">AboutUs</a></li>
 					</ul>
 					<br>
 					<span>HELP</span>
@@ -87,7 +87,7 @@
 					</ul>
 				</div>
 				<div class="col-md-12" style="border-top: 1px solid #c4c4c4; padding-top: 5px;">
-					<p class="sp-copyright"> © 2017 Shadowtechlt. All Rights Reserved.</p>
+					<p class="sp-copyright"> © 2017 bookmyanchors.com. All Rights Reserved.</p>
 				</div>
 			</div>
 			<!-- ends footer -->
