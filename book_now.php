@@ -10,7 +10,7 @@ ob_start();
 
 include 'db_connnection.php';
 
-$sql = 'SELECT * from celebrity_anchors where id ='.$_GET['anchor_id'];
+$sql = 'SELECT * from B_ANCHOR_DETAILS where anchor_id ='.$_GET['anchor_id'];
 $retval = mysql_query( $sql, $conn );
 if(! $retval ) {
 	die('Could not get data: ' . mysql_error());
