@@ -296,6 +296,25 @@ if(! $retval ) {
 											?>
 											</select>
 										</div>
+										<div class="col-md-12">
+										Place:
+											<select class="form-control " name="place">
+											<?php 
+											$out_of_station_sql = 'SELECT * from out_of_station';
+											$out_of_station_retval = mysql_query( $out_of_station_sql, $conn );
+											if(! $out_of_station_retval ) {
+												die('Could not get data: ' . mysql_error());
+											} 
+											while($out_of_station_row = mysql_fetch_array($out_of_station_retval, MYSQL_ASSOC))
+											{ 
+
+											?>
+											<option value=<?php echo $out_of_station_row['place_name'];  ?>><?php echo $out_of_station_row['place_name'];  ?></option>
+											<?php
+												}
+											?>
+											</select>
+										</div>
 										<div id="append"></div>
 										<button id="test" type="button" class="btn btn-info">Check Amount</button>
 									</form>
