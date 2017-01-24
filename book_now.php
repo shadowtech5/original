@@ -135,47 +135,29 @@ if(! $retval ) {
 			                    <div class="row">
 			                        <div class="col-md-12">
 			                            <div class="form-group">
-			                                <label for="form_name">Firstname *</label>
-			                                <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
-			                                <div class="help-block with-errors"></div>
+			                                <label for="form_name">Type of Event *</label>
+			                                <!-- <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
+			                                <div class="help-block with-errors"></div> -->
+			                                <select class="form-control">
+												<?php 
+													$event_sql = 'SELECT * from M_EVENT_TYPE';
+													$event_retval = mysql_query( $event_sql, $conn );
+
+													if(! $event_retval ) {
+													die('Could not get data: ' . mysql_error());
+													}   
+													while($event_row = mysql_fetch_array($event_retval, MYSQL_ASSOC)) {
+													?>
+													<option value=<?php echo "{$event_row['event_type']}"; ?>><?php echo "{$event_row['event_type']}"; ?></option>
+												<?php } ?>
+			                                	<option></option>
+			                                </select>
 			                            </div>
 			                        </div>
 			                        <div class="col-md-12">
 			                            <div class="form-group">
-			                                <label for="form_lastname">Lastname *</label>
-			                                <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
-			                                <div class="help-block with-errors"></div>
-			                            </div>
-			                        </div>
-			                    </div>
-			                    <div class="row">
-			                        <div class="col-md-12">
-			                            <div class="form-group">
-			                                <label for="form_email">Email *</label>
-			                                <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
-			                                <div class="help-block with-errors"></div>
-			                            </div>
-			                        </div>
-			                        <div class="col-md-12">
-			                            <div class="form-group">
-			                                <label for="form_phone">Company Name</label>
-			                                <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Please enter your company Name*">
-			                                <div class="help-block with-errors"></div>
-			                            </div>
-			                        </div>
-			                    </div>
-			                    <div class="row">
-			                        <div class="col-md-12">
-			                            <div class="form-group">
-			                                <label for="form_email">Mobile *</label>
-			                                <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your mobile number*" required="required" data-error="Valid email is required.">
-			                                <div class="help-block with-errors"></div>
-			                            </div>
-			                        </div>
-			                        <div class="col-md-12">
-			                            <div class="form-group">
-			                                <label for="form_email">Phone *</label>
-			                                <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your phone number *" required="required" data-error="Valid email is required.">
+			                                <label for="form_lastname">Event Place *</label>
+			                                <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter event place *" required="required" data-error="Lastname is required.">
 			                                <div class="help-block with-errors"></div>
 			                            </div>
 			                        </div>
@@ -183,8 +165,94 @@ if(! $retval ) {
 			                    <div class="row">
 			                        <div class="col-md-12">
 			                            <div class="form-group">
-			                                <label for="form_message">Address *</label>
-			                                <textarea id="form_message" name="message" class="form-control" placeholder="Please enter address *" rows="4" required="required" data-error="Please,enter address."></textarea>
+			                                <label for="form_email">Event Venue *</label>
+			                                <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter event venue *" required="required" data-error="Valid email is required.">
+			                                <div class="help-block with-errors"></div>
+			                            </div>
+			                        </div>
+			                        <div class="col-md-12">
+			                            <div class="form-group">
+			                                <label for="form_phone">Costume</label>
+			                                <select class="form-control">
+			                                	<option>
+			                                		Formal
+			                                	</option>
+			                                	<option>
+			                                		Semi Formal
+			                                	</option>
+			                                	<option>
+			                                		Casual
+			                                	</option>
+			                                	<option>
+			                                		Traditional
+			                                	</option>
+			                                	<option>
+			                                		Party Wear
+			                                	</option>
+			                                </select>
+			                            </div>
+			                        </div>
+			                    </div>
+			                    <div class="row">
+			                        <div class="col-md-12">
+			                            <div class="form-group">
+			                                <label for="form_email">Event Starting time *</label>
+			                                <br>
+			                                <select class="form-control col-md-6" name="hour">
+						              			<?php 
+						              				for($i=0;$i<=24;$i++)
+						              				{
+						              			?>
+						              				<option value=<?php echo (string)$i;  ?>><?php echo $i;  ?></option>
+						              			<?php
+						              				}
+						              			?>
+											</select>
+											<br>
+											<select class="form-control col-md-6" name="hour">
+						              			<?php 
+						              				for($i=00;$i<=60;$i++)
+						              				{
+						              			?>
+						              				<option value=<?php echo (string)$i;  ?>><?php echo $i;  ?></option>
+						              			<?php
+						              				}
+						              			?>
+											</select>
+			                            </div>
+			                        </div>
+			                        <div class="col-md-12">
+			                            <div class="form-group">
+			                                <label for="form_email">Event Ending Time *</label>
+			                                <select class="form-control col-md-6" name="hour">
+						              			<?php 
+						              				for($i=0;$i<=24;$i++)
+						              				{
+						              			?>
+						              				<option value=<?php echo (string)$i;  ?>><?php echo $i;  ?></option>
+						              			<?php
+						              				}
+						              			?>
+											</select>
+											<br>
+											<select class="form-control col-md-6" name="hour">
+						              			<?php 
+						              				for($i=00;$i<=60;$i++)
+						              				{
+						              			?>
+						              				<option value=<?php echo (string)$i;  ?>><?php echo $i;  ?></option>
+						              			<?php
+						              				}
+						              			?>
+											</select>
+			                            </div>
+			                        </div>
+			                    </div>
+			                    <div class="row">
+			                        <div class="col-md-12">
+			                            <div class="form-group">
+			                                <label for="form_message">Event Briefing *</label>
+			                                <textarea id="form_message" name="message" class="form-control" placeholder="Please enter event briefing *" rows="4" required="required" data-error="Please,enter address."></textarea>
 			                                <div class="help-block with-errors"></div>
 			                            </div>
 			                        </div>
