@@ -5,6 +5,7 @@
 	// $time_duration = $_POST['time_duration'];
 	$hour = $_POST['hour'];
 	$minute = $_POST['minute'];
+	$place = $_POST['place'];
 	
 
 	$ev_id=$_COOKIE["ev_id"];
@@ -61,7 +62,16 @@
 		$amount = $anchor_price * $days;
 	}
 	
-		
+	$out_of_station_sql = 'SELECT * from out_of_station where place_name="'.$place.'"';
+	$out_of_station_retval = mysql_query( $out_of_station_sql, $conn );
+	if(! $out_of_station_retval ) {
+		die('Could not get data: ' . mysql_error());
+	} 
+	while($out_of_station_row = mysql_fetch_array($out_of_station_retval, MYSQL_ASSOC))
+	{ 
+		$place_amount = $out_of_station_row['amount'];
+	}
+	$amount = $amount + $place_amount;
 	echo $anchor_name." costs almost for :". $amount;
 	echo '<a id="book_now_buttonss"><button type="button" class="btn btn-info col-md-12">BOOK NOW</button></a>';
 	echo '<script>$("#book_now_buttonss").click(function(e){

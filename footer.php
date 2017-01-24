@@ -64,7 +64,7 @@
 					</ul>
 					<span>BOOKMYANCHORS NEWS</span>
 					<ul>
-						<li><a href="landingpage.php?ev_id=1">Blog</a></li>
+						<li><a href="https://goo.gl/JEVHMD">Blog</a></li>
 						<li><a href="landingpage.php?ev_id=1">Media Coverage</a></li>
 						<li><a href="contactus.php">Contact Us</a></li>
 					</ul>

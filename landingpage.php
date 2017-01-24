@@ -490,7 +490,7 @@
 				</div>	 -->
 				<div id="cssmenu">
 					<ul>
-					   <li class="active"><a class="active real_anchor" href="#">Anchor</a></li>
+					   <li class="active real_anchor"><a class="active real_anchor" href="#">Anchor</a></li>
 					   <li class="celebrity-anchor"><a class="celebrity-anchor" href="#">Celebrity Anchor</a></li>
 					</ul>
 				</div>
@@ -703,7 +703,7 @@
 						<!-- menu bar starts -->
 						<div id="cssmenu">
 							<ul>
-							   <li><a class="real_anchor" href="#">Anchor</a></li>
+							   <li class="real_anchor"><a class="real_anchor" href="#">Anchor</a></li>
 							   <li class="active celebrity-anchor"><a class="active celebrity-anchor" href="#">Celebrity Anchor</a></li>
 							</ul>
 						</div>
