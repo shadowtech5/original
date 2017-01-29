@@ -14,6 +14,7 @@
 	          	<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a>
 	          	<ul class="dropdown-menu">
 		        	<li><a href="login_social_google.php?provider=google"><span class="fa fa-google-plus fa-lg"></span> log in with Google</a></li>
+		        	<li><a href="#"><span class="fa fa-facebook fa-lg"></span> log in with Facebook</a></li>
 		        </ul>
 	          	<?php
 					}
