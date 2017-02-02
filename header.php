@@ -1,3 +1,22 @@
+<?php
+	if(isset($_COOKIE['user_email']))
+	{
+		include 'db_connnection.php';
+
+		$sql_login = 'SELECT * from admin where username ="'.$_COOKIE['user_email'].'"';
+		$retval_login = mysql_query( $sql_login, $conn );
+		if(! $retval_login ) {
+			die('Could not get data: ' . mysql_error());
+		}
+		while($row_redirect = mysql_fetch_array($retval_login, MYSQL_ASSOC)) 
+		{
+			if ($row_redirect['super_user'])
+			{
+				header("Location: examples/dashboard.html");
+			} 
+		}
+	}
+?>
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
 	    <div class="navbar-header col-md-2">
@@ -14,7 +33,7 @@
 	          	<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a>
 	          	<ul class="dropdown-menu">
 		        	<li><a href="login_social_google.php?provider=google"><span class="fa fa-google-plus fa-lg"></span> log in with Google</a></li>
-		        	<li><a href="#"><span class="fa fa-facebook fa-lg"></span> log in with Facebook</a></li>
+		        	<li><a href="facebook_connect/fbconfig.php"><span class="fa fa-facebook fa-lg"></span> log in with Facebook</a></li>
 		        </ul>
 	          	<?php
 					}
@@ -23,13 +42,6 @@
 				?>
 				<a class="dropdown-toggle" data-toggle="dropdown" href="#">
 					<?php 
-						include 'db_connnection.php';
-
-						$sql_login = 'SELECT * from admin where username ="'.$_COOKIE['user_email'].'"';
-						$retval_login = mysql_query( $sql_login, $conn );
-						if(! $retval_login ) {
-							die('Could not get data: ' . mysql_error());
-						} 
 						while($row_login = mysql_fetch_array($retval_login, MYSQL_ASSOC)) 
 						{
 							echo $row_login['first_name']." ". $row_login['last_name']; 

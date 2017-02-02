@@ -34,13 +34,13 @@
       else{
          while($row = mysql_fetch_array($retval, MYSQL_ASSOC))
          {
-            if($staff = $row['staff'])
+            if($staff =$row['staff'])
             {
                echo "staff";
             }
-            elseif($super_user = $row['super_user'])
+            elseif($super_user != $row['super_user'])
             {
-               echo "super user";
+               header('Location: '.'examples/dashboard.php');  
             }
             else
             {
