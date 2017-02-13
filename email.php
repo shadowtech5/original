@@ -29,10 +29,10 @@ function email_send($to, $fname, $subject, $body, $lname="")
 
 	try{
 	    $mail->Send();
-	    echo "Success!";
+	    return true;
 	} catch(Exception $e){
 	    //Something went bad
-	    echo "Fail :(". $e;
+	    return false;
 	}
 }
 // email_send("siraj.espanioevents@gmail.com");

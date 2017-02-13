@@ -25,6 +25,8 @@ $(document).ready(function(){
     	$(".booking-info-container").removeClass("hide");
         $(".photos-container").addClass("hide");
         $(".video-container").addClass("hide");
+        $("#clientsandtest").removeClass("active");
+        $(".testmonial").addClass("hide");
     });
     $("#biography").click(function(){
     	$("#booking-info").removeClass("active");
@@ -35,12 +37,16 @@ $(document).ready(function(){
     	$(".booking-info-container").addClass("hide");
         $(".photos-container").addClass("hide");
         $(".video-container").addClass("hide");
+        $("#clientsandtest").removeClass("active");
+        $(".testmonial").addClass("hide");
     });
     $("#photos").click(function(){
         $("#booking-info").removeClass("active");
         $("#photos").addClass("active");
         $("#biography").removeClass("active");
         $("#videos").removeClass("active");
+        $("#clientsandtest").removeClass("active");
+        $(".testmonial").addClass("hide");
         $(".biography-container").addClass("hide");
         $(".booking-info-container").addClass("hide");
         $(".photos-container").removeClass("hide");
@@ -55,6 +61,20 @@ $(document).ready(function(){
         $(".booking-info-container").addClass("hide");
         $(".video-container").removeClass("hide");
         $(".photos-container").addClass("hide");
+        $("#clientsandtest").removeClass("active");
+        $(".testmonial").addClass("hide");
+    });
+    $("#clientsandtest").click(function(){
+        $("#booking-info").removeClass("active");
+        $("#videos").removeClass("active");
+        $("#biography").removeClass("active");
+        $("#photos").removeClass("active");
+        $(".biography-container").addClass("hide");
+        $(".booking-info-container").addClass("hide");
+        $(".video-container").addClass("hide");
+        $(".photos-container").addClass("hide");
+        $("#clientsandtest").addClass("active");
+        $(".testmonial").removeClass("hide");
     });
     $("#book_now_buttonss").click(function(e){
         console.log("inside book");

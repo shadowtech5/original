@@ -20,7 +20,7 @@ return
 				),
 				"Facebook" => array(
 					"enabled" => TRUE,
-					"keys" => array("id" => "214704095656120", "secret" => "8613042ce7016d16ff6a1a5fcb6677cf"),
+					"keys" => array("id" => "1878966485648895", "secret" => "2824d912d645dcafa9a3dc1b6f3f7764"),
 					"trustForwarded" => false
 				),
 			),

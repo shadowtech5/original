@@ -201,9 +201,9 @@
 			//ends tamil
 			if($flag_kanada)
 			{
-				if(isset($_POST['kanada']))
+				if(isset($_POST['kannada']))
 				{
-					$sql = $sql. "and (anchor_language like '%kanada%'";
+					$sql = $sql. "and (anchor_language like '%kannada%'";
 					$flag_kanada = False;
 					if(isset($_POST['panjabi']))
 					{
@@ -228,9 +228,9 @@
 			}
 			if($flag_panjabi)
 			{
-				if(isset($_POST['panjabi']))
+				if(isset($_POST['punjabi']))
 				{
-					$sql = $sql. "and(anchor_language like '%panjabi%'";
+					$sql = $sql. "and(anchor_language like '%punjabi%'";
 					$flag_panjabi = False;
 					if(isset($_POST['telugu']))
 					{
@@ -468,7 +468,7 @@
 				            <input type="checkbox" name="english" style="margin-left: 15px;">English</input>
 				            <input type="checkbox" name="malayalam" style="margin-left: 15px;">Malayalam</input>
 				            <input type="checkbox" name="tamil" style="margin-left: 10px;">Tamil</input><br>
-				            <input type="checkbox" name="kanada" style="margin-left: 15px;">Kanada</input>
+				            <input type="checkbox" name="kannada" style="margin-left: 15px;">kannada</input>
 				            <input type="checkbox" name="punjabi" style="margin-left: 13px;">Punjabi</input>
 				            <input type="checkbox" name="telugu" style="margin-left: 38px;">Telugu</input><br>
 				            <input type="checkbox" name="marati" style="margin-left: 15px;">Marathi</input>
@@ -594,7 +594,7 @@
 										?>
 										<form id=<?php echo $form_name ?> method="POST">
 											<div class="<?php echo $check_available_form_contents; ?>">
-												Event date:<input type="date" name="" class="form-control">
+												Event date:<input type="date" name="event_date" class="form-control">
 												<span>Duration: Hours &amp; Miniutes</span>
 												<br>
 												<select class="form-control time left" name="hour">
@@ -607,7 +607,7 @@
 						              				}
 						              			?>
 												</select>
-												<select class="form-control time" name="hour">
+												<select class="form-control time" name="min">
 						              			<?php 
 						              				for($i=0;$i<=60;$i++)
 						              				{
@@ -771,7 +771,7 @@
 								</div> -->
 								<div class="landingpage_buttons_container">
 									<div class="col-md-6 landingpage_buttons">
-										<a href="celc_book_now.php?ac_id=<?php echo"{$row['id']}";?>">
+										<a href="celc_book_now.php?anchor_id=<?php echo"{$row['id']}";?>">
 											<button class="btn btn-info col-md-12">Book Now</button>
 										</a>
 									</div>

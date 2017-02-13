@@ -153,6 +153,7 @@ if(! $retval ) {
 						<span><a  id="booking-info">Booking Info</a></span>
 						<span><a  id="photos">Photos</a></span>
 						<span><a  id="videos">Videos</a></span>
+						<span><a  id="clientsandtest">Clients&amp;Test monial</a></span>
 					</div>
 					<!-- ends menu bar -->
 
@@ -221,7 +222,7 @@ if(! $retval ) {
 									<span>Event Prefered</span>
 								</div>
 								<div class="col-md-6 description-details sub-text">
-									<span>CAMPUS EVENTS, CONCERTS/FESTIVALS, CORPORATE EVENTS, RESTAURANTS-PUBS-BARS, WEDDINGS</span>
+									<span><?php echo "{$row['event_prefer']}"; ?></span>
 								</div>
 							</div>
 							<div class="col-md-12 description-container">
@@ -265,7 +266,7 @@ if(! $retval ) {
 										<div class="col-md-6">
 											<select class="form-control time left" name="hour">
 											<?php 
-												for($i=0;$i<=24;$i++){
+												for($i=1;$i<=24;$i++){
 											?>
 											<option value=<?php echo (string)$i;  ?>><?php echo $i;  ?></option>
 											<?php
@@ -397,6 +398,15 @@ if(! $retval ) {
 						</div>
 					</div>
 					<!-- ends videos container -->
+
+					<!-- testmonial -->
+					<div class="testmonial hide col-md-12">
+						<span class="main-title">Testmonial</span>
+						<div class="col-md-12 container-fluid">
+							
+						</div>
+					</div>
+					<!-- ends testmonial -->
 
 					<?php 
 						} 
