@@ -8,7 +8,7 @@
 	]);
 	$helper = $fb->getRedirectLoginHelper();
 	$permissions = ['email']; // optional
-	$loginUrl = $helper->getLoginUrl('http://bookmyanchorss.com/original/login-callback.php', $permissions);
+	$loginUrl = $helper->getLoginUrl('http://qa.bookmyanchors.com/login-callback.php', $permissions);
 	if(isset($_COOKIE['user_email']))
 	{
 		include 'db_connnection.php';
@@ -22,11 +22,17 @@
 		{
 			if ($row_redirect['super_user'])
 			{
-				header("Location: examples/dashboard.html");
+				header("Location: examples/dashboard.php");
 			} 
 		}
 	}
 ?>
+<style>
+.navbar{
+	padding-bottom: 5px;
+	margin-bottom: 0;
+}
+</style>
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
 	    <div class="navbar-header col-md-2">
@@ -34,6 +40,22 @@
 				<img src="img/logo.jpg" class="img-responsive">
 			</a>
 	    </div>
+	    <?php 
+	    	if($_SERVER['HTTP_HOST'].$_SERVER["REQUEST_URI"] != $_SERVER['HTTP_HOST']."/index.php"){
+	    ?>
+	    <div class="col-md-8 Search-box text-center">
+			<div class="input-group stylish-input-group">
+    			<input type="text" class="form-control"  placeholder="Search with name or bma code" >
+        			<span class="input-group-addon">
+            			<button type="submit">
+							<span class="glyphicon glyphicon-search"></span>
+            			</button>  
+        			</span>
+			</div>
+		</div>
+		<?php 
+			}
+		?>
       	<ul class="nav navbar-nav navbar-right">
 	        <li>
 	        	<?php
