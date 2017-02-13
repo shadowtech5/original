@@ -153,6 +153,7 @@ if(! $retval ) {
 						<span><a  id="booking-info">Booking Info</a></span>
 						<span><a  id="photos">Photos</a></span>
 						<span><a  id="videos">Videos</a></span>
+						<span><a  id="clientsandtest">Clients&amp;Test monial</a></span>
 					</div>
 					<!-- ends menu bar -->
 
@@ -221,7 +222,7 @@ if(! $retval ) {
 									<span>Event Prefered</span>
 								</div>
 								<div class="col-md-6 description-details sub-text">
-									<span>CAMPUS EVENTS, CONCERTS/FESTIVALS, CORPORATE EVENTS, RESTAURANTS-PUBS-BARS, WEDDINGS</span>
+									<span><?php echo "{$row['event_prefer']}"; ?></span>
 								</div>
 							</div>
 							<div class="col-md-12 description-container">
@@ -265,7 +266,7 @@ if(! $retval ) {
 										<div class="col-md-6">
 											<select class="form-control time left" name="hour">
 											<?php 
-												for($i=0;$i<=24;$i++){
+												for($i=1;$i<=24;$i++){
 											?>
 											<option value=<?php echo (string)$i;  ?>><?php echo $i;  ?></option>
 											<?php
@@ -296,13 +297,32 @@ if(! $retval ) {
 											?>
 											</select>
 										</div>
+										<div class="col-md-12">
+										Place:
+											<select class="form-control " name="place">
+											<?php 
+											$out_of_station_sql = 'SELECT * from out_of_station';
+											$out_of_station_retval = mysql_query( $out_of_station_sql, $conn );
+											if(! $out_of_station_retval ) {
+												die('Could not get data: ' . mysql_error());
+											} 
+											while($out_of_station_row = mysql_fetch_array($out_of_station_retval, MYSQL_ASSOC))
+											{ 
+
+											?>
+											<option value=<?php echo $out_of_station_row['place_name'];  ?>><?php echo $out_of_station_row['place_name'];  ?></option>
+											<?php
+												}
+											?>
+											</select>
+										</div>
 										<div id="append"></div>
 										<button id="test" type="button" class="btn btn-info">Check Amount</button>
 									</form>
 								</div>
 							</div>
 							<div id="available_result">
-
+									
 							</div>
 							</div>
 						</div>
@@ -379,157 +399,21 @@ if(! $retval ) {
 					</div>
 					<!-- ends videos container -->
 
+					<!-- testmonial -->
+					<div class="testmonial hide col-md-12">
+						<span class="main-title">Testmonial</span>
+						<div class="col-md-12 container-fluid">
+							
+						</div>
+					</div>
+					<!-- ends testmonial -->
+
 					<?php 
 						} 
 					?>
 				</div>
-
-				<!-- booking container -->
-				<div class="container booking_container col-md-6 hide">
-
-		            <div class="row">
-		                <div class="col-lg-12 col-lg-offset-2" style="padding-top: 80px; margin-left: 20px;">
-		                	<button type="button" class="close close_booking" data-dismiss="modal">&times;</button>
-		                	<div id="available_result_book">
-		                		booking confirmed
-		                	</div>
-
-		                    <form id="contact-form" method="post" role="form">
-		                        <div class="controls">
-		                        <span class="customer-details">Customer Details</span>
-		                        <div class="book-now-style">   
-				                            <div class="row">
-				                                <div class="col-md-6">
-				                                    <div class="form-group">
-				                                        <label for="form_name">Firstname *</label>
-				                                        <input id="form_name" type="text" name="fname" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
-				                                        <div class="help-block with-errors"></div>
-				                                    </div>
-				                                </div>
-				                                <div class="col-md-6">
-				                                    <div class="form-group">
-				                                        <label for="form_lastname">Lastname *</label>
-				                                        <input id="form_lastname" type="text" name="lname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
-				                                        <div class="help-block with-errors"></div>
-				                                    </div>
-				                                </div>
-				                            </div>
-				                            <div class="row">
-				                                <div class="col-md-6">
-				                                    <div class="form-group">
-				                                        <label for="form_email">Email *</label>
-				                                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
-				                                        <div class="help-block with-errors"></div>
-				                                    </div>
-				                                </div>
-				                                <div class="col-md-6">
-				                                    <div class="form-group">
-				                                        <label for="form_phone">Company Name</label>
-				                                        <input id="form_phone" type="tel" name="event_type" class="form-control" placeholder="Please enter your company name*">
-				                                        <div class="help-block with-errors"></div>
-				                                    </div>
-				                                </div>
-				                            </div>
-				                            <div class="row">
-				                                <div class="col-md-6">
-				                                    <div class="form-group">
-				                                        <label for="form_email">Mobile *</label>
-				                                        <input id="form_email" type="tel" name="mobile" class="form-control" placeholder="Please enter your mobile *" required="required" data-error="Valid email is required.">
-				                                        <div class="help-block with-errors"></div>
-				                                    </div>
-				                                </div>
-				                                <div class="col-md-6">
-				                                    <div class="form-group">
-				                                        <label for="form_email">Phone *</label>
-				                                        <input id="form_email" type="tel" name="phone" class="form-control" placeholder="Please enter your Phone number *" required="required" data-error="Valid email is required.">
-				                                        <div class="help-block with-errors"></div>
-				                                    </div>
-				                                </div>
-				                            </div>
-				                            <div class="row">
-				                                <div class="col-md-12">
-				                                    <div class="form-group">
-				                                        <label for="form_message">Company Address *</label>
-				                                        <textarea id="form_message" name="address" class="form-control" placeholder="Please enter address *" rows="4" required="required" data-error="Please,enter address."></textarea>
-				                                        <div class="help-block with-errors"></div>
-				                                    </div>
-				                                </div>
-				                            </div>
-		                        <span class="customer-details">Event Details</span> 
-				                            <div class="row">
-				                                <div class="col-md-6">
-				                                    <div class="form-group">
-				                                        <label for="form_name">Event Type *</label>
-				                                        <input id="form_name" type="text" name="fname" class="form-control" placeholder="Please enter Event Type *" required="required" data-error="Firstname is required.">
-				                                        <div class="help-block with-errors"></div>
-				                                    </div>
-				                                </div>
-				                                <div class="col-md-6">
-				                                    <div class="form-group">
-				                                        <label for="form_lastname">State *</label>
-				                                        <input id="form_lastname" type="text" name="lname" class="form-control" placeholder="State *" required="required" data-error="Lastname is required.">
-				                                        <div class="help-block with-errors"></div>
-				                                    </div>
-				                                </div>
-				                            </div>
-				                            <div class="row">
-				                                <div class="col-md-6">
-				                                    <div class="form-group">
-				                                        <label for="form_email">City *</label>
-				                                        <input id="form_email" type="email" name="email" class="form-control" placeholder="City *" required="required" data-error="Valid email is required.">
-				                                        <div class="help-block with-errors"></div>
-				                                    </div>
-				                                </div>
-				                                <div class="col-md-6">
-				                                    <div class="form-group">
-				                                        <label for="form_phone">Costume</label>
-				                                        <input id="form_phone" type="tel" name="event_type" class="form-control" placeholder="Costume Used*">
-				                                        <div class="help-block with-errors"></div>
-				                                    </div>
-				                                </div>
-				                            </div>
-				                            <div class="row">
-				                                <div class="col-md-6">
-				                                    <div class="form-group">
-				                                        <label for="form_email">Eevnt Starting Time *</label>
-				                                        <input id="form_email" type="tel" name="mobile" class="form-control" placeholder="Eevnt Start Time" required="required" data-error="Valid email is required.">
-				                                        <div class="help-block with-errors"></div>
-				                                    </div>
-				                                </div>
-				                                <div class="col-md-6">
-				                                    <div class="form-group">
-				                                        <label for="form_email">Event Ending Time *</label>
-				                                        <input id="form_email" type="tel" name="phone" class="form-control" placeholder="PEnd Time *" required="required" data-error="Valid email is required.">
-				                                        <div class="help-block with-errors"></div>
-				                                    </div>
-				                                </div>
-				                            </div>
-				                            <div class="row">
-				                                <div class="col-md-12">
-				                                    <div class="form-group">
-				                                        <label for="form_message">Event Briefing *</label>
-				                                        <textarea id="form_message" name="address" class="form-control" placeholder="Brief about the event *" rows="4" required="required" data-error="Please,enter address."></textarea>
-				                                        <div class="help-block with-errors"></div>
-				                                    </div>
-				                                </div>
-				                                <div class="col-md-12">
-				                                	<button id="book_confirmation" type="button" class="btn btn-success btn-send">Book Now</button>
-				                                </div>
-				                            </div>
-				                        </div>
-				                    </div>                
-		                        </div>
-		                    </form>
-
-		                </div><!-- /.8 -->
-
-		            </div> <!-- /.row-->
-
-		        </div> <!-- /.container-->
-		        <!-- ends booking container -->
 			</div>
 			<!-- ends user complete details container -->
-
 		</div>
 		<!-- ends user details entry -->
 			

@@ -1,6 +1,6 @@
 <?php 
 session_start();
-if(!isset($_GET['ac_id'])){
+if(!isset($_GET['anchor_id'])){
 	header("Location: landingpage.php");
 }
 if(!isset($_COOKIE["ev_id"])){
@@ -10,12 +10,12 @@ ob_start();
 
 include 'db_connnection.php';
 
-$sql = 'SELECT * from celebrity_anchors where id ='.$_GET['ac_id'];
+$sql = 'SELECT * from B_ANCHOR_DETAILS where anchor_id ='.$_GET['anchor_id'];
 $retval = mysql_query( $sql, $conn );
 if(! $retval ) {
 	die('Could not get data: ' . mysql_error());
 } 
-?>
+?> 
 
 <!DOCTYPE html>
 <html>
@@ -66,10 +66,13 @@ if(! $retval ) {
 		<?php 
 			}
 		 ?>
-		<div class="col-md-6 view-profile-user-deails">x		 
-			 <div class="col-lg-12 col-lg-offset-2" style="padding-top: 28px; margin-left: 2px;">
+		<!-- booking container -->
+		<div class="col-md-6 view-profile-user-deails">
+			<div class="col-lg-12 col-lg-offset-2" style="padding-top: 28px; margin-left: 2px;">
 				<button type="button" class="close" data-dismiss="modal">&times;</button>
-			    <form id="contact-form" method="post" role="form">
+			    <form id="contact-form" method="post" role="form" action="book.php">
+			    	<input type="hidden" name="anchor" value="normal">
+			    	<input type="hidden" name="anchor_id" value=<?php echo $_GET['anchor_id']; ?> >
 			        <div class="controls">
 			        <span class="customer-details">Customer Details</span>
 			        <div class="book-now-style">    
@@ -77,14 +80,14 @@ if(! $retval ) {
 			                        <div class="col-md-12">
 			                            <div class="form-group">
 			                                <label for="form_name">Firstname *</label>
-			                                <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
+			                                <input id="form_name" type="text" name="first_name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
 			                                <div class="help-block with-errors"></div>
 			                            </div>
 			                        </div>
 			                        <div class="col-md-12">
 			                            <div class="form-group">
 			                                <label for="form_lastname">Lastname *</label>
-			                                <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
+			                                <input id="form_lastname" type="text" name="last_name" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
 			                                <div class="help-block with-errors"></div>
 			                            </div>
 			                        </div>
@@ -100,7 +103,7 @@ if(! $retval ) {
 			                        <div class="col-md-12">
 			                            <div class="form-group">
 			                                <label for="form_phone">Company Name</label>
-			                                <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Please enter your company Name*">
+			                                <input id="form_phone" type="text" name="company_name" class="form-control" placeholder="Please enter your company Name*">
 			                                <div class="help-block with-errors"></div>
 			                            </div>
 			                        </div>
@@ -109,14 +112,14 @@ if(! $retval ) {
 			                        <div class="col-md-12">
 			                            <div class="form-group">
 			                                <label for="form_email">Mobile *</label>
-			                                <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your mobile number*" required="required" data-error="Valid email is required.">
+			                                <input id="form_email" type="tel" name="mobile_number" class="form-control" placeholder="Please enter your mobile number*" required="required" data-error="Valid email is required.">
 			                                <div class="help-block with-errors"></div>
 			                            </div>
 			                        </div>
 			                        <div class="col-md-12">
 			                            <div class="form-group">
 			                                <label for="form_email">Phone *</label>
-			                                <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your phone number *" required="required" data-error="Valid email is required.">
+			                                <input id="form_email" type="tel" name="phone_number" class="form-control" placeholder="Please enter your phone number *" required="required" data-error="Valid email is required.">
 			                                <div class="help-block with-errors"></div>
 			                            </div>
 			                        </div>
@@ -125,7 +128,133 @@ if(! $retval ) {
 			                        <div class="col-md-12">
 			                            <div class="form-group">
 			                                <label for="form_message">Address *</label>
-			                                <textarea id="form_message" name="message" class="form-control" placeholder="Please enter address *" rows="4" required="required" data-error="Please,enter address."></textarea>
+			                                <textarea id="form_message" name="address" class="form-control" placeholder="Please enter address *" rows="4" required="required" data-error="Please,enter address."></textarea>
+			                                <div class="help-block with-errors"></div>
+			                            </div>
+			                        </div>
+			                    </div>
+			                    <span class="customer-details">Event Details</span>
+			                    <div class="row">
+			                        <div class="col-md-12">
+			                            <div class="form-group">
+			                                <label for="form_name">Type of Event *</label>
+			                                <!-- <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
+			                                <div class="help-block with-errors"></div> -->
+			                                <select class="form-control" name="event_type">
+												<?php 
+													$event_sql = 'SELECT * from M_EVENT_TYPE';
+													$event_retval = mysql_query( $event_sql, $conn );
+
+													if(! $event_retval ) {
+													die('Could not get data: ' . mysql_error());
+													}   
+													while($event_row = mysql_fetch_array($event_retval, MYSQL_ASSOC)) {
+													?>
+													<option value=<?php echo "{$event_row['event_type']}"; ?>><?php echo "{$event_row['event_type']}"; ?></option>
+												<?php } ?>
+			                                	<option></option>
+			                                </select>
+			                            </div>
+			                        </div>
+			                        <div class="col-md-12">
+			                            <div class="form-group">
+			                                <label for="form_lastname">Event Place *</label>
+			                                <input id="form_lastname" type="text" name="event_place" class="form-control" placeholder="Please enter event place *" required="required" data-error="Lastname is required.">
+			                                <div class="help-block with-errors"></div>
+			                            </div>
+			                        </div>
+			                    </div>
+			                    <div class="row">
+			                        <div class="col-md-12">
+			                            <div class="form-group">
+			                                <label for="form_email">Event Venue *</label>
+			                                <input id="form_email" type="text" name="event_venue" class="form-control" placeholder="Please enter event venue *" required="required" data-error="Valid email is required.">
+			                                <div class="help-block with-errors"></div>
+			                            </div>
+			                        </div>
+			                        <div class="col-md-12">
+			                            <div class="form-group">
+			                                <label for="form_phone">Costume</label>
+			                                <select class="form-control" name="costume">
+			                                	<option value="Formal">
+			                                		Formal
+			                                	</option>
+			                                	<option value="Semi Formal">
+			                                		Semi Formal
+			                                	</option>
+			                                	<option value="Casual">
+			                                		Casual
+			                                	</option>
+			                                	<option value="Traditional">
+			                                		Traditional
+			                                	</option>
+			                                	<option value="Party Wear">
+			                                		Party Wear
+			                                	</option>
+			                                </select>
+			                            </div>
+			                        </div>
+			                    </div>
+			                    <div class="row">
+			                        <div class="col-md-12">
+			                            <div class="form-group">
+			                                <label for="form_email">Event Starting time *</label>
+			                                <br>
+			                                <select class="form-control col-md-6" name="start_hour">
+						              			<?php 
+						              				for($i=0;$i<=24;$i++)
+						              				{
+						              			?>
+						              				<option value=<?php echo (string)$i;  ?>><?php echo $i;  ?></option>
+						              			<?php
+						              				}
+						              			?>
+											</select>
+											<br>
+											<select class="form-control col-md-6" name="start_min">
+						              			<?php 
+						              				for($i=00;$i<=60;$i++)
+						              				{
+						              			?>
+						              				<option value=<?php echo (string)$i;  ?>><?php echo $i;  ?></option>
+						              			<?php
+						              				}
+						              			?>
+											</select>
+			                            </div>
+			                        </div>
+			                        <div class="col-md-12">
+			                            <div class="form-group">
+			                                <label for="form_email">Event Ending Time *</label>
+			                                <select class="form-control col-md-6" name="end_hour">
+						              			<?php 
+						              				for($i=0;$i<=24;$i++)
+						              				{
+						              			?>
+						              				<option value=<?php echo (string)$i;  ?>><?php echo $i;  ?></option>
+						              			<?php
+						              				}
+						              			?>
+											</select>
+											<br>
+											<select class="form-control col-md-6" name="end_min">
+						              			<?php 
+						              				for($i=00;$i<=60;$i++)
+						              				{
+						              			?>
+						              				<option value=<?php echo (string)$i;  ?>><?php echo $i;  ?></option>
+						              			<?php
+						              				}
+						              			?>
+											</select>
+			                            </div>
+			                        </div>
+			                    </div>
+			                    <div class="row">
+			                        <div class="col-md-12">
+			                            <div class="form-group">
+			                                <label for="form_message">Event Briefing *</label>
+			                                <textarea id="form_message" name="event_message" class="form-control" placeholder="Please enter event briefing *" rows="4" required="required" data-error="Please,enter address."></textarea>
 			                                <div class="help-block with-errors"></div>
 			                            </div>
 			                        </div>
@@ -133,11 +262,12 @@ if(! $retval ) {
 			                            <input type="submit" class="btn btn-success btn-send" value="Book Now">
 			                        </div>
 			                    </div>
-			                </div>        
+			        	</div>        
 			        </div>
 			    </form>
 			</div>
 		</div>	<!-- /.8 -->
+		        <!-- ends booking container -->
 	</div>
 		<div class="col-md-12 container-fluid footer-dynamic-block">
 			<?php

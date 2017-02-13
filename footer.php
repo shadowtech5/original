@@ -2,10 +2,10 @@
 
 			<div class="footer-bar container-fluid">
 				<div class="col-md-3 type_of_events">
-					<div class="footer-logo">
+					<div class="footer-logo" style="padding-bottom: 10px;">
 						<img src="img/logo.png" class="img-responsive logo ">
 						<div class="social-menus left">
-							<a class="btn btn-social-icon btn-google" href="http://bit.ly/2isAQYF 	">
+							<a class="btn btn-social-icon btn-google" href="http://bit.ly/2isAQYF">
 						    	<span class="fa fa-google"></span>
 							</a>
 							<a class="btn btn-social-icon btn-twitter" href="http://bit.ly/2ho0cuF">
@@ -17,8 +17,22 @@
 							<a class="btn btn-social-icon btn-instagram" href="http://bit.ly/2i6upOr">
 						    	<span class="fa fa-instagram"></span>
 							</a>
-						  </div>
+						</div>
 					</div>
+					<!-- <div class="footer-center">
+						<div>
+							<i class="fa fa-map-marker left"></i>
+							<p><span>1st floor, 44/3567/A</span><br> <span>PK Tower Deshabhimani Road</span><br>Kaloor Cochin-17</p>
+						</div>
+						<div>
+							<i class="fa fa-phone left"></i>
+							<p>+1 555 123456</p>
+						</div>
+						<div>
+							<i class="fa fa-envelope left"></i>
+							<p><a href="mailto:support@company.com">info@bookmyanchors.com</a></p>
+						</div>
+					</div> -->
 				</div>
 				<div class="col-md-3 type_of_events">
 					<span>TYPE OF EVENTS</span>
@@ -41,66 +55,39 @@
 				<div class="col-md-3">
 					<span>BOOKMYANCHORS APP</span>
 					<ul>
-						<li><a href="landingpage.php?ev_id=1">Android</a></li>
-						<li><a href="landingpage.php?ev_id=1">iPhone</a></li>
+						<li><a href="landingpage.php">Android</a></li>
+						<li><a href="landingpage.php">iPhone</a></li>
 					</ul>
 					<span>COUNTRIES</span>
 					<ul>
-						<li><a href="landingpage.php?ev_id=1">India</a></li>
+						<li>India</li>
 					</ul>
-					<span>HELP</span>
+					<span>BOOKMYANCHORS NEWS</span>
 					<ul>
-						<li><a href="landingpage.php?ev_id=1">FAQs</a></li>
-						<li><a href="landingpage.php?ev_id=1">Terms and Conditions</a></li>
-						<li><a href="landingpage.php?ev_id=1">Privacy Policy</a></li>
+						<li><a href="https://goo.gl/JEVHMD">Blog</a></li>
+						<li><a href="landingpage.php?ev_id=1">Media Coverage</a></li>
+						<li><a href="contactus.php">Contact Us</a></li>
 					</ul>
 				</div>
 				<div class="col-md-3">
-					<span>BOOKMYANCHORS NEWS</span>
+					<span>INFORMATIONS</span>
 					<ul>
-						<li><a href="landingpage.php?ev_id=1">Blog</a></li>
+						<li><a href="landingpage.php?ev_id=1">Disclaimer</a></li>
+						<li><a href="terms-conditions.php">Terms &amp; Conditions</a></li>
+						<li><a href="privacypolicy.php">Privacy Policy</a></li>
+						<li><a href="faq.php">FAQ</a></li>						
 						<li><a href="landingpage.php?ev_id=1">Team</a></li>
-						<li><a href="landingpage.php?ev_id=1">Media Coverage</a></li>
-						<li><a href="landingpage.php?ev_id=1">Contact Us</a></li>
+						<li><a href="about_us.php">AboutUs</a></li>
 					</ul>
-					<span style="padding-bottom: 10px;">FEEDBACK</span>
-					<div class="book-now-style" style=" padding-top: 10px;">   
-						<form id="feedback-form" method="post" role="form">
-					        <div class="row">
-					            <div class="col-md-12">
-					                <div class="form-group">
-					                    <label for="form_name">Firstname *</label>
-					                    <input id="form_name" type="text" name="fname" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
-					                    <div class="help-block with-errors"></div>
-					                </div>
-					            </div>
-					        </div>
-					        <div class="row">
-					            <div class="col-md-12">
-					            	<div class="form-group">
-					                    <label for="form_email">Email *</label>
-					                    <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
-					                    <div class="help-block with-errors"></div>
-					                </div>
-					            </div>
-					        </div>
-					        <div class="row">
-					         	<div class="col-md-12">
-					            	<div class="form-group">
-					                	<label for="form_message">Feedback *</label>
-					                    <textarea id="form_message" name="address" class="form-control" placeholder="Please enter your feedback *" rows="4" required="required" data-error="Please,enter your feedback."></textarea>
-					                    <div class="help-block with-errors"></div>
-					                </div>
-					            </div>
-						        <div class="col-md-12" style="padding-bottom: 10px;">
-						        	<button id="feedback"type="button" class="btn btn-success btn-send">Submit</button>
-						        </div>
-					        </div>
-				        </form>
-				    </div>        
+					<br>
+					<span>HELP</span>
+					<ul> 
+						<li><a href="refund.php">Refund/Cancellation</a></li>
+						<li><a href="feedback_suggestion.php">Feedback & Suggestions</a></li>
+					</ul>
 				</div>
 				<div class="col-md-12" style="border-top: 1px solid #c4c4c4; padding-top: 5px;">
-					<p class="sp-copyright"> © 2017 Shadowtech. All Rights Reserved.</p>
+					<p class="sp-copyright"> © 2017 bookmyanchors.com. All Rights Reserved.</p>
 				</div>
 			</div>
 			<!-- ends footer -->

@@ -59,14 +59,16 @@ session_start();
 		<div class="social-container1 hide">
 			<div class="col-md-12 container-fluid light-black">
 				<!-- icon bar -->
-				<div class="container-fluid light-black icon-container">
-					<img src="img/logo.png" class="img-responsive logo">
+				<div class="container-fluid light-black icon-container col-md-12">
+					<div class="col-md-4 logo">
+						<a href="index.php">
+						<img src="img/logo.png" class="img-responsive">
+						</a>
+					</div>
 				</div>
-				<!-- ends icon bar -->
 			</div>
-		</div>
-			
-		<div class="container-fluid background_image img-responsive img-responsive">
+		</div>	
+		<div class="container-fluid background_image img-responsive background_image img-responsive img-responsive">
 			<!-- social media bar -->
 			<?php include('header.php'); ?>
 			<!-- ends social media bar -->
@@ -77,7 +79,6 @@ session_start();
 				<ol class="carousel-indicators">
 					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 					<li data-target="#myCarousel" data-slide-to="1"></li>
-					<li data-target="#myCarousel" data-slide-to="2"></li>
 				</ol>
 				<!-- Ends Indicators -->			
 
@@ -89,10 +90,6 @@ session_start();
 
 					<div class="item">
 						<img src="img/slider2.jpg" alt="Banner-2">
-					</div>
-
-					<div class="item">
-						<img src="img/slider3.jpg" alt="Banner-3">
 					</div>
 				</div>
 				<!-- Ends Wrapper for slides -->

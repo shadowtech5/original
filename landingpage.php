@@ -85,7 +85,7 @@
 				if(isset($_POST['english']))
 				{
 					$sql = $sql. "and (anchor_language like '%english%'";
-					$flag_english = false;
+					$flag_english = False;
 					if(isset($_POST['malayalam']))
 					{
 						$flag_malayalam = False;
@@ -100,7 +100,7 @@
 								$sql = $sql. "or anchor_language like '%kanada%'";
 								if(isset($_POST['panjabi']))
 								{
-									$flag_panjabi = Flase;
+									$flag_panjabi = False;
 									$sql = $sql. "or anchor_language like '%panjabi%'";
 									if(isset($_POST['telugu']))
 									{
@@ -138,7 +138,7 @@
 						$sql = $sql. "or anchor_language like '%tamil%'";
 						if(isset($_POST['kanada']))
 						{
-							$flag_kanada = Flase;
+							$flag_kanada = False;
 							$sql = $sql. "or anchor_language like '%kanada%'";
 							if(isset($_POST['panjabi']))
 							{
@@ -170,10 +170,10 @@
 				if(isset($_POST['tamil']))
 				{
 					$sql = $sql. "and (anchor_language like '%tamil%'";
-					$flag_tamil = Flase;
+					$flag_tamil = False;
 					if(isset($_POST['kanada']))
 					{
-						$flag_kanada = Flase;
+						$flag_kanada = False;
 						$sql = $sql. "or anchor_language like '%kanada%'";
 						if(isset($_POST['panjabi']))
 						{
@@ -185,13 +185,13 @@
 								$sql = $sql. "or anchor_language like '%telugu%'";
 								if(isset($_POST['marati']))
 								{
-									$flag_marati = Flase;
+									$flag_marati = False;
 									$sql = $sql. "or anchor_language like '%marati%'";
 								}
 							}
 						}
 					}
-					if($flag_tamil == Flase)
+					if($flag_tamil == False)
 					{
 						$sql = $sql.")";
 					}
@@ -201,10 +201,10 @@
 			//ends tamil
 			if($flag_kanada)
 			{
-				if(isset($_POST['kanada']))
+				if(isset($_POST['kannada']))
 				{
-					$sql = $sql. "and (anchor_language like '%kanada%'";
-					$flag_kanada = Flase;
+					$sql = $sql. "and (anchor_language like '%kannada%'";
+					$flag_kanada = False;
 					if(isset($_POST['panjabi']))
 					{
 						$flag_panjabi = False;
@@ -220,7 +220,7 @@
 							}
 						}
 					}
-					if($flag_kanada == Flase)
+					if($flag_kanada == False)
 					{
 						$sql = $sql.")";
 					}
@@ -228,10 +228,10 @@
 			}
 			if($flag_panjabi)
 			{
-				if(isset($_POST['panjabi']))
+				if(isset($_POST['punjabi']))
 				{
-					$sql = $sql. "and(anchor_language like '%panjabi%'";
-					$flag_panjabi = Flase;
+					$sql = $sql. "and(anchor_language like '%punjabi%'";
+					$flag_panjabi = False;
 					if(isset($_POST['telugu']))
 					{
 						$flag_telugu = False;
@@ -241,7 +241,7 @@
 							$sql = $sql. "or anchor_language like '%marati%'";
 						}
 					}
-					if($flag_panjabi == Flase)
+					if($flag_panjabi == False)
 					{
 						$sql = $sql.")";
 					}
@@ -468,7 +468,7 @@
 				            <input type="checkbox" name="english" style="margin-left: 15px;">English</input>
 				            <input type="checkbox" name="malayalam" style="margin-left: 15px;">Malayalam</input>
 				            <input type="checkbox" name="tamil" style="margin-left: 10px;">Tamil</input><br>
-				            <input type="checkbox" name="kanada" style="margin-left: 15px;">Kanada</input>
+				            <input type="checkbox" name="kannada" style="margin-left: 15px;">kannada</input>
 				            <input type="checkbox" name="punjabi" style="margin-left: 13px;">Punjabi</input>
 				            <input type="checkbox" name="telugu" style="margin-left: 38px;">Telugu</input><br>
 				            <input type="checkbox" name="marati" style="margin-left: 15px;">Marathi</input>
@@ -480,7 +480,7 @@
         			</form>
       			</div>
 			<!-- ends -->
-			<div class="col-sm-9 real_anchor">
+			<div class="col-sm-9 real_anchor_tab">
 			<!-- menu bar starts -->
 				<!-- <div class="row celeb-profile-menu-bar">
 					<div class="col-md-6">
@@ -490,18 +490,20 @@
 				</div>	 -->
 				<div id="cssmenu">
 					<ul>
-					   <li class="active real_anchor"><a href="#">Anchor</a></li>
-					   <li><a class="celebrity-anchor" href="#">Celebrity Anchor</a></li>
+					   <li class="active real_anchor"><a class="active real_anchor" href="#">Anchor</a></li>
+					   <li class="celebrity-anchor"><a class="celebrity-anchor" href="#">Celebrity Anchor</a></li>
 					</ul>
 				</div>
 
 			<!-- ends menu bar -->
 				
 				<?php
-					while($row = mysql_fetch_array($retval, MYSQL_ASSOC)) 
+					if(mysql_num_rows($retval)>0)
 					{
-						$dp = $row['image_path'].'main.jpg"';
-						$status = 'glyphicon glyphicon-record right '.$row['status'];
+						while($row = mysql_fetch_array($retval, MYSQL_ASSOC)) 
+						{
+							$dp = $row['image_path'].'main.jpg"';
+							$status = 'glyphicon glyphicon-record right '.$row['status'];
 				?>
 			<!-- profile shows -->
 					<div class="col-md-6">
@@ -580,89 +582,6 @@
 										</a>
 									</div>
 								</div>
-								<!-- booking container -->
-						<div class="<?php echo $anchor_booking_container;?>">	
-				            <div class="row">	
-				            <div id="available_result_book"></div>
-				                <div class="col-lg-12 col-lg-offset-2" style="padding-top: 28px; margin-left: 2px;">
-				                	<?php
-				                		$close = $name. "_close_booking close"; 
-				                	?>
-				                	<button type="button" class="<?php echo $close; ?>" data-dismiss="modal">&times;</button>
-				                    <form id="contact-form" method="post" role="form">
-				                        <div class="controls">
-				                        <span class="customer-details">Customer Details</span>
-				                        <div class="book-now-style">    
-						                            <div class="row">
-						                                <div class="col-md-12">
-						                                    <div class="form-group">
-						                                        <label for="form_name">Firstname *</label>
-						                                        <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
-						                                        <div class="help-block with-errors"></div>
-						                                    </div>
-						                                </div>
-						                                <div class="col-md-12">
-						                                    <div class="form-group">
-						                                        <label for="form_lastname">Lastname *</label>
-						                                        <input id="form_lastname" type="text" name="lname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
-						                                        <div class="help-block with-errors"></div>
-						                                    </div>
-						                                </div>
-						                            </div>
-						                            <div class="row">
-						                                <div class="col-md-12">
-						                                    <div class="form-group">
-						                                        <label for="form_email">Email *</label>
-						                                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
-						                                        <div class="help-block with-errors"></div>
-						                                    </div>
-						                                </div>
-						                                <div class="col-md-12">
-						                                    <div class="form-group">
-						                                        <label for="form_phone">Company Name</label>
-						                                        <input id="form_phone" type="text" name="company" class="form-control" placeholder="Please enter your company Name*">
-						                                        <div class="help-block with-errors"></div>
-						                                    </div>
-						                                </div>
-						                            </div>
-						                            <div class="row">
-						                                <div class="col-md-12">
-						                                    <div class="form-group">
-						                                        <label for="form_email">Mobile *</label>
-						                                        <input id="form_email" type="text" name="mobile" class="form-control" placeholder="Please enter your mobile number*" required="required" data-error="Valid email is required.">
-						                                        <div class="help-block with-errors"></div>
-						                                    </div>
-						                                </div>
-						                                <div class="col-md-12">
-						                                    <div class="form-group">
-						                                        <label for="form_email">Phone *</label>
-						                                        <input id="form_email" type="text" name="phone" class="form-control" placeholder="Please enter your phone number *" required="required" data-error="Valid email is required.">
-						                                        <div class="help-block with-errors"></div>
-						                                    </div>
-						                                </div>
-						                            </div>
-						                            <div class="row">
-						                                <div class="col-md-12">
-						                                    <div class="form-group">
-						                                        <label for="form_message">Address *</label>
-						                                        <textarea id="form_message" name="message" class="form-control" placeholder="Please enter address *" rows="4" required="required" data-error="Please,enter address."></textarea>
-						                                        <div class="help-block with-errors"></div>
-						                                    </div>
-						                                </div>
-						                                <div class="col-md-12">
-						                                    <input type="button" id="book_confirmation" class="btn btn-success btn-send" value="Book Now">
-						                                </div>
-						                            </div>
-						                        </div>        
-				                        </div>
-				                    </form>
-
-				                </div><!-- /.8 -->
-
-				            </div> <!-- /.row-->
-
-				        </div> <!-- /.container-->
-				        <!-- ends booking container -->
 								
 								<?php 
 									$check_available = "col-md-12 " . $name;
@@ -675,7 +594,7 @@
 										?>
 										<form id=<?php echo $form_name ?> method="POST">
 											<div class="<?php echo $check_available_form_contents; ?>">
-												Event date:<input type="date" name="" class="form-control">
+												Event date:<input type="date" name="event_date" class="form-control">
 												<span>Duration: Hours &amp; Miniutes</span>
 												<br>
 												<select class="form-control time left" name="hour">
@@ -688,7 +607,7 @@
 						              				}
 						              			?>
 												</select>
-												<select class="form-control time" name="hour">
+												<select class="form-control time" name="min">
 						              			<?php 
 						              				for($i=0;$i<=60;$i++)
 						              				{
@@ -770,17 +689,23 @@
 						});
 					</script>
 						<?php
+								}
 							}
+							else
+							{
+								echo "no data";
+							}
+
 						?>
 						</style>
 					</div>
 					<div class="col-sm-9 celebrity-anchor_tab hide">
 						<!-- menu bar starts -->
-						<div class="row celeb-profile-menu-bar">
-							<div class="col-md-6">
-								<span><a class="real-anchor" style="padding: 20px;">Anchor</a></span>
-								<span><a class="active celebrity-anchor" style="margin-left: 25px;padding: 20px;">Celebrity Anchor</a></span>
-							</div>
+						<div id="cssmenu">
+							<ul>
+							   <li class="real_anchor"><a class="real_anchor" href="#">Anchor</a></li>
+							   <li class="active celebrity-anchor"><a class="active celebrity-anchor" href="#">Celebrity Anchor</a></li>
+							</ul>
 						</div>
 
 						<?php
@@ -792,10 +717,10 @@
 							die('Could not get data: ' . mysql_error());
 						}
 
-					while($row = mysql_fetch_array($retval, MYSQL_ASSOC)) 
-					{
-						$dp = $row['image_path'].'main.jpg"';
-				?>
+							while($row = mysql_fetch_array($retval, MYSQL_ASSOC)) 
+							{
+								$dp = $row['image_path'].'main.jpg"';
+						?>
 			<!-- profile shows -->
 					<div class="col-md-6">
 						<div class="profile-outer-container">
@@ -805,7 +730,34 @@
 								</div>
 								<div class="col-md-6 profile-content-main-outer">
 									<div class="profile-content">
-										<span class="anchor_name_inner"><?php echo "{$row['anchor_name']}"; ?></span> 
+										<span class="anchor_name_inner"><?php echo "{$row['anchor_name']}"; ?></span>
+										<br>
+										<?php
+											$sql = 'SELECT * from cele_category_connecter where anchor_id='.$row['id'];
+											$retval2 = mysql_query( $sql, $conn );
+
+											if(! $retval2 ) 
+											{
+												die('Could not get data: ' . mysql_error());
+											}
+
+											while($row2 = mysql_fetch_array($retval2, MYSQL_ASSOC)) 
+											{
+												$sql = 'SELECT * from anchor_category where category_id='.$row2['category_id'];
+												$retval3 = mysql_query( $sql, $conn );
+
+												if(! $retval3 ) 
+												{
+													die('Could not get data: ' . mysql_error());
+												}
+												while($row3 = mysql_fetch_array($retval3, MYSQL_ASSOC)) 
+												{
+										?>
+										<span><?php echo "{$row3['category']}". " /"; ?></span>
+										<?php
+												}
+											}
+										?> 
 									</div>
 									<?php
 										$name = str_replace(' ', '', $row['anchor_name']);
@@ -819,7 +771,7 @@
 								</div> -->
 								<div class="landingpage_buttons_container">
 									<div class="col-md-6 landingpage_buttons">
-										<a href="book_now.php?ac_id=<?php echo"{$row['id']}";?>">
+										<a href="celc_book_now.php?anchor_id=<?php echo"{$row['id']}";?>">
 											<button class="btn btn-info col-md-12">Book Now</button>
 										</a>
 									</div>
@@ -828,87 +780,7 @@
 											<button class="btn btn-info col-md-12">ViewProfile</button>
 										</a>
 									</div>
-								</div>
-								<!-- booking container -->
-						<div class="<?php echo $anchor_booking_container;?>">	
-				            <div class="row">	
-				                <div class="col-lg-12 col-lg-offset-2" style="padding-top: 28px; margin-left: 2px;">
-				                	<button type="button" class="close" data-dismiss="modal">&times;</button>
-				                    <form id="contact-form" method="post" role="form">
-				                        <div class="controls">
-				                        <span class="customer-details">Customer Details</span>
-				                        <div class="book-now-style">    
-						                            <div class="row">
-						                                <div class="col-md-12">
-						                                    <div class="form-group">
-						                                        <label for="form_name">Firstname *</label>
-						                                        <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
-						                                        <div class="help-block with-errors"></div>
-						                                    </div>
-						                                </div>
-						                                <div class="col-md-12">
-						                                    <div class="form-group">
-						                                        <label for="form_lastname">Lastname *</label>
-						                                        <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
-						                                        <div class="help-block with-errors"></div>
-						                                    </div>
-						                                </div>
-						                            </div>
-						                            <div class="row">
-						                                <div class="col-md-12">
-						                                    <div class="form-group">
-						                                        <label for="form_email">Email *</label>
-						                                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
-						                                        <div class="help-block with-errors"></div>
-						                                    </div>
-						                                </div>
-						                                <div class="col-md-12">
-						                                    <div class="form-group">
-						                                        <label for="form_phone">Company Name</label>
-						                                        <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Please enter your company Name*">
-						                                        <div class="help-block with-errors"></div>
-						                                    </div>
-						                                </div>
-						                            </div>
-						                            <div class="row">
-						                                <div class="col-md-12">
-						                                    <div class="form-group">
-						                                        <label for="form_email">Mobile *</label>
-						                                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your mobile number*" required="required" data-error="Valid email is required.">
-						                                        <div class="help-block with-errors"></div>
-						                                    </div>
-						                                </div>
-						                                <div class="col-md-12">
-						                                    <div class="form-group">
-						                                        <label for="form_email">Phone *</label>
-						                                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your phone number *" required="required" data-error="Valid email is required.">
-						                                        <div class="help-block with-errors"></div>
-						                                    </div>
-						                                </div>
-						                            </div>
-						                            <div class="row">
-						                                <div class="col-md-12">
-						                                    <div class="form-group">
-						                                        <label for="form_message">Address *</label>
-						                                        <textarea id="form_message" name="message" class="form-control" placeholder="Please enter address *" rows="4" required="required" data-error="Please,enter address."></textarea>
-						                                        <div class="help-block with-errors"></div>
-						                                    </div>
-						                                </div>
-						                                <div class="col-md-12">
-						                                    <input type="submit" class="btn btn-success btn-send" value="Book Now">
-						                                </div>
-						                            </div>
-						                        </div>        
-				                        </div>
-				                    </form>
-
-				                </div><!-- /.8 -->
-
-				            </div> <!-- /.row-->
-
-				        </div> <!-- /.container-->
-				        <!-- ends booking container -->
-								
+								</div>								
 								<?php 
 									$check_available = "col-md-12 " . $name;
 								?>
