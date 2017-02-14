@@ -72,6 +72,13 @@
 		$place_amount = $out_of_station_row['amount'];
 	}
 	$amount = $amount + $place_amount;
+	if ($days >= 5)
+	{
+		for ($d = 5; $d<=$days; $d++)
+		{
+			$amount = $amount - 1000;
+		}
+	}
 	echo $anchor_name." costs almost for :". $amount;
 	echo '<a href="book_now.php?anchor_id='.$achor_id.'"><button type="button" class="btn btn-info col-md-12">BOOK NOW</button></a>';
 	// echo '<script>$("#book_now_buttonss").click(function(e){
