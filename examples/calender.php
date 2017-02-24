@@ -26,6 +26,9 @@
 		.hide{
 			display: none;
 		}
+		.modal{
+			display: block;
+		}
 	</style>   
 	<script>
 
@@ -34,13 +37,28 @@
     			dayClick: function(date) {
         	
         		// alert('Clicked on: ' + date.format());
-        		$('#calendar_modal').removeClass('hide');
-        		$('#calendar_modal').show();
+        		$('.modal-body').append('<input id="offline_date" type="hidden" name="offline_date" value='+date.format()+'>');
+        		$('#myModal').removeClass('hide');
+        		// $('#calendar_modal').show();
     			}
     		});
-    		$('#close_button_calendar_modal').click(function(){
-    			$('#calendar_modal').addClass('hide');
-    		});		
+    		$('#modal_close').click(function(){
+    			$('#myModal').addClass('hide');
+    			$("#offline_date").remove();
+    		});
+    		$("#offline_submit_button").click(function(e){
+    			var frm = $('#offline_form');
+		        e.preventDefault;
+		        $.ajax({
+		            url: 'offline.php',
+		            type: 'POST',
+		            data: frm.serialize(),
+		            success: function (data) 
+		            {
+		                alert("svdjfbsjd");
+		            }
+		        });
+    		});	
 		});
 
 	</script>
@@ -64,50 +82,10 @@
 
 
 	    <div class="main-panel">
-			<nav class="navbar navbar-transparent navbar-absolute">
-				<div class="container-fluid">
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<a class="navbar-brand" href="#">Calender</a>
-					</div>
-					<div class="collapse navbar-collapse">
-						<ul class="nav navbar-nav navbar-right">
-							<li>
-								<a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">
-									<i class="material-icons">dashboard</i>
-									<p class="hidden-lg hidden-md">Dashboard</p>
-								</a>
-							</li>
-							<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-									<i class="material-icons">notifications</i>
-									<span class="notification">5</span>
-									<p class="hidden-lg hidden-md">Notifications</p>
-								</a>
-								<ul class="dropdown-menu">
-									<li><a href="#">Mike John responded to your email</a></li>
-									<li><a href="#">You have 5 new tasks</a></li>
-									<li><a href="#">You're now friend with Andrew</a></li>
-									<li><a href="#">Another Notification</a></li>
-									<li><a href="#">Another One</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">
-	 							   <i class="material-icons">person</i>
-	 							   <p class="hidden-lg hidden-md">Profile</p>
-	 						   </a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</nav>
 
+	    	<?php 
+				include('dashboard_header.php');
+			?>
 	        <div class="content">
 	            <div class="container-fluid">
 	                <div class="row">
@@ -135,14 +113,43 @@
 	    </div>
 	</div>
 	<!-- sample modal -->
-	<div id="calendar_modal" class="modal"> 
+
+	<!-- Modal -->
+	<div id="myModal" class="modal hide">
+		<div class="modal-dialog">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Modal Header</h4>
+			</div>
+			<form id="offline_form">
+				<div class="modal-body">
+					<select class="form-control" name="offline_option">
+						<option>Online</option>
+						<option>Offline</option>
+						<option>Busy</option>
+					</select>
+				</div>
+				<div class="modal-footer">
+					<button id="offline_submit_button" type="button" class="btn btn-default">Submit</button>
+					<button type="button" class="btn btn-default" id="modal_close">Close</button>
+				</div>
+			</form>
+		</div>
+
+		</div>
+	</div>
+
+	<!-- <div id="calendar_modal" class="modal"> 
 		<select>
 			<option>Online</option>
 			<option>Offline</option>
 			<option>Busy</option>
 		</select>
 		<button type="button" class="btn btn-default" id="close_button_calendar_modal">Close</button>
-	</div>
+	</div> -->
 	<!-- ends sample modal -->
 
 </body>

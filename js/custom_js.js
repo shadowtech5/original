@@ -96,6 +96,7 @@ $(document).ready(function(){
         $confirm_var = confirm("Are you sure");
         if($confirm_var)
         {
+            
             var frm = $('#contact-form');
             e.preventDefault;
             $.ajax({
