@@ -65,18 +65,18 @@
 					<span>BOOKMYANCHORS NEWS</span>
 					<ul>
 						<li><a href="https://goo.gl/JEVHMD">Blog</a></li>
-						<li><a href="landingpage.php?ev_id=1">Media Coverage</a></li>
+						<!-- <li><a href="landingpage.php?ev_id=1">Media Coverage</a></li> -->
 						<li><a href="contactus.php">Contact Us</a></li>
 					</ul>
 				</div>
 				<div class="col-md-3">
 					<span>INFORMATIONS</span>
 					<ul>
-						<li><a href="landingpage.php?ev_id=1">Disclaimer</a></li>
+						<!-- <li><a href="landingpage.php?ev_id=1">Disclaimer</a></li> -->
 						<li><a href="terms-conditions.php">Terms &amp; Conditions</a></li>
 						<li><a href="privacypolicy.php">Privacy Policy</a></li>
 						<li><a href="faq.php">FAQ</a></li>						
-						<li><a href="landingpage.php?ev_id=1">Team</a></li>
+						<li><a href="team.php">Team</a></li>
 						<li><a href="about_us.php">AboutUs</a></li>
 					</ul>
 					<br>

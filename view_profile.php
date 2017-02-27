@@ -153,7 +153,7 @@ if(! $retval ) {
 						<span><a  id="booking-info">Booking Info</a></span>
 						<span><a  id="photos">Photos</a></span>
 						<span><a  id="videos">Videos</a></span>
-						<span><a  id="clientsandtest">Events&amp;Clients</a></span>
+						<!-- <span><a  id="clientsandtest">Events&amp;Clients</a></span> -->
 					</div>
 					<!-- ends menu bar -->
 
