@@ -31,6 +31,7 @@ if(mysql_num_rows($retval)>0)
 			$event_message = $row['event_brief'];
 			$fname = $row['first_name'];
 			$lname = $row['last_name'];
+			$email = $row['client_email']
 		}
 
 		$anchor_sql = "SELECT * from B_ANCHOR_DETAILS where email_id='".$anchor_email."'";
@@ -39,7 +40,7 @@ if(mysql_num_rows($retval)>0)
 		{
 			$anchor_name = $anchor_row['anchor_name'];
 		}
-		$email = $_COOKIE['user_email'];
+		// $email = $_COOKIE['user_email'];
 
 		$email_body = "<p>Dear ".$fname." ".$lname.",</p><p>Your Booking confirmed for anchor " .$anchor_name."</p><p>Please confirm below details</p><table><tr><td>Anchor Name</td><td> ".$anchor_name."</td></tr><tr><td>Event Type</td><td>".$event_type."</td></tr><tr><td>Event Place</td><td>".$event_place."</td></tr><tr><td>Event Venue</td><td>".$event_venue."</td></tr><tr><td>Costume</td><td>".$costume."</td></tr><tr><td>Starting Time</td><td>".$start_hour ." : ".$start_min."</td></tr><tr><td>Ending Time</td><td>".$end_hour ." : ".$end_min."</td></tr><tr><td>About Event</td><td>".$event_message."</td></tr></table>";
 		$subject = "Thanks for booking";

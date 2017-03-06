@@ -517,7 +517,7 @@ strong {
 	overflow: hidden;
 }
 .photo-outer-container{
-	padding: 0;
+	padding: 5px;
 }
 .landing-page-carousel{
 	/*height: 500px !important;*/
