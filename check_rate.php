@@ -35,6 +35,7 @@
 	while($row = mysql_fetch_array($retval, MYSQL_ASSOC)) {
 		$anchor_price = $row['price'];
 		$anchor_name = $row['anchor_name'];	
+		$anchor_email = $row['email_id'];
 	}
 
 
@@ -79,8 +80,18 @@
 			$amount = $amount - 1000;
 		}
 	}
-	echo $anchor_name." costs almost for :". $amount;
-	echo '<a href="book_now.php?anchor_id='.$achor_id.'"><button type="button" class="btn btn-info col-md-12">BOOK NOW</button></a>';
+	$randum_number = sprintf("%06d", mt_rand(1, 999999));
+	$booking_table_query = "insert into booking(payment_id, anchor_email_id, amount, event_place, days) values('".$randum_number."', '".$anchor_email."',".$amount.", '".$place."' ,".$days.")";
+	if(mysql_query($booking_table_query, $conn))
+	{
+		echo $anchor_name." costs almost for :". $amount;
+		echo '<a href="book_now.php?anchor_id='.$achor_id.'&tran_id='.$randum_number.'"><button type="button" class="btn btn-info col-md-12">BOOK NOW</button></a>';
+	}
+	else
+	{
+		echo "Something went wrong. Please try after sometimes";
+		echo mysql_error();
+	}
 	// echo '<script>$("#book_now_buttonss").click(function(e){
  //        console.log("inside book");
  //        $(".view-profile-user-deails").addClass("hide");

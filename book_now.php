@@ -73,6 +73,7 @@ if(! $retval ) {
 			    <form id="contact-form" method="post" role="form" action="book.php">
 			    	<input type="hidden" name="anchor" value="normal">
 			    	<input type="hidden" name="anchor_id" value=<?php echo $_GET['anchor_id']; ?> >
+			    	<input type="hidden" name="payment_id" value=<?php echo $_GET['tran_id']; ?>>
 			        <div class="controls">
 			        <span class="customer-details">Customer Details</span>
 			        <div class="book-now-style">    

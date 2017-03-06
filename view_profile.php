@@ -153,7 +153,7 @@ if(! $retval ) {
 						<span><a  id="booking-info">Booking Info</a></span>
 						<span><a  id="photos">Photos</a></span>
 						<span><a  id="videos">Videos</a></span>
-						<span><a  id="clientsandtest">Clients&amp;Test monial</a></span>
+						<!-- <span><a  id="clientsandtest">Events&amp;Clients</a></span> -->
 					</div>
 					<!-- ends menu bar -->
 
@@ -392,7 +392,7 @@ if(! $retval ) {
 							}
 							else
 							{
-								echo "no data";
+								echo "Will be updated Soon";
 							}
 							?>
 						</div>
@@ -401,9 +401,9 @@ if(! $retval ) {
 
 					<!-- testmonial -->
 					<div class="testmonial hide col-md-12">
-						<span class="main-title">Testmonial</span>
+						<span class="main-title">Events &amp; Clients</span>
 						<div class="col-md-12 container-fluid">
-							
+							Will be updated soon
 						</div>
 					</div>
 					<!-- ends testmonial -->

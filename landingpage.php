@@ -338,7 +338,7 @@
 			.subfltr-text{
 				font-size: 17px; 
 				font-family: raleway;
-				}	
+			}
 		</style>
 		<script type="text/javascript">
 			$(document).ready(function(){
@@ -492,6 +492,19 @@
 					<ul>
 					   <li class="active real_anchor"><a class="active real_anchor" href="#">Anchor</a></li>
 					   <li class="celebrity-anchor"><a class="celebrity-anchor" href="#">Celebrity Anchor</a></li>
+					   <li style="float: right;">
+					   		<ul style="display: flex; padding-top: 5%;">
+					   			<li style="padding-right: 5px;">
+					   				<span class="glyphicon glyphicon-record right online"></span> Online
+					   			</li>
+					   			<li style="padding-right: 5px;">
+					   				<span class="glyphicon glyphicon-record right ofline"></span> Offline
+					   			</li>
+					   			<li>
+					   				<span class="glyphicon glyphicon-record right busy"></span> At Work
+					   			</li>
+					   		</ul>
+					   </li>
 					</ul>
 				</div>
 
