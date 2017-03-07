@@ -28,35 +28,53 @@
 	}
 ?>
 <style>
-.navbar{
-	padding-bottom: 5px;
-	margin-bottom: 0;
+body{font-family: raleway;padding-top: 50px;}
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: #101010;
+    background: #222;
 }
+.nav{
+	line-height: 1px;
+	font-size: 16px;
+	padding-top: 10px;
+}
+.navbar{
+	height: 70px;
+}
+.navbar-brand>img {
+    display: block;
+    width: 250px;
+    margin-top: -10px;
+}
+#fixNavbar{
+		border-radius:0;
+		position:fixed;
+		width: 100%;
+		left: 0;
+		top: 0;
+		z-index: 999;
+	}
+.dropdown-menu{padding-bottom: 4px;}	
 </style>
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse" id="fixNavbar">
     <div class="container-fluid">
-	    <div class="navbar-header col-md-2">
-			<a href="index.php">
-				<img src="img/logo.jpg" class="img-responsive">
-			</a>
+	    <div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" style="margin-top: 17px;">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.php">
+			<img class="img-logo hidden-xs hidden-sm" src="img/logo.png"/>
+			<span class="visible-xs visible-sm" style="margin-top: 9px;">BookMyAnchor</span>
+		  </a>
 	    </div>
-	    <?php 
-	    	if($_SERVER['HTTP_HOST'].$_SERVER["REQUEST_URI"] != $_SERVER['HTTP_HOST']."/index.php"){
-	    ?>
-	    <div class="col-md-8 Search-box text-center">
-			<div class="input-group stylish-input-group">
-    			<input type="text" class="form-control"  placeholder="Search with name or bma code" >
-        			<span class="input-group-addon">
-            			<button type="submit">
-							<span class="glyphicon glyphicon-search"></span>
-            			</button>  
-        			</span>
-			</div>
-		</div>
-		<?php 
-			}
-		?>
-      	<ul class="nav navbar-nav navbar-right">
+	    
+	    <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+	        <li><a href="#/">OFFERS</a></li>
+	        <li><a href="#">GIFITING</a></li>
 	        <li>
 	        	<?php
 					if(!isset($_COOKIE['user_email']))
@@ -64,9 +82,9 @@
 				?>
 	          	<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a>
 	          	<ul class="dropdown-menu">
-		        	<li><a href="login_social_google.php?provider=google"><span class="fa fa-google-plus fa-lg"></span> log in with Google</a></li>
+		        	<li><a href="login_social_google.php?provider=google"><span class="fa fa-google-plus fa-lg"></span> Log in with Google</a></li>
 		        	<!-- <li><a href="facebook_connect/fbconfig.php"><span class="fa fa-facebook fa-lg"></span> log in with Facebook</a></li> -->
-		        	<li><a href="<?php echo $loginUrl; ?>"><span class="fa fa-facebook fa-lg"></span> log in with Facebook</a></li>
+		        	<li><a href="<?php echo $loginUrl; ?>"><span class="fa fa-facebook fa-lg"></span> Log in with Facebook</a></li>
 		        </ul>
 	          	<?php
 					}
@@ -93,6 +111,8 @@
 		        	}
 		        ?>
 	        </li>
+	        
       	</ul>
     </div>
+   </div>  
 </nav>

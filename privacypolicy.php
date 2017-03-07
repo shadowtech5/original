@@ -12,31 +12,28 @@
 		<script src="js/jquery-2.1.0.min.js"></script>
 		<script src="js/jquery.swipebox.js"></script>
 		<link rel="stylesheet" href="css/swipebox.css">
-		<!-- <link rel="stylesheet" href="css/bootstrap.min.css">
-		<script src="js/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script> -->
-
 		<link href="css/font-awesome.css" rel="stylesheet">
 	    <link href="css/bootstrap-social.css" rel="stylesheet" >
 		<link rel="stylesheet" type="text/css" href="css/custom_style.css">
 		<script type="text/javascript" src="js/custom_js.js"></script>
 		<style type="text/css">
-		@import url('https://fonts.googleapis.com/css?family=Lato:700,900&subset=latin-ext');
+		@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
 			.bookmyanchor-privacypolicy{
 				 font-family: 'Lato', sans-serif;
 			}
 			.bookmyanchor-privacypolicy h1,h2{
 				 font-family: 'Lato', sans-serif;
 				 font-size: 18px;
-				 font-weight: 900;
+				 font-weight: 700;
 				 line-height: 2;
 			}
 			.bookmyanchor-privacypolicy p{
 				 font-family: 'Lato', sans-serif;
-				 font-size: 15px;
-				 font-weight: 700;
-				 line-height: 2;
+				 font-size: 16px;
+				 font-weight: 400;
+				 line-height: 1.6;
 				 color: #383737;
+				 text-align: justify;
 			}
 			.bookmyanchor-privacypolicy-check{
 				list-style-type: none;
@@ -49,9 +46,9 @@
 	</head>
 	<body>
 		<?php include('header.php');?>
-	<div class="container-fluid col-md-12">
+	<div class="container">
 		<div class="bookmyanchor-privacypolicy">
-			<h2>Privacy Policy</h2>
+			<h2 style="padding-top: 15px;">Privacy Policy</h2>
 			<p>
 				This website, www.bookmyanchors.com developed, owned and operated by <strong>shadowtechlt</strong>. (“Company” / "bookmyanchors.com") is offered to its subscribers, who may view/ access or use the Website services. By visiting this Website you comply to all the terms and conditions of this Privacy Policy. By using the services by this Website, you expressly consent to our use and disclosure of your or anyone’s personal information in accordance with this Privacy Policy. This Privacy Policy is in addition to the Terms of Use of Website and Terms and Conditions of the celebrity emcees/ emcee and Client.<br>
 				With the following statement we are complying with our statutory duty in terms of the requirements under the Information Technology (Reasonable security practices and procedures and sensitive personal data or information) Rules, 2011, (Rules) as notified by way of section 87(2) (ob) read with section 43A of the Information Technology Act, 2000 to provide information and inform you about the saving of information, the type of information, its purpose as well as our identity. We are also informing you about our first transfer and the type of information transferred. We recommend you to read this carefully to understand how we care about your personal data. We would like to assure you that we follow appropriate standards when it comes to protecting your privacy on our websites.<br>

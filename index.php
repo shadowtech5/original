@@ -40,7 +40,7 @@ session_start();
 			}
 
 		</style>
-		<script type="text/javascript">
+		<!-- <script type="text/javascript">
 			$(document).ready(function(){
 				console.log("nf");
 				$(".background_image").scroll(function(){
@@ -53,22 +53,10 @@ session_start();
 					}
 				});
 			});
-		</script>
+		</script> -->
 	</head>
 	<body>
-		<div class="social-container1 hide">
-			<div class="col-md-12 container-fluid light-black">
-				<!-- icon bar -->
-				<div class="container-fluid light-black icon-container col-md-12">
-					<div class="col-md-4 logo">
-						<a href="index.php">
-						<img src="img/logo.png" class="img-responsive">
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>	
-		<div class="container-fluid background_image img-responsive background_image img-responsive img-responsive">
+		
 			<!-- social media bar -->
 			<?php include('header.php'); ?>
 			<!-- ends social media bar -->

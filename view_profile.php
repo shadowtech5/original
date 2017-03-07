@@ -52,6 +52,7 @@ if(! $retval ) {
 			height: 49px;
 			font-family: raleway;
 		}
+
 		</style>
 		<script type="text/javascript">
 			;( function( $ ) {
@@ -153,7 +154,7 @@ if(! $retval ) {
 						<span><a  id="booking-info">Booking Info</a></span>
 						<span><a  id="photos">Photos</a></span>
 						<span><a  id="videos">Videos</a></span>
-						<span><a  id="clientsandtest">Clients&amp;Test monial</a></span>
+						<span><a  id="clientsandtest">Clients &amp; Testmonial</a></span>
 					</div>
 					<!-- ends menu bar -->
 
