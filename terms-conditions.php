@@ -21,28 +21,29 @@
 		<link rel="stylesheet" type="text/css" href="css/custom_style.css">
 		<script type="text/javascript" src="js/custom_js.js"></script>
 		<style type="text/css">
-		@import url('https://fonts.googleapis.com/css?family=Lato:700,900&subset=latin-ext');
+		@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
 			.terms-conditions{
-				 font-family: 'Lato', sans-serif;
+				font-family: 'Lato', sans-serif;
 			}
 			.terms-conditions h1{
 				 font-family: 'Lato', sans-serif;
-				 font-size: 20px;
-				 font-weight: 900;
+				 font-size: 16px;
+				 font-weight: 700;
 				 line-height: 2;
 			}
 			.terms-conditions h2{
 				 font-family: 'Lato', sans-serif;
 				 font-size: 18px;
-				 font-weight: 900;
+				 font-weight: 700;
 				 line-height: 2;
 			}
 			.terms-conditions p{
 				 font-family: 'Lato', sans-serif;
-				 font-size: 15px;
-				 font-weight: 700;
-				 line-height: 2;
+				 font-size: 16px;
+				 font-weight: 400;
+				 line-height: 1.6;
 				 color: #383737;
+				 text-align: justify;
 			}
 			
 			.terms-conditions-check{
@@ -53,61 +54,25 @@
 				font-size: 2px;
 	     	}
 		</style>
-		<script type="text/javascript">
-			$(document).ready(function(){
-				console.log("nf");
-				$(".background_image").scroll(function(){
-					if($(this).scrollTop()>400)
-					{
-						$(".social-container1").removeClass("hide");
-					}
-					else{
-						$(".social-container1").addClass("hide");	
-					}
-				});
-			});
-		</script>
 	</head>
 	<body>
-	<div class="social-container1 hide">
-		<div class="col-md-12 container-fluid light-black">
-		<!-- icon bar -->
-			<div class="container-fluid light-black icon-container col-md-12">
-				<div class="col-md-4 logo">
-					<a href="index.php">
-						<img src="img/logo.png" class="img-responsive">
-					</a>
-				</div>
-				<div class="col-md-8  Search-box">
-					<div class="input-group stylish-input-group">
-	           			<input type="text" class="form-control"  placeholder="Search with name or bma code" >
-		        			<span class="input-group-addon">
-		               			<button type="submit">
-									<span class="glyphicon glyphicon-search"></span>
-	                   			</button>  
-	               			</span>
-	       			</div>
-				</div>
-			</div>
-		</div>
-		</div>
-	<div class="container-fluid">
+	<div class="container">
 		<!-- social media bar -->
 			<?php include('header.php'); ?>
 			<!-- ends social media bar -->
 
-		<div class="terms-conditions">
+		<div class="terms-conditions" style="padding-top: 15px;">
 			<h2>Terms and Conditions</h2>
 			<p>
-				The website,<strong> www.Bookmyanchors </strong>developed, owned and operated by <strong>shdowtech</strong>, is offered to its users, who may view/ access the Website subject to the Terms of Use provided hereunder.<br>
-
+				The website,<strong> www.Bookmyanchors </strong>developed, owned and operated by <strong>shdowtechlt</strong>, is offered to its users, who may view/ access the Website subject to the Terms of Use provided hereunder.<br>
+			</p>	
 				By accessing and/or using the Website, you agree 
 				<ol type="i">
 					<li>to be bound by these Terms of Use and are deemed to have read and understood all of its contents and implications;</li>
 					<li> you grant your free and unconditional consent to be subject to these Terms of Use as applicable.</li>
-				</ol><br>	
+				</ol>	
+			<p>
 				The Terms of Use set forth herein apply to the Website is covered and protected by all laws including but not limited to copyright and trademark laws of India.
-
 			</p>
 		</div>
 		<div class="terms-conditions">
@@ -120,7 +85,6 @@
 				These terms and condition will constitute a binding contract between you and Bookmyanchors. By accessing the Bookmyanchors Services, you accept, without limitation or qualification, the following Terms of Use found and our existing Bookmyanchors Rules (the "Rules"), found, which are incorporated by this reference. You are only authorized to use the Bookmyanchors Services if you agree to abide by the Terms of Use and all applicable laws. If you do NOT accept the Terms of Use and the Rules, then please discontinue your use of the Site and the Bookmyanchors Services. Your continued use of this website following the posting of any change or modification of these terms will mean you accept those changes or modifications. Bookmyanchors reserves the right to withdraw access to this website and to change, modify, revise the materials, products and pricing listed or offered through this website at any time.
 				<br>
 				We may modify the Terms of Use from time to time and each modification will be effective upon posting on the Site, which serves as notice to you. The Terms of Use constitute the entire agreement regarding your use of the Site or the Bookmyanchors Services and supersede any such prior Terms of Use. We will attempt to notify all members of changes to these Terms of Use but are not obligated to do so, as it is important that you review the Terms of Use regularly to ensure you are updated as to any changes made.
-
 			</p>
 		</div>
 		<div class="terms-conditions">
@@ -141,7 +105,6 @@
 				The content associated with the Bookmyanchors Services, including without limitation, the text, software, scripts, graphics, photographs, sounds, music, videos, visual interface, design, computer code, interactive features and the like  and the trademarks, service marks, trade names and logos contained therein, except all Anchor Content, are owned by or licensed to Bookmyanchors, subject to copyright and other intellectual property rights under the law. Except as expressly and unambiguously provided herein, Bookmyanchors does not grant you any express or implied rights, and all rights in and to the Bookmyanchors Services and the Site Content are retained by Bookmyanchors.
 				<br>
 				You may access Anchor Content for your information and personal, non-commercial use solely as intended through the provided functionality of the Bookmyanchors Services. Anchor Content and Site Content are provided to you for your information and personal, non-commercial use only, to be used solely as intended through the provided functionality of the Bookmyanchors Services and may not be downloaded, copied, reproduced, distributed, transmitted, broadcast, displayed, sold, licensed, or otherwise exploited for any other purposes whatsoever without the prior written consent of the respective owners, and it may not be used as prohibited under the Terms of Use.
-
 			</p>
 		</div>
 		<div class="terms-conditions">

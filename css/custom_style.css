@@ -206,7 +206,9 @@ strong {
 	margin-left: 5px;
 	margin-right: 5px;
 	border: 1px solid #8d8d8d;
-	height: 200px;	
+	height: 200px;
+	border: 1px solid #5bc0de;
+    box-shadow: 3px 5px 10px #e0dfdf;	
 }
 .sp-copyright{
 	text-align: center;
@@ -296,6 +298,7 @@ strong {
 	height: 250px;
 }
 .user-details-container{
+	padding-top: 50px;
 	background-color: #eaeaea;
 }
 .user-name-container>span{
@@ -304,7 +307,7 @@ strong {
 	font-weight: bold;
 }
 .view-profile-user-deails{
-	padding-top: 25px;
+	padding-top: 13px;
 }
 /*.celeb-profile-menu-bar{
 	font-size: 24px;
@@ -430,13 +433,14 @@ strong {
 
 /*ends*/
 .view-profile-menu-bar{
-	border-top: 2px solid #484a4a;
-	border-bottom: 2px solid #484a4a;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	font-size: 25.19px;
-	color: #7b7878;
-	font-family: raleway;
+	border-top: 2px solid #46b8da;
+    border-bottom: 2px solid #46b8da;
+    padding-top: 26px;
+    padding-bottom: 24px;
+    font-size: 17.19px;
+    color: #7b7878;
+    font-family: raleway;
+    text-align: justify;
 }
 .view-profile-menu-bar>span{
 	padding-right: 20px;
@@ -451,20 +455,20 @@ strong {
 	cursor:pointer;
 }
 .biography-container>span{
-	font-size: 60px;
-	/*padding-bottom: 15px;*/
-	font-weight: 600;
+	font-size: 40px;
 }
 .biography-container{
-	padding-top: 10px;
+	padding-top: 3px;
 	padding-bottom: 10px;
 }
 .biography-deails{
-	padding-top: 15px;
-	padding-left: 0;
-	font-size: 18px;
-	font-family: raleway;
-	font-weight: bold;
+	padding-top: 10px;
+    padding-left: 0;
+    font-size: 16px;
+    font-family: raleway;
+    letter-spacing: 1px;
+    /* font-weight: bold; */
+    text-align: left;
 }
 .active{
 	color: #000000 !important;
@@ -581,7 +585,7 @@ strong {
 }
 .profile-content{
 	background-color: #ffffff;
-	padding-left: 10px;
+	padding: 6px;
 	line-height: 23px;
 	font-family: Fra;
 	height: 160px;
@@ -664,6 +668,6 @@ strong {
 @media only screen and (max-width: 980px) {
     .profile-image-container
     {
-        height: 350px;
+        height: 230px;
     }
 }

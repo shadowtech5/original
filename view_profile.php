@@ -52,6 +52,7 @@ if(! $retval ) {
 			height: 49px;
 			font-family: raleway;
 		}
+
 		</style>
 		<script type="text/javascript">
 			;( function( $ ) {
