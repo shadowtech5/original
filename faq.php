@@ -26,25 +26,11 @@
    			font-family: 'FontAwesome';
     		content: "\f078"; /* "play" icon */
    			float: right;
-   			color: #F58723;
+   			color: #5bc0de;
    			font-size: 18px;
    			line-height: 22px;
-			/* rotate "play" icon from > (right arrow) to down arrow */
-			/*    -webkit-transform: rotate(-90deg);
-			    -moz-transform: rotate(-90deg);
-			    -ms-transform: rotate(-90deg);
-			    -o-transform: rotate(-90deg);
-			    transform: rotate(-90deg); */
-			}
-
 			.panel-heading [data-toggle="collapse"].collapsed:after {
-			/* rotate "play" icon from > (right arrow) to ^ (up arrow) */
-			/*    -webkit-transform: rotate(90deg);
-			    -moz-transform: rotate(90deg);
-			    -ms-transform: rotate(90deg);
-			    -o-transform: rotate(90deg);
-			    transform: rotate(90deg); */
-			    color: #454444;
+			color: #454444;
 			}
 			.panel-heading h4 a
 			{	
@@ -55,9 +41,9 @@
 			}
 			.panel-body{
 				font-family: 'Lato', sans-serif;
-				font-size: 18px;
+				font-size: 16px;
 				font-weight: 400;
-				line-height: 2;
+				line-height:1.6;
 			}
 			.panel-title a{
 				text-decoration: none;

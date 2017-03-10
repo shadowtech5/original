@@ -4,7 +4,7 @@
 				<div class="col-md-3 type_of_events">
 					<div class="footer-logo" style="padding-bottom: 10px;">
 						<img src="img/logo.png" class="img-responsive logo ">
-						<div class="social-menus left">
+						<div class="social-menus left" style="padding-top: 10px;">
 							<a class="btn btn-social-icon btn-google" href="http://bit.ly/2isAQYF">
 						    	<span class="fa fa-google"></span>
 							</a>
@@ -19,20 +19,6 @@
 							</a>
 						</div>
 					</div>
-					<!-- <div class="footer-center">
-						<div>
-							<i class="fa fa-map-marker left"></i>
-							<p><span>1st floor, 44/3567/A</span><br> <span>PK Tower Deshabhimani Road</span><br>Kaloor Cochin-17</p>
-						</div>
-						<div>
-							<i class="fa fa-phone left"></i>
-							<p>+1 555 123456</p>
-						</div>
-						<div>
-							<i class="fa fa-envelope left"></i>
-							<p><a href="mailto:support@company.com">info@bookmyanchors.com</a></p>
-						</div>
-					</div> -->
 				</div>
 				<div class="col-md-3 type_of_events">
 					<span>TYPE OF EVENTS</span>
